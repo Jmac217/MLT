@@ -174,11 +174,11 @@ a{cursor:pointer;}
 */
 
 /* send button */
-#requestAlert{position:absolute;top:475px;left:80px;height:0px;width:500px;visibility:hidden;}
-#sendRequest{position:absolute;top:530px;left:290px;visibility:visible;}
-#printPreview{position:absolute;top:530px;left:330px;visibility:hidden;}
-#updateRequest{position:absolute;top:530px;left:290px;visibility:hidden;}
-#cancelUpdate{position:absolute;top:530px;left:330px;visibility:hidden;}
+#requestAlert{position:absolute;top:10px;left:80px;height:0px;width:500px;visibility:hidden;}
+#sendRequest{position:absolute;top:10px;left:290px;visibility:visible;}
+#printPreview{position:absolute;top:10px;left:330px;visibility:hidden;}
+#updateRequest{position:absolute;top:10px;left:290px;visibility:hidden;}
+#cancelUpdate{position:absolute;top:10px;left:330px;visibility:hidden;}
 
 /* dropdown.php */
 
@@ -208,4 +208,4 @@ a{cursor:pointer;}
 #bugFeedback{position:absolute;left:-5px;top:90px;width:150px;height:20px;font-size:13px;}
 #submitBug{position:absolute;top:90px;left:137px;}
 
-#footer{/*position:absolute;left:0px;top:500px;width:800px;height:25px;background-color:#333333;visibility:visible;*/}
+#footer{position:absolute;left:0px;bottom:-35px;width:100%;height:35px;visibility:visible;}
