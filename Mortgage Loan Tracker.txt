@@ -1,0 +1,62 @@
+DB Project for Loans
+
+maybe a login, will see later.
+
+- Mortgage Loans Tracker
+
+--Form--
+x Date - App recieved
+x Customer Name
+
+--checkboxes--
+HMDA Data / gov monitoring? [y or n]
+Loan Accepted? [y or n]
+Turned Down loan? [y or n]
+Turned Down in 3 days? [y or n]
+Notice of adverse action? [y or n]
+Delivered to HMDA officer
+was early disclosure delivered? [y or n]
+
+--DB--
+Loan Accepted
+Appraisal order date -selection
+title policy order date - menu
+closing date - menu
+appraisal received date
+title work receiving date
+
+lock date
+expiration date
+
+comments?
+
+logic
+HMDA Data / gov monitoring? [checkbox]
+
+Loan Accepted? [y or n]
+if no
+	Turned Down in 3 days? [y or n]
+	Notice of adverse action? [y or n]
+	if no
+		was early disclosure delivered? [y or n]
+	if yes
+		Delivered to HMDA officer
+		
+questions
+how many at once?
+
+////////////////////////////
+tr ids
+
+govMonitoring
+loanAccepted
+beRejected
+adverseAction
+earlyDisclosure
+deliveredTo
+
+
+
+
+
+

@@ -1,0 +1,55 @@
+<?php
+
+// connect to db
+$connect = mysql_connect('localhost','root','')or die(mysql_error());
+$db = mysql_select_db('mlt')or die(mysql_error());
+
+// test connection
+if ($db = 1){echo 'connected to DB';
+}else{echo 'connection failed.';}
+
+// declare variables from POST
+/*
+ *
+ * Variables that are still needed
+ * 
+ * FirstName
+ * LastName
+ * acceptedDate
+ * appraisalOrderDate
+ * appraisalReceiveDate
+ * titleOrderDate
+ * titleReceiveDate
+ * closeDate
+ * lockDate
+ * expirationDate
+ * appraisalComment
+ * titleComment
+ * lockComment
+ * 
+ */
+$monitor = $_POST['monitor'];
+$loan = $_POST['loan'];
+$adverse = $_POST['adverse'];
+$rejected = $_POST['rejected'];
+$delivered = $_POST['delivered'];
+$disclosure = $_POST['disclosure'];
+
+/*
+ *
+ * Since I hurried through the variable names I'll translate them here...
+ * 	 (It would be best to go back through and rename everything...)
+ *
+ *	monitor 	 ->  isGovMonitoring
+ *	loan 			 ->  wasLoanAccepted
+ *	adverse    ->  isAdverseAction
+ *	rejected	 ->  willBeRejected
+ *	delivered  ->  deliveredToHMDA
+ *	disclosure ->  wasEarlyDisclosure
+ *
+ */
+
+// query -> insert values into db.loan
+$query = mysql_query("INSERT INTO loan (isGovMonitoring,wasLoanAccepted,isAdverseAction,willBeRejected,deliveredToHMDA,wasEarlyDisclosure) VALUES($monitor,$loan,$adverse,$rejected,$delivered,$disclosure)") or die(mysql_error());// plus a bunch of dates
+
+?>

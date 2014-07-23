@@ -1,0 +1,54 @@
+x Needs to be a 'cancel' button next to 'update' -> it will only refresh the page.
+
+x a new set of checkbox getter functions needs to be written for update. The current checkbox population on .customer.select is only a placeholder.
+x - As of right now checkboxes aren't being gathered during Update.
+
+x I just finished the front end of the new checkbox design. There are now edit buttons for all of the boxes, set to true and false, but displaying yes, no, or N/A
+x - the backend for this still needs implemented in the update.click function.
+x - it will be just like the date update stuff.
+   -- I would still like to know what the hell that bug was...
+
+Warnings
+			receiveDate is not in the database, but there is an acceptedDate. I'm not sure exactly how to take care of this as of yet. COME BACK TO THIS WHEN FINISHED.
+			-- also receiveDate is the date above the name fields.
+			** may need to go back through the *DateUpdate fields and create a div for removing, and that would go back to the original date and allow them to select edit again.
+	
+The old, ideal, checkbox function.	
+x ** Checkboxes are not updated on customer.click just yet, that needs fixed
+x		 Once a customer is selected, selecting another cancels out the other checkboxes. Things get messy quickly.
+		 
+Minor Tweaks
+
+x name fields could use an onKeyUp instead of blur for nameCheck
+
+x set date to 0000-00-00 if date = 2013-01-01
+
+ --- set the comments double the current height.
+ --- Seemed Unnecessary once I tested it.
+
+x make all boolean fields visible when a name is selected. This includes swapping the update button.
+x  - which reminds me that I also need to create an update script.  -.-*
+ 
+'Print Preview' should have filters to search by "only-true", "only-false", or "full-document" values and should also not say "True" or "False", but instead maybe something like "Yes" and "no".
+ - this is probably going to just be a set of three pages for now... a page with only 'yes', one with only 'no', and a final that has 'everything' as it is now.
+
+x create a set of divs next to the date-selectors that say "edit" for easy editing. This is described in index.js
+
+recolor everything!
+
+x Set a 'Print Preview' button on the Update page.
+
+***** BUGS *****
+Alignment is off in IE
+When a checkbox is 'edited', but another customer is selected, the previously edited boxes do not show back up.
+Selected Customer's Names will disappear when clicked, I don't know if this is a bug or a feature, but it could be bad if the user was not aware of this.
+
+IE
+==
+Seems like the left align features and the exit buttons in the dropdown are funky
+also the update button doesn't appear.
+-- haven't tried to send to db
+
+== POST ==
+clean up comments.
+Rearrange code

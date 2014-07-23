@@ -1,0 +1,32 @@
+/* Globals */
+body{background-color:#ccc;}
+p{color:#888;}
+li{color:#555;}
+.checkbox{text-align:right;}
+
+/* Div IDs */
+#header{position:absolute;left:200px;top:25px;width:900px;height:75px;background-color:#ccc;}
+#headerText{position:absolute;bottom:0px;right:0px;color:#222;font-size:45px;}
+#body{position:absolute;top:100px;height:425px;left:300px;width:700px;background-color:#222222;}
+#doc{position:absolute;top:10px;left:20px;width:660px;background-color:#777777;}
+/* table rows */
+/*
+#govMonitoring{visibility:visible}
+#loanAccepted{visibility:visible}
+#beRejected{visibility:hidden;}
+#adverseAction{visibility:hidden;}
+#earlyDisclosure{visibility:hidden;}
+#deliveredTo{visibility:hidden;}
+*/
+/* checkboxes and radio buttons */
+#isGovMonitoring{}
+#wasLoanAcceptedYes{}
+#wasLoanAcceptedNo{}
+#willBeRejectedYes{}
+#willBeRejectedNo{}
+#isAdverseActionYes{}
+#isAdverseActionNo{}
+#wasEarlyDisclosure{}
+#deliveredToHMDA{}
+#footer{position:absolute;left:0px;bottom:0px;width:100%;height:25px;background-color:#333333;}
+/*#footer{position:absolute;left:300px;top:525px;width:700px;height:25px;background-color:#333333;}*/
