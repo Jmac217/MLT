@@ -2,9 +2,7 @@ If this is going to be used it's obviously going to need some work, so bugs and 
 
 Alignment is off for old IE, make sure that works; add button, add bug slider, and dropdown are all out of whack.
 
-Dates need updated to 2014
-
-Checkboxes (props) are not being checked
+Checkboxes are not being checked
 
 Input fields are being overwritten on blur
 
