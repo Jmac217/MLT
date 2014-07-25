@@ -1,4 +1,9 @@
 $(document).ready(function(){
+
+	// reload the page
+	$('#header').click(function(){
+		window.location.reload('true');	
+	});
 	
 	// global variables, used for upload post
 	var monitor = 'false';
@@ -677,14 +682,16 @@ $(document).ready(function(){
 				if(nameCheck=='true'){
 					$.post('php/submit.php',{customerFirst:customerFirst,customerLast:customerLast,monitor:monitor,loan:loan,rejected:rejected,adverse:adverse,delivered:delivered,disclosure:disclosure,expirationDate:expirationDate,lockDate:lockDate,closeDate:closeDate,titleReceiveDate:titleReceiveDate,titleOrderDate:titleOrderDate,appraisalReceiveDate:appraisalReceiveDate,appraisalOrderDate:appraisalOrderDate,acceptedDate:acceptedDate,receiveDate:receiveDate,appraisalComment:appraisalComment,titleComment:titleComment,lockComment:lockComment},function(data){
 						if(data=='0'){
-							$('#requestAlert').animate({'height':'20px'},250).css({'visibility':'visible','color':'#00FF00','font-size':'18px'}).html('Your loan was entered succesfully.');
+							$('#requestAlert').animate({'opacity':'1'},500).css({'visibility':'visible','color':'#55FF55','font-size':'18px'}).html('Your loan was entered succesfully.');
 						}else if(data=='1'){
-							$('#requestAlert').animate({'height':'20px'},250).css({'visibility':'visible','color':'#FF0000	','font-size':'18px'}).html('There was a problem processing your loan.<br /> Please contact an administrator for further assistance.');
+							$('#requestAlert').animate({'opacity':'1'},500).css({'height':'50px','visibility':'visible','color':'#FF5555','font-size':'18px'}).html('There was a problem processing your loan.<br /> Please contact an administrator for further assistance.');
 						}
 						// shut it down before someone gets confused
-						$('#requestAlert').animate({'height':'0px'},8000,function(){
-							$(this).css({'visibility':'hidden'});
-						});
+						setTimeout(function(){
+							$('#requestAlert').animate({'opacity':'0'},500,function(){
+								$(this).css({'height':'25px','visibility':'hidden'});
+							});
+						},3000);
 							// send this first and last name to setSession.php
 							$.post('php/setSession.php',{customerFirst:customerFirst,customerLast:customerLast},function(){
 								$('#sendRequest').css({'left':'270px'});
@@ -862,13 +869,16 @@ $(document).ready(function(){
 			// acceptedDate is stil comented out in the following line. Just in case it will be used.
 			// It could be beneficial to put some error messages into the return function here.
 			$.post('php/updateCustomer.php',{id:id,customerFirst:customerFirst,customerLast:customerLast,monitor:monitor,loan:loan,rejected:rejected,adverse:adverse,delivered:delivered,disclosure:disclosure,expirationDate:expirationDate,lockDate:lockDate,closeDate:closeDate,titleReceiveDate:titleReceiveDate,titleOrderDate:titleOrderDate,appraisalReceiveDate:appraisalReceiveDate,appraisalOrderDate:appraisalOrderDate,acceptedDate:acceptedDate/*,receiveDate:receiveDate*/,appraisalComment:appraisalComment,titleComment:titleComment,lockComment:lockComment},function(data){
-				//alert(data);
 				if(data=='0'){
-					$('#requestAlert').animate({'height':'20px'},250).css({'visibility':'visible','color':'#00FF00','font-size':'18px'}).html('Your loan was updated succesfully.');
-				}
-				$('#requestAlert').animate({'height':'0px'},8000,function(){
-					$(this).css({'visibility':'hidden'});
-				});				
+					$('#requestAlert').animate({'opacity':'1'},250).css({'visibility':'visible','color':'#55FF55','font-size':'18px'}).html('Your loan was updated succesfully.');
+				}else if(data=='1'){
+							$('#requestAlert').animate({'opacity':'1'},500).css({'height':'50px','visibility':'visible','color':'#FF5555','font-size':'18px'}).html('There was a problem updating your loan.<br /> Please contact an administrator for further assistance.');
+						}
+				setTimeout(function(){
+					$('#requestAlert').animate({'opacity':'0'},250,function(){
+						$(this).css({'height':'25px','visibility':'hidden'});
+					});
+				},3000);				
 				
 				//window.location.href = 'index.php';
 			});

@@ -53,6 +53,8 @@ echo '
 		<head>
 			<title>MLT Printable</title>
 			<link rel="stylesheet" type="text/css" href="../css/printable.css"/>
+			<script type="text/javascript" src="../js/jquery.js"></script>
+			<script type="text/javascript" src="../js/print.js"></script>
 		</head>
 		<body>
 		<span id="print">Click to Print</span>
@@ -115,8 +117,6 @@ echo '
 				<div id="footer"></div>
 			</div>
 		</body>
-		<script type="text/javascript" src="../js/jquery.js"></script>
-		<script type="text/javascript" src="../js/print.js"></script>
 	</html>
 ';
 ?>

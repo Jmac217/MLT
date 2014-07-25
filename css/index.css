@@ -13,7 +13,7 @@ input[type='button']:hover{cursor:pointer;color:white;background-color:#555;}
 #customerNameCheck{position:absolute;top:50px;left:400px;}
 
 /* Div IDs */
-#header{position:absolute;left:0px;top:0px;width:900px;height:55px;/*background-color:#ddd;*/}
+#header{position:absolute;left:0px;top:0px;width:500px;height:55px;cursor:pointer;}
 #headerText{position:absolute;bottom:0px;left:20px;color:#222;font-size:45px;}
 #version{position:absolute;bottom:10px;left:465px;color:#000;font-size:9px;}
 #body{position:absolute;top:55px;height:570px;left:0px;width:675px;background-color:#222222;border-radius:10px;}
@@ -178,7 +178,7 @@ input[type='button']:hover{cursor:pointer;color:white;background-color:#555;}
 */
 
 /* send button */
-#requestAlert{position:absolute;top:10px;left:80px;height:0px;width:500px;visibility:hidden;}
+#requestAlert{position:absolute;top:45px;height:25px;left:0px;width:100%;background-color:#222;opacity:0;visibility:hidden;border-radius:5px 5px 5px 5px;border:solid 1px black;}
 #sendRequest{position:absolute;top:10px;left:290px;visibility:visible;}
 #printPreview{position:absolute;top:10px;left:330px;visibility:hidden;}
 #updateRequest{position:absolute;top:10px;left:290px;visibility:hidden;}
