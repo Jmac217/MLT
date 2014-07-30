@@ -36,8 +36,12 @@
 	
 	echo '
 	<div id="dropdownContainer">
-		<div id="dropdownSelected"><i>New</i></div>
-			<div id="dropdown">';
+		<div id="dropdownSelected" class="dropdown_box">
+			<!--<i>New</i>-->
+			<i id="dropdown_title">Customers</i>
+			<input id="customer_search" type="text" value="Customer Last Name Search..."/>
+		</div>
+			<div id="dropdown" class="dropdown_box">';
 						
 	while($i<=$cap){ // loop through all rows
 		$row = mysql_fetch_assoc(mysql_query("SELECT id,first,last FROM loan WHERE id='$i'")); // select only the rows where user exists and that are unread
@@ -70,8 +74,8 @@
 		}else{$i++;}
 	} if($top=0){$dropHeight=0;}else{$dropHeight=($height*$t+10);};
 	echo '
-				<div id="dropdownExtend"><div id="dropdownExtendText">Extend</div></div>
-				<div id="dropdownClose"><div id="dropdownCloseText">Close</div></div>
+				<div id="dropdownExtend" class="bordered"><div id="dropdownExtendText">Extend</div></div>
+				<div id="dropdownClose" class="bordered"><div id="dropdownCloseText">Close</div></div>
 			</div>
 	</div>
 	

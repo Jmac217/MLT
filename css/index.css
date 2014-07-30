@@ -5,19 +5,22 @@ li{color:#555;}
 a{cursor:pointer;}
 .checkbox{text-align:right;}
 .box{border-style:none;border:solid 1px #333;color:gray;text-align:center;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;-ms-box-sizing:border-box;box-sizing:border-box;box-shadow:5px 5px 15px #333;}
+.dropdown_box{border-style:none;border:solid 1px #333;color:black;text-align:center;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;-ms-box-sizing:border-box;box-sizing:border-box;box-shadow:5px 5px 15px #333;}
+.bordered{border-style:none;border-top:solid 0.5px #333;text-align:center;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;-ms-box-sizing:border-box;box-sizing:border-box;}
 .bezzle{border-bottom-left-radius:10px;border-bottom-right-radius:10px;}
 input{border-style:none;border:solid 1px #333;color:gray;text-align:center;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;-ms-box-sizing:border-box;box-sizing:border-box;}
 input[type='button']:hover{cursor:pointer;color:white;background-color:#555;}
 
 /* customerNameCheck */
-#customerNameCheck{position:absolute;top:50px;left:400px;}
 
 /* Div IDs */
 #header{position:absolute;left:0px;top:0px;width:500px;height:55px;cursor:pointer;}
 #headerText{position:absolute;bottom:0px;left:20px;color:#222;font-size:45px;}
 #version{position:absolute;bottom:10px;left:465px;color:#000;font-size:9px;}
-#body{position:absolute;top:55px;height:570px;left:0px;width:675px;background-color:#222222;border-radius:10px;}
-#doc{position:absolute;top:8px;left:8px;height:520px;width:660px;background-image:url("../res/doc.png");border-radius:5px;/*background-color:#6d7d7d;*/}/* #224455 */
+#body{position:absolute;top:55px;height:770px;left:0px;width:675px;background-color:#222222;border-radius:10px;}
+#doc{position:absolute;top:8px;left:8px;height:720px;width:660px;/*background-image:url("../res/doc.png");*/border-radius:5px;background-color:#6d7d7d;}/* #224455 */
+
+#customer_input{position:absolute;left:120px;top:10px;}
 
 /* full spans */
 #govMonitoring{position:absolute;top:100px;left:127px;visibility:visible;}
@@ -192,15 +195,20 @@ input[type='button']:hover{cursor:pointer;color:white;background-color:#555;}
 /*#dropdownContainer{position:absolute;top:0px;right:0px;height:40px;width:250px;background-color:#111111;}*/
 #dropdownFeedback{position:absolute;top:55px;left:685px;height:20px;width:250px;text-align:center;}
 #dropdownContainer{position:absolute;top:55px;left:685px;height:40px;width:250px;border-radius:5px;}/* color not shown */
-#dropdownSelected{position:absolute;top:0px;right:0px;height:30px;width:250px;background-color:#55636b;font-size:25px;color:#999;border-top-left-radius:5px;border-top-right-radius:5px;}
-#dropdown{position:absolute;right:0px;top:30px;height:10px;width:250px;background-color:#6d7d7d;overflow:hidden;}
+#dropdownSelected{position:absolute;top:0px;right:0px;height:50px;width:250px;background-color:#55636b;font-size:25px;color:#999;border-top-left-radius:5px;border-top-right-radius:5px;border-bottom:none;}
+#dropdown_title{position:absolute;top:0px;left:87px;color:#CCC;font-size:16px;}
+#customer_search{position:absolute;bottom:0px;left:0px;height:60%;width:100%;border-top-left-radius:5px;border-top-right-radius:5px;border:none;}
+/*#customerNameCheck{position:absolute;top:50px;left:400px;}*/
+#dropdown{position:absolute;right:0px;top:50px;height:10px;width:250px;background-color:#6d7d7d;overflow:hidden;}
 .customerContainer{position:absolute;height:20px;width:250px;}
 .customer{position:absolute;height:20px;width:230px;left:0px;}
 .options{position:absolute;height:20px;width:20px;top:0px;right:0px;}
 .remove{position:absolute;height:20px;width:20px;right:0px;background-image:url("../res/x_blue.png");cursor:pointer;}
 #dropdownExtend{position:absolute;right:0px;bottom:0px;height:10px;width:250px;background-color:#8f9f9f;text-align:center;visibility:visible;}
+#dropdownExtend:hover{background-color:#cfdfdf;cursor:pointer;}
 #dropdownExtendText{position:absolute;bottom:0px;width:250px;font-size:9px;text-align:center;}
 #dropdownClose{position:absolute;right:0px;bottom:0px;height:10px;width:250px;background-color:#8f9f9f;text-align:center;visibility:hidden;}
+#dropdownClose:hover{background-color:#cfdfdf;cursor:pointer;}
 #dropdownCloseText{position:absolute;bottom:0px;width:250px;font-size:9px;text-align:center;}
 /**/
 

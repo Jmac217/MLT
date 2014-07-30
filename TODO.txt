@@ -1,0 +1,10 @@
+TODO
+
+index.js
+=====
+All of those variables in index.js are going to be added to a JSON object array
+Dropdown states should be conditional, rather than separate similar functions.
+
+Major eventual reworks
+===============
+The dropdown will be rewritten in Javascript, which allows for seamless refreshes, and JSON; dropdown.close.click functionality could be changed from XML, which does work, into a real JSON file.

@@ -7,3 +7,5 @@ Checkboxes are not being checked
 Input fields are being overwritten on blur
 
 alrighty so inputs, .box, and checkbox selection ability need to be taken from other projects. I believe checkbox selection is the only one that is not available in Customer Loan Database.
+
+MySQL could probably be cut out for the most part, and be replaced by JSON.

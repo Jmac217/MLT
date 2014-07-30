@@ -1,0 +1,4 @@
+Functional documentation
+++++++++++++++++
+
+date_selection(id, title): takes the id of the div, to be placed within the container div (and, for now, the included divs), and a title that gets displayed as text for the subsequent date selectors. 
