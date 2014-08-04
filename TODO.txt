@@ -1,5 +1,19 @@
 TODO
 
+Converge everything into a single list. This form is not two sections any more. Dates and check-boxes are of the same list now.
+
+Remove
+=====
+x HMDA
+x Has this loan been approved?
+x Lock Date
+x Expiration Date
+x Will this loan be turned down in 3 days?
+x Notice of adverse action
+
+x redundancy on title work ordered & title work approved
+x move title work ordered & title work approved to down below appraisal and still needs buttons like up top
+
 index.js
 =====
 All of those variables in index.js are going to be added to a JSON object array

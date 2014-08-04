@@ -46,53 +46,20 @@
 					</span>
 				</span>
 				
-				<!-- Loan Accepted -->
-				<span id='loanAccepted'>
-					Has this loan been approved?
-					<span id='loanAcceptedCheckbox'>
-						Yes <input id='wasLoanAcceptedYes' type='radio' />
-						No <input id='wasLoanAcceptedNo' type='radio' />
+				<!-- Loan Accepted is being replaced by Conditionally Approved -->
+				<!-- Conditionally Approved -->
+				<span id='conditionallyApproved'>
+					Conditionally Approved
+					<span id='conditionallyApprovedCheckbox'>
+						Yes <input id='wasconditionallyApprovedYes' type='radio' />
+						No <input id='wasconditionallyApprovedNo' type='radio' />
 					</span>
 				</span>
-				<span id='loanAcceptedAnswer'>
-					<span id='loanAcceptedAnswerYesNo'>
+				<span id='conditionallyApprovedAnswer'>
+					<span id='conditionallyApprovedAnswerYesNo'>
 						Yes/No
 					</span>
-					<span id='loanAcceptedAnswerEdit'>
-						Edit
-					</span>
-				</span>
-				
-				<!-- Turned down in 3 days -->
-				<span id='beRejected'>
-					Will this loan be turned down in three days?
-					<span id='beRejectedCheckbox'>
-						Yes <input id='willBeRejectedYes' type='radio' />
-						No <input id='willBeRejectedNo' type='radio' />
-					</span>
-				</span>
-				<span id='beRejectedAnswer'>
-					<span id='beRejectedAnswerYesNo'>
-						Yes/No
-					</span>
-					<span id='beRejectedAnswerEdit'>
-						Edit
-					</span>
-				</span>
-				
-				<!-- Notice of adverse action -->
-				<span id='adverseAction'>
-					Notice of adverse action
-					<span id='adverseActionCheckbox'>
-						Yes <input id='isAdverseActionYes' type='radio' />
-						No <input id='isAdverseActionNo' type='radio' />
-					</span>
-				</span>
-				<span id='adverseActionAnswer'>
-					<span id='adverseActionAnswerYesNo'>
-						Yes/No
-					</span>
-					<span id='adverseActionAnswerEdit'>
+					<span id='conditionallyApprovedAnswerEdit'>
 						Edit
 					</span>
 				</span>
@@ -113,41 +80,24 @@
 						Edit
 					</span>
 				</span>
-				
-				<!-- delivered to HMDA officer -->
-				<span id='deliveredTo'>
-					Delivered to HMDA officer
-					<span id='deliveredToCheckbox'>
-						<input id='deliveredToHMDA' type='checkbox' />
+
+				<span id='loanStatus'>
+					Loan Status : 
+					<span id='loanStatusCheckbox'>
+						Processing/Underwriting <input id='loanStatusProcessing' type='radio' />
+						Final Approved <input id='loanStatusApproved' type='radio' />
+						Closing Prep <input id='loanStatusClosing' type='radio' />
 					</span>
 				</span>
-				<span id='deliveredToAnswer'>
-					<span id='deliveredToAnswerYesNo'>
+				<span id='loanStatusAnswer'>
+					<span id='loanStatusAnswerYesNo'>
 						Yes/No
 					</span>
-					<span id='deliveredToAnswerEdit'>
+					<span id='loanStatusAnswerEdit'>
 						Edit
 					</span>
 				</span>
-				
-				<!-- DISCONNECTED -- AN OUTLINE FOR RIGHT NOW -->
-				
-				<!-- Conditionally Approved -->
-				<span id='conditionallyApproved'>
-					Conditionally Approved
-					<span id='conditionallyApprovedCheckbox'>
-						Yes <input id='wasconditionallyApprovedYes' type='radio' />
-						No <input id='wasconditionallyApprovedNo' type='radio' />
-					</span>
-				</span>
-				<span id='conditionallyApprovedAnswer'>
-					<span id='conditionallyApprovedAnswerYesNo'>
-						Yes/No
-					</span>
-					<span id='conditionallyApprovedAnswerEdit'>
-						Edit
-					</span>
-				</span>
+
 				
 				<!-- title work ordered -->
 				<!-- this form is special, it requires 3 selectors -->
@@ -184,6 +134,67 @@
 						Edit
 					</span>
 				</span>
+
+					<!-- Title Ordered Date -->
+					<div id='loanStatusDate'>
+						<span id='loanStatusDateTitle'>Loan Status : </span>
+						<span id='loanStatusDateWrapper'>
+						<select id ='loanStatusMonth' name="month">
+							<option value="01">January
+							<option value="02">February
+							<option value="03">March
+							<option value="04">April
+							<option value="05">May
+							<option value="06">June
+							<option value="07">July
+							<option value="08">August
+							<option value="09">September
+							<option value="10">October
+							<option value="11">November
+							<option value="12">December
+						</select>
+						<select id='loanStatusDay' name="day">
+							<option value="01">1
+							<option value="02">2
+							<option value="03">3
+							<option value="04">4
+							<option value="05">5
+							<option value="06">6
+							<option value="07">7
+							<option value="08">8
+							<option value="09">9
+							<option value="10">10
+							<option value="11">11
+							<option value="12">12
+							<option value="13">13
+							<option value="14">14
+							<option value="15">15
+							<option value="16">16
+							<option value="17">17
+							<option value="18">18
+							<option value="19">19
+							<option value="20">20
+							<option value="21">21
+							<option value="22">22
+							<option value="23">23
+							<option value="24">24
+							<option value="25">25
+							<option value="26">26
+							<option value="27">27
+							<option value="28">28
+							<option value="29">29
+							<option value="30">30
+							<option value="31">31
+						</select>
+						<select id='loanStatusYear' name="year">
+							<option value="2014">2014
+							<option value="2015">2015
+						</select>
+						</span>
+						<input type='input' value='Loan Status Comments' id='loanStatusComment' alt='Loan Status Comments'></input>
+					</div>
+					<span id='loanStatusDateInfo'><span id='loanStatusDateInfoDate'></span><a id='loanStatusDateInfoLink'>Edit</a></span>
+					
 
 				<br /><br />
 				
@@ -303,7 +314,7 @@
 							<option value="2015">2015
 						</select>
 						</span>
-						<input type='input' value='Appraisal Ordered Comments' id='appraisalOrderedComment' alt='Appraisal Ordered Comments'></input>
+						<!--<input type='input' value='Appraisal Ordered Comments' id='appraisalOrderedComment' alt='Appraisal Ordered Comments'></input>-->
 					</div>
 					<span id='appraisalOrderedDateInfo'><span id='appraisalOrderedDateInfoDate'></span><a id='appraisalOrderedDateInfoLink'>Edit</a></span>
 					
@@ -363,7 +374,7 @@
 							<option value="2015">2015
 						</select>
 						</span>
-						<input type='input' value='Appraisal Approved Comments' id='appraisalApprovedComment' alt='Appraisal Approved Comments'></input>
+						<input type='input' value='Appraisal Comments' id='appraisalComment' alt='Appraisal Comments'></input>
 					</div>
 					<span id='appraisalApprovedDateInfo'><span id='appraisalApprovedDateInfoDate'></span><a id='appraisalApprovedDateInfoLink'>Edit</a></span>											
 					
@@ -423,10 +434,10 @@
 							<option value="2015">2015
 						</select>
 						</span>
-						<input type='input' value='Title Ordered Comments' id='titleOrderedComment' alt='Title Ordered Comments'></input>
+						<input type='input' value='Title Comments' id='titleComment' alt='Title Comments'></input>
 					</div>
 					<span id='titleOrderedDateInfo'><span id='titleOrderedDateInfoDate'></span><a id='titleOrderedDateInfoLink'>Edit</a></span>
-					
+
 					<!-- Title Approved Date -->
 					<div id='titleApprovedDate'>
 						<span id='titleApprovedDateTitle'>Title Approved : </span>
@@ -485,179 +496,60 @@
 					</div>
 					<span id='titleApprovedDateInfo'><span id='titleApprovedDateInfoDate'></span><a id='titleApprovedDateInfoLink'>Edit</a></span>										
 					
-					<!-- Lock Date -->
-					<div id='lockDate'>
-						<span id='lockDateTitle'>Lock Date : </span>
-						<span id='lockDateWrapper'>
-						<select id ='lockMonth' name="month">
-							<option value="01">January
-							<option value="02">February
-							<option value="03">March
-							<option value="04">April
-							<option value="05">May
-							<option value="06">June
-							<option value="07">July
-							<option value="08">August
-							<option value="09">September
-							<option value="10">October
-							<option value="11">November
-							<option value="12">December
-						</select>
-						<select id='lockDay' name="day">
-							<option value="01">1
-							<option value="02">2
-							<option value="03">3
-							<option value="04">4
-							<option value="05">5
-							<option value="06">6
-							<option value="07">7
-							<option value="08">8
-							<option value="09">9
-							<option value="10">10
-							<option value="11">11
-							<option value="12">12
-							<option value="13">13
-							<option value="14">14
-							<option value="15">15
-							<option value="16">16
-							<option value="17">17
-							<option value="18">18
-							<option value="19">19
-							<option value="20">20
-							<option value="21">21
-							<option value="22">22
-							<option value="23">23
-							<option value="24">24
-							<option value="25">25
-							<option value="26">26
-							<option value="27">27
-							<option value="28">28
-							<option value="29">29
-							<option value="30">30
-							<option value="31">31
-						</select>
-						<select id='lockYear' name="year">
-							<option value="2014">2014
-							<option value="2015">2015
-						</select>
-						</span>
-						<input type='input' value='Lock Comments' id='lockComment' alt='Lock Comments'></input>
-					</div>
-					<span id='lockDateInfo'><span id='lockDateInfoDate'></span><a id='lockDateInfoLink'>Edit</a></span>
-					
-					<!-- Expiration Date -->
-					<div id='expirationDate'>
-						<span id='expirationDateTitle'> Expiration Date : </span>
-						<span id='expirationDateWrapper'>
-						<select id ='expirationMonth' name="month">
-							<option value="01">January
-							<option value="02">February
-							<option value="03">March
-							<option value="04">April
-							<option value="05">May
-							<option value="06">June
-							<option value="07">July
-							<option value="08">August
-							<option value="09">September
-							<option value="10">October
-							<option value="11">November
-							<option value="12">December
-						</select>
-						<select id='expirationDay' name="day">
-							<option value="01">1
-							<option value="02">2
-							<option value="03">3
-							<option value="04">4
-							<option value="05">5
-							<option value="06">6
-							<option value="07">7
-							<option value="08">8
-							<option value="09">9
-							<option value="10">10
-							<option value="11">11
-							<option value="12">12
-							<option value="13">13
-							<option value="14">14
-							<option value="15">15
-							<option value="16">16
-							<option value="17">17
-							<option value="18">18
-							<option value="19">19
-							<option value="20">20
-							<option value="21">21
-							<option value="22">22
-							<option value="23">23
-							<option value="24">24
-							<option value="25">25
-							<option value="26">26
-							<option value="27">27
-							<option value="28">28
-							<option value="29">29
-							<option value="30">30
-							<option value="31">31
-						</select>
-						<select id='expirationYear' name="year">
-							<option value="2014">2014
-							<option value="2015">2015
-						</select>
-						</span>
-					</div>
-					<span id='expirationDateInfo'><span id='expirationDateInfoDate'></span><a id='expirationDateInfoLink'>Edit</a></span>
-					
 					<div id='targetCloseDate'>
 						<span id='targetCloseDateTitle'>Target Closing Date : </span>
 						<span id='targetCloseDateWrapper'>
-						<select id ='targetCloseMonth' name="month">
-							<option value="01">January
-							<option value="02">February
-							<option value="03">March
-							<option value="04">April
-							<option value="05">May
-							<option value="06">June
-							<option value="07">July
-							<option value="08">August
-							<option value="09">September
-							<option value="10">October
-							<option value="11">November
-							<option value="12">December
-						</select>
-						<select id='targetCloseDay' name="day">
-							<option value="01">1
-							<option value="02">2
-							<option value="03">3
-							<option value="04">4
-							<option value="05">5
-							<option value="06">6
-							<option value="07">7
-							<option value="08">8
-							<option value="09">9
-							<option value="10">10
-							<option value="11">11
-							<option value="12">12
-							<option value="13">13
-							<option value="14">14
-							<option value="15">15
-							<option value="16">16
-							<option value="17">17
-							<option value="18">18
-							<option value="19">19
-							<option value="20">20
-							<option value="21">21
-							<option value="22">22
-							<option value="23">23
-							<option value="24">24
-							<option value="25">25
-							<option value="26">26
-							<option value="27">27
-							<option value="28">28
-							<option value="29">29
-							<option value="30">30
-							<option value="31">31
-						</select>
-						<select id='targetCloseYear' name="year">
-							<option value="2014">2014
-							<option value="2015">2015
-						</select>
+							<select id ='targetCloseMonth' name="month">
+								<option value="01">January
+								<option value="02">February
+								<option value="03">March
+								<option value="04">April
+								<option value="05">May
+								<option value="06">June
+								<option value="07">July
+								<option value="08">August
+								<option value="09">September
+								<option value="10">October
+								<option value="11">November
+								<option value="12">December
+							</select>
+							<select id='targetCloseDay' name="day">
+								<option value="01">1
+								<option value="02">2
+								<option value="03">3
+								<option value="04">4
+								<option value="05">5
+								<option value="06">6
+								<option value="07">7
+								<option value="08">8
+								<option value="09">9
+								<option value="10">10
+								<option value="11">11
+								<option value="12">12
+								<option value="13">13
+								<option value="14">14
+								<option value="15">15
+								<option value="16">16
+								<option value="17">17
+								<option value="18">18
+								<option value="19">19
+								<option value="20">20
+								<option value="21">21
+								<option value="22">22
+								<option value="23">23
+								<option value="24">24
+								<option value="25">25
+								<option value="26">26
+								<option value="27">27
+								<option value="28">28
+								<option value="29">29
+								<option value="30">30
+								<option value="31">31
+							</select>
+							<select id='targetCloseYear' name="year">
+								<option value="2014">2014
+								<option value="2015">2015
+							</select>
 						</span>
 					</div>
 					<span id='targetCloseDateInfo'><span id='targetCloseDateInfoDate'></span><a id='targetCloseDateInfoLink'>Edit</a></span>			

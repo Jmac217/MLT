@@ -25,19 +25,21 @@ input[type='button']:hover{cursor:pointer;color:white;background-color:#555;}
 /* full spans */
 #govMonitoring{position:absolute;top:100px;left:127px;visibility:visible;}
 #loanAccepted{position:absolute;top:120px;left:127px;visibility:visible;}
-#beRejected{position:absolute;top:140px;left:127px;visibility:hidden;}
-#adverseAction{position:absolute;top:160px;left:127px;visibility:hidden;}
-#earlyDisclosure{position:absolute;top:180px;left:127px;visibility:hidden;}
-#deliveredTo{position:absolute;top:180px;left:127px;visibility:hidden;}
 
-#conditionallyApproved{position:absolute;top:200px;left:127px;visibility:visible;}
-#titleOrdered{position:absolute;top:220px;left:127px;visibility:visible;}
-#titleApproved{position:absolute;top:240px;left:127px;visibility:visible;}
+#loanStatus{position:absolute;top:120px;left:127px;visibility:visible;}
 
+#beRejected{position:absolute;top:140px;left:127px;visibility:visible;}
+#adverseAction{position:absolute;top:160px;left:127px;visibility:visible;}
+#earlyDisclosure{position:absolute;top:170px;left:127px;visibility:visible;}
+#deliveredTo{position:absolute;top:180px;left:127px;visibility:visible;}
 
+#conditionallyApproved{position:absolute;top:190px;left:127px;visibility:visible;}
 
 #govMonitoringAnswer{position:absolute;top:100px;width:130px;left:405px;visibility:hidden;}
 #loanAcceptedAnswer{position:absolute;top:120px;width:130px;left:405px;visibility:hidden;}
+
+#loanStatusAnswer{position:absolute;top:120px;width:130px;left:405px;visibility:hidden;}
+
 #beRejectedAnswer{position:absolute;top:140px;width:130px;left:405px;visibility:hidden;}
 #adverseActionAnswer{position:absolute;top:160px;width:130px;left:405px;visibility:hidden;}
 #earlyDisclosureAnswer{position:absolute;top:180px;width:130px;left:405px;visibility:hidden;}
@@ -49,42 +51,49 @@ input[type='button']:hover{cursor:pointer;color:white;background-color:#555;}
 
 #govMonitoringAnswerYesNo{position:absolute;top:0px;left:10px;}
 #loanAcceptedAnswerYesNo{position:absolute;top:0px;left:10px;}
+
+#loanStatusAnswerYesNo{position:absolute;top:0px;left:10px;}
+
 #beRejectedAnswerYesNo{position:absolute;top:0px;left:10px;}
 #adverseActionAnswerYesNo{position:absolute;top:0px;left:10px;}
 #earlyDisclosureAnswerYesNo{position:absolute;top:0px;left:10px;}
 #deliveredToAnswerYesNo{position:absolute;top:0px;left:10px;}
 
 #conditionallyApprovedAnswerYesNo{position:absolute;top:0px;left:10px;}
-#titleOrderedAnswerYesNo{position:absolute;top:0px;left:10px;}
-#titleApprovedAnswerYesNo{position:absolute;top:0px;left:10px;}
 
 #govMonitoringAnswerEdit{position:absolute;top:0px;right:0px;cursor:pointer;}
 #loanAcceptedAnswerEdit{position:absolute;top:0px;right:0px;cursor:pointer;}
+
+#loanStatusAnswerEdit{position:absolute;top:0px;right:0px;cursor:pointer;}
+
 #beRejectedAnswerEdit{position:absolute;top:0px;right:0px;cursor:pointer;}
 #adverseActionAnswerEdit{position:absolute;top:0px;right:0px;cursor:pointer;}
 #earlyDisclosureAnswerEdit{position:absolute;top:0px;right:0px;cursor:pointer;}
 #deliveredToAnswerEdit{position:absolute;top:0px;right:0px;cursor:pointer;}
 
 #conditionallyApprovedAnswerEdit{position:absolute;top:0px;right:0px;cursor:pointer;}
-#titleOrderedAnswerEdit{position:absolute;top:0px;right:0px;cursor:pointer;}
-#titleApprovedAnswerEdit{position:absolute;top:0px;right:0px;cursor:pointer;}
 
 /* checkboxes and radio buttons */
 #govMonitoringCheckbox{position:absolute;top:0px;left:397px;visibility:visible;}
-#loanAcceptedCheckbox{position:absolute;top:0px;left:319px;width:100px;visibility:visible;}
-#beRejectedCheckbox{position:absolute;top:0px;left:319px;width:100px;visibility:hidden;}
-#adverseActionCheckbox{position:absolute;top:0px;left:319px;width:100px;visibility:hidden;}
-#earlyDisclosureCheckbox{position:absolute;top:0px;left:319px;width:100px;visibility:hidden;}
-#deliveredToCheckbox{position:absolute;top:0px;left:397px;visibility:hidden;}
-
 #conditionallyApprovedCheckbox{position:absolute;top:0px;left:319px;width:100px;visibility:visible;}
-#titleOrderedCheckbox{position:absolute;top:0px;left:153px;width:300px;visibility:visible;}
-#titleApprovedCheckbox{position:absolute;top:0px;left:319px;width:100px;visibility:visible;}
+#earlyDisclosureCheckbox{position:absolute;top:0px;left:319px;width:100px;visibility:visible;}
+#deliveredToCheckbox{position:absolute;top:0px;left:397px;visibility:visible;}
 
 /* date selectors */
 
+#loanStatusDate{position:absolute;top:125px;left:127px;visibility:hidden;}
+#loanStatusDateWrapper{position:absolute;top:0px;left:0px;}
+#loanStatusDay{position:absolute;top:0px;left:313px;}
+#loanStatusMonth{position:absolute;top:0px;left:218px;}
+#loanStatusYear{position:absolute;top:0px;left:355px;}
+#loanStatusDateInfo{position:absolute;top:345px;left:387px;width:150px;height:20px;visibility:hidden;}
+#loanStatusDateInfoDate{position:absolute;top:0px;left:0px;}
+#loanStatusDateInfoLink{position:absolute;top:0px;right:0px;}
+/* 5a */
+#loanStatusComment{position:absolute;top:22px;left:0px;width:416px;visibility:visible;}
+
 /* 1 */ /* Date Approved */
-#acceptedDate{position:absolute;top:280px;left:127px;/*background-color:blue;*/}
+#acceptedDate{position:absolute;top:210px;left:127px;/*background-color:blue;*/}
 #acceptedDateWrapper{position:absolute;top:0px;left:0px;visibility:visible;}
 #acceptedDay{position:absolute;top:0px;left:313px;}
 #acceptedMonth{position:absolute;top:0px;left:218px;}
@@ -94,7 +103,7 @@ input[type='button']:hover{cursor:pointer;color:white;background-color:#555;}
 #acceptedDateInfoLink{position:absolute;top:0px;right:0px;}
 
 /* 2 */
-#appraisalOrderedDate{position:absolute;top:302px;left:127px;/*background-color:green;*/}
+#appraisalOrderedDate{position:absolute;top:230px;left:127px;/*background-color:green;*/}
 #appraisalOrderedDateWrapper{position:absolute;top:0px;left:0px;visibility:visible;}
 #appraisalOrderedDay{position:absolute;top:0px;left:313px;}
 #appraisalOrderedMonth{position:absolute;top:0px;left:218px;}
@@ -105,20 +114,8 @@ input[type='button']:hover{cursor:pointer;color:white;background-color:#555;}
 
 #appraisalOrderedComment{position:absolute;top:22px;left:0px;width:416px;}
 
-/* 3 */ /* NOT USED...? */
-/*
-#appraisalDate{position:absolute;top:240px;left:127px;}
-#appraisalDateWrapper{position:absolute;top:0px;left:0px;visibility:visible;}
-#appraisalDay{position:absolute;top:0px;left:313px;}
-#appraisalMonth{position:absolute;top:0px;left:218px;}
-#appraisalYear{position:absolute;top:0px;left:355px;}
-#appraisalDateInfo{position:absolute;top:240px;left:387px;width:150px;height:20px;visibility:hidden;}
-#appraisalDateInfoDate{position:absolute;top:0px;left:0px;}
-#appraisalDateInfoLink{position:absolute;top:0px;right:0px;}
-*/
-
 /* 3 */
-#appraisalApprovedDate{position:absolute;top:346px;left:127px;/*background-color:tan;*/}
+#appraisalApprovedDate{position:absolute;top:250px;left:127px;/*background-color:tan;*/}
 #appraisalApprovedDateWrapper{position:absolute;top:0px;left:0px;visibility:visible;}
 #appraisalApprovedDay{position:absolute;top:0px;left:313px;}
 #appraisalApprovedMonth{position:absolute;top:0px;left:218px;}
@@ -128,11 +125,22 @@ input[type='button']:hover{cursor:pointer;color:white;background-color:#555;}
 #appraisalApprovedDateInfoLink{position:absolute;top:0px;right:0px;}
 
 /* 3a */
-#appraisalApprovedComment{position:absolute;top:22px;left:0px;width:416px;}
+#appraisalComment{position:absolute;top:23px;left:0px;width:416px;}
+
+#titleOrdered{position:absolute;top:295px;left:127px;visibility:visible;}
+#titleOrderedCheckbox{position:absolute;top:0px;left:153px;width:300px;visibility:visible;}
+#titleOrderedAnswerYesNo{position:absolute;top:0px;left:10px;}
+#titleOrderedAnswerEdit{position:absolute;top:0px;right:0px;cursor:pointer;}
+
+#titleApproved{position:absolute;top:315px;left:127px;visibility:visible;}
+#titleApprovedCheckbox{position:absolute;top:432px;left:319px;width:100px;visibility:visible;}
+#titleApprovedAnswerYesNo{position:absolute;top:0px;left:10px;}
+#titleApprovedAnswerEdit{position:absolute;top:0px;right:0px;cursor:pointer;}
+#titleApprovedCheckbox{position:absolute;top:0px;left:319px;width:100px;visibility:visible;}
 
 /* 4 */
-#titleOrderedDate{position:absolute;top:389px;left:127px;/*background-color:purple;*/}
-#titleOrderedDateWrapper{position:absolute;top:0px;left:0px;visibility:visible;}
+#titleOrderedDate{position:absolute;top:315px;left:127px;visibility:hidden;}
+#titleOrderedDateWrapper{position:absolute;top:0px;left:0px;}
 #titleOrderedDay{position:absolute;top:0px;left:313px;}
 #titleOrderedMonth{position:absolute;top:0px;left:218px;}
 #titleOrderedYear{position:absolute;top:0px;left:355px;}
@@ -140,11 +148,11 @@ input[type='button']:hover{cursor:pointer;color:white;background-color:#555;}
 #titleOrderedDateInfoDate{position:absolute;top:0px;left:0px;}
 #titleOrderedDateInfoLink{position:absolute;top:0px;right:0px;}
 
-#titleOrderedComment{position:absolute;top:22px;left:0px;width:416px;}
+#titleComment{position:absolute;top:22px;left:0px;width:416px;visibility:visible;}
 
 /* 5 */
-#titleApprovedDate{position:absolute;top:432px;left:127px;/*background-color:red;*/}
-#titleApprovedDateWrapper{position:absolute;top:0px;left:0px;visibility:visible;}
+#titleApprovedDate{position:absolute;top:392px;left:127px;visibility:hidden;}
+#titleApprovedDateWrapper{position:absolute;top:0px;left:0px;}
 #titleApprovedDay{position:absolute;top:0px;left:313px;}
 #titleApprovedMonth{position:absolute;top:0px;left:218px;}
 #titleApprovedYear{position:absolute;top:0px;left:355px;}
@@ -154,29 +162,10 @@ input[type='button']:hover{cursor:pointer;color:white;background-color:#555;}
 /* 5a */
 #titleApprovedComment{position:absolute;top:41px;left:0px;width:416px;}
 
-/* 6 */ /* Lock Date */
-#lockDate{position:absolute;top:454px;left:127px;/*background-color:silver;*/}
-#lockDateWrapper{position:absolute;top:0px;left:0px;visibility:visible;}
-#lockDay{position:absolute;top:0px;left:313px;}
-#lockMonth{position:absolute;top:0px;left:218px;}
-#lockYear{position:absolute;top:0px;left:355px;}
-#lockDateInfo{position:absolute;top:389px;left:387px;width:150px;height:20px;visibility:hidden;}
-#lockDateInfoDate{position:absolute;top:0px;left:0px;}
-#lockDateInfoLink{position:absolute;top:0px;right:0px;}
-
-/* 7 */
-#expirationDate{position:absolute;top:497px;left:127px;/*background-color:cyan;*/}
-#expirationDateWrapper{position:absolute;top:0px;left:0px;visibility:visible;}
-#expirationDay{position:absolute;top:0px;left:313px;}
-#expirationMonth{position:absolute;top:0px;left:218px;}
-#expirationYear{position:absolute;top:0px;left:355px;}
-#expirationDateInfo{position:absolute;top:410px;left:387px;width:150px;height:20px;visibility:hidden;}
-#expirationDateInfoDate{position:absolute;top:0px;left:0px;}
-#expirationDateInfoLink{position:absolute;top:0px;right:0px;}
 /* 7a */
 #lockComment{position:absolute;top:22px;left:0px;width:416px;}
 
-#targetCloseDate{position:absolute;top:519px;left:127px;/*background-color:white;*/}
+#targetCloseDate{position:absolute;top:360px;left:127px;}
 #targetCloseDateWrapper{position:absolute;top:0px;left:0px;visibility:visible;}
 #targetCloseDay{position:absolute;top:0px;left:313px;}
 #targetCloseMonth{position:absolute;top:0px;left:218px;}
@@ -184,7 +173,6 @@ input[type='button']:hover{cursor:pointer;color:white;background-color:#555;}
 #targetCloseDateInfo{position:absolute;top:452px;left:387px;width:150px;height:20px;visibility:hidden;}
 #targetCloseDateInfoDate{position:absolute;top:0px;left:0px;}
 #targetCloseDateInfoLink{position:absolute;top:0px;right:0px;}
-
 
 #receiveDate{position:absolute;top:551px;left:127px;background-color:brown;}
 #receiveDateWrapper{position:absolute;top:0px;left:0px;visibility:visible;}
