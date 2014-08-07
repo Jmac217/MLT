@@ -1,0 +1,24 @@
+[
+	{
+		"id":"1",
+		"first":"Jordan",
+		"last":"Elder",
+		"hmda_data-gov_monitoring":"false",
+		"loan_status":"processing-underwriting",
+		"loan_status_comments":"Just a short comment",
+		"was_early_disclosure_delivered":"false",
+		"conditionally_approved":"false",
+		"conditionally_approved_date":"09-09-2014",
+		"appraisal_ordered":"false",
+		"appraisal_ordered_date":"09-09-2014",
+		"appraisal_approved":"false",
+		"appraisal_approved_date":"09-09-2014",
+		"appraisal_comments":"Another short comment, but this one is about appraisals.",
+		"title_work_ordered":"bank",
+		"title_work_ordered_date":"09-09-2014",
+		"title_work_approved":"false",
+		"title_work_approved_date":"09-09-2014",
+		"title_comments":"Some words about the title in the form of another overly muddied sentence fragment.",
+		"target_closing_date":"09-09-2014"
+	}
+]
