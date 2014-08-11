@@ -26,9 +26,8 @@
 					<tr><td>Customer Name:</td>
 							<td><input id='customerFirst' type='text' value='First Name' alt='First Name'></input></td>
 							<td><input id='customerLast' type='text' value='Last Name' alt='Last Name'></input></td>
-					</tr><tr>
-							<td colspan='3'><span id='customerNameCheck'>&nbsp;</span></td>
 					</tr>
+					<tr><td colspan='3'><span id='customerNameCheck'>&nbsp;</span></td></tr>
 				
 					<!-- Checkboxes -->
 					
@@ -42,7 +41,7 @@
 						<td id='conditionallyApprovedInput' colspan='2'  class='input'>
 							<div class='table_wrapper'>
 								<span id='conditionallyApprovedCheckbox'  class='checkbox'>
-									<input id='wasConditionallyApproved' type='checkbox' />
+									<input id='wasConditionallyApproved' type='checkbox' class='checkbox'/>
 								</span>
 								<span id='conditionallyApprovedFeedback'  class='feedback'>
 									Yes/No
@@ -50,7 +49,7 @@
 								<a id='conditionallyApprovedEdit'  class='field_edit'>
 									Edit
 								</a>
-								<span id='conditionallyApprovedDate'>
+								<span id='conditionallyApprovedDate' class='date'>
 									<span id='conditionallyApprovedDateWrapper'  class='date_wrapper'>
 										<select id ='conditionallyApprovedMonth' name="month">
 											<option value="01">January
@@ -131,7 +130,7 @@
 								<a id='appraisalOrderedEdit' class='field_edit'>
 									Edit
 								</a>
-								<span id='appraisalOrderedDate'>
+								<span id='appraisalOrderedDate' class='date'>
 									<span id='appraisalOrderedDateWrapper' class='date_wrapper'>
 										<select id ='appraisalOrderedMonth' name="month">
 											<option value="01">January
@@ -212,7 +211,7 @@
 								<a id='appraisalApprovedEdit' class='field_edit'>
 									Edit
 								</a>
-								<span id='appraisalApprovedDate'>
+								<span id='appraisalApprovedDate' class='date'>
 									<span id='appraisalApprovedDateWrapper'  class='date_wrapper'>
 										<select id ='appraisalApprovedMonth' name="month">
 											<option value="01">January
@@ -302,7 +301,7 @@
 							<a id='loanStatusEdit' class='field_edit'>
 								Edit
 							</a>
-							<span id='loanStatusDate'>
+							<span id='loanStatusDate' class='date'>
 								<span id='loanStatusDateWrapper' class='date_wrapper'>
 									<select id ='loanStatusMonth' name="month">
 										<option value="01">January
@@ -391,7 +390,7 @@
 							<a id='titleOrderedEdit' class='field_edit'>
 								Edit
 							</a>
-							<span id='titleOrderedDate'>
+							<span id='titleOrderedDate' class='date'>
 								<span id='titleOrderedDateWrapper' class='date_wrapper'>
 									<select id ='titleOrderedMonth' name="month">
 										<option value="01">January
@@ -477,7 +476,7 @@
 								<a id='titleApprovedEdit' class='field_edit'>
 									Edit
 								</a>
-								<span id='titleApprovedDate'>
+								<span id='titleApprovedDate' class='date'>
 									<span id='titleApprovedDateWrapper' class='date_wrapper'>
 										<select id ='titleApprovedMonth' name="month">
 											<option value="01">January
@@ -548,7 +547,7 @@
 								Target Closing Date
 							</span>
 						</td>
-						<td id='targetCloseDateInput' colspan='2'>
+						<td id='targetCloseDateInput' colspan='2' class='date_only'>
 							<div class='table_wrapper'>
 								<span id='targetCloseDateWrapper' class='date_wrapper'>
 									<select id ='targetCloseMonth' name="month">
@@ -623,9 +622,71 @@
 		</div>
 		<!--<div id='box'></div>-->
 		<div id='dropdownFeedback' alt='0'></div>
-		<?php include 'php/dropdown.php'; ?>
+		<?php //include 'php/dropdown.php'; ?>
 		<!--<div id='footer'></div>-->
-		
+
+
+
+
+
+
+
+
+
+<!-- Dropdown.php
+<!=================-->
+	<div id="dropdownContainer">
+		<div id="dropdownSelected" class="dropdown_box">
+			<i id="dropdown_title">Customers</i>
+			<input id="customer_search" type="text" value="Customer Last Name Search..."/>
+		</div>
+		<div id="dropdown" class="dropdown_box">
+			<ul>
+			</ul>
+
+<!--
+	while($i<=$cap){ // loop through all rows
+		$row = mysql_fetch_assoc(mysql_query("SELECT id,first,last FROM loan WHERE id='$i'")); // select only the rows where user exists and that are unread
+		if(isset($row['first'])&&isset($row['last'])){
+			if($row['id']=$i){
+				//if($t=0){$top=0;}else{
+				$top = ($t*$height)/*.'px'*/; // this dynamically sets message top
+				//}
+				$id=$row['id']; // this message_id
+-->
+
+<!--
+
+					<div class="customerContainer" style="top:'.$top.'px">
+							<div class="customer" id="'.$i.'">
+								'.$row['first'].' '.$row['last'].'
+							</div>
+							<div class="options">
+								<div class="remove" id="'.$i.'"></div>
+							</div>
+						</div>
+-->
+
+<!--
+				$i++;
+				$t++;
+			
+				// Message should start with the most recent date.
+				// There should be spans on top:0px and bottom:0px for previous_message and next_message.
+				// Add a link to display a send_message form 
+				// 	or
+				// If $_POST['id'] display a send_message form and auto-fill cc with users email.
+			}
+		}else{$i++;}
+	} if($top=0){$dropHeight=0;}else{$dropHeight=($height*$t+10);};
+-->
+
+
+			<div id="dropdownExtend" class="bordered"><div id="dropdownExtendText">Extend</div></div>
+				<div id="dropdownClose" class="bordered"><div id="dropdownCloseText">Close</div></div>
+			</div>
+	</div>
+	
 		<?php include 'php/bug.php'; ?>
 
 		<script type='text/javascript' src='js/jquery.js'></script>

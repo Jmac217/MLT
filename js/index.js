@@ -1,11 +1,39 @@
 $(document).ready(function(){
 
+	// debug
+	$("#dropdown").animate({"height":"700px"},200);
+
+	// New Dropdown 
+	$("#dropdownExtend").click(function(){
+		$("#dropdown").animate({"height":"700px"},200);
+	});
+	$("#dropdownClose").click(function(){
+		$("#dropdown").animate({"height":"10px"},200);
+	});
+
+	$.getJSON('json/customers.json', function(data){
+		var customers = [];
+		$.each(data, function(key, val){
+			customers.push("<li>"+key+":"+val+"</li>");	
+		});
+		$('#dropdown').children('ul').append(customers);
+		
+	});
+	// Variables are set from JSON
+	// ---
+	// get json object
+	// for each object in json
+	// 	put first, last into dropdownSelected	
+	// 	append customer as a class to the list
+	// ---
+
 	function date_selection(id, title){
 		// this should take a json template!
 		// in 'id=this.id+"*"', "*" should be removed as part of the ID and associated as a relative class
 		// divs should be appended into a table; call this table "customer_questionaire_dates" or something similar
 		$('#doc').append("<div id='"+id+"'><span id='"+id+"Title'>"+title+" : </span><span id='"+id+"Wrapper'><select id ='"+id+"Month' name='month'><option value='01'>January<option value='02'>February<option value='03'>March<option value='04'>April<option value='05'>May<option value='06'>June<option value='07'>July<option value='08'>August<option value='09'>September<option value='10'>October<option value='11'>November<option value='12'>December</select><select id='"+id+"Day' name='day'><option value='01'>1<option value='02'>2<option value='03'>3<option value='04'>4<option value='05'>5<option value='06'>6<option value='07'>7<option value='08'>8<option value='09'>9<option value='10'>10<option value='11'>11<option value='12'>12<option value='13'>13<option value='14'>14<option value='15'>15<option value='16'>16<option value='17'>17<option value='18'>18<option value='19'>19<option value='20'>20<option value='21'>21<option value='22'>22<option value='23'>23<option value='24'>24<option value='25'>25<option value='26'>26<option value='27'>27<option value='28'>28<option value='29'>29<option value='30'>30<option value='31'>31</select><select id='"+id+"Year' name='year'><option value='2014'>2014<option value='2015'>2015</select></span><!-- date wrapper --></div><span id='"+id+"Info'><span id='"+id+"InfoDate'></span><a id='"+id+"InfoLink'>Edit</a></span>");					
 	}
+	//
 	//date_selection("approvedDate", "Date Approved");
 
 	// reload the page
@@ -61,20 +89,51 @@ $(document).ready(function(){
 	
 	var id = 0;
 	
-	function resetCheckboxes(){
-		$('#wasLoanAcceptedYes').attr('checked', false);
-		$('#wasLoanAcceptedNo').attr('checked', false);
-		$('#isAdverseActionYes').attr('checked', false);
-		$('#isAdverseActionNo').attr('checked', false);
-		$('#willBeRejectedYes').attr('checked', false);
-		$('#willBeRejectedNo').attr('checked', false);
-		$('#wasEarlyDisclosureNo').attr('checked', false);
-		$('#wasEarlyDisclosureYes').attr('checked', false);
-		$('#deliveredToHMDA').attr('checked', false);
-	}
+	function resetCheckboxes(){}
+
+	// checkboxes
+
+	$('input[type="checkbox"]').click(function(){
+		if(this.checked){
+			$(this).parent().siblings('.date').children('.date_wrapper').css({'visibility':'visible'})
+		}else{
+			$(this).parent().siblings('.date').children('.date_wrapper').css({'visibility':'hidden'})
+		}
+	});
+
+	// Radio Button Sets
+	// ============
+
+	// Loan Status
+	$('#loanStatusProcessing').click(function(){
+		$('#loanStatusApproved').prop('checked',false);	
+		$('#loanStatusClosing').prop('checked',false);	
+	});
+	$('#loanStatusApproved').click(function(){
+		$('#loanStatusProcessing').prop('checked',false);	
+		$('#loanStatusClosing').prop('checked',false);	
+	});
+	$('#loanStatusClosing').click(function(){
+		$('#loanStatusApproved').prop('checked',false);	
+		$('#loanStatusProcessing').prop('checked',false);	
+	});
 	
-	// dropdown functionality
-	//$('#dropdownExtend').hover(function(){$(this).css({'background-color':'#cfdfdf','border':'1px solid','cursor':'pointer'});}).mouseleave(function(){$(this).css({'background-color':'#8f9f9f','border':'none'});});
+	// Title Work Ordered
+	$('#titleOrderedNo').click(function(){
+		$('#titleOrderedBank').prop('checked',false);	
+		$('#titleOrderedRealtor').prop('checked',false);	
+	});
+	$('#titleOrderedBank').click(function(){
+		$('#titleOrderedNo').prop('checked',false);	
+		$('#titleOrderedRealtor').prop('checked',false);	
+	});
+	$('#titleOrderedRealtor').click(function(){
+		$('#titleOrderedNo').prop('checked',false);	
+		$('#titleOrderedBank').prop('checked',false);	
+	});
+	
+	// Dropdown
+	// =======
 	
 	// this should be an if statement that changes states
 	$('#dropdownExtend').click(function(){
@@ -84,16 +143,17 @@ $(document).ready(function(){
 		$.post('php/numRows.php', function(data){
 			if (data=='0'){
 				$('#dropdownFeedback').html('There are no existing loans.').fadeOut(5000);
-				//var loan='loan';
-				//$.post('php/reset.php',{loan:loan},function(){alert('reset');});
+				// fade causes the feedback to go invisible
+				// dropdown needs refreshed
 			};
 		});
 	});
-	//$('#dropdownClose').hover(function(){$(this).css({'background-color':'#cfdfdf','border':'1px solid','cursor':'pointer'});}).mouseleave(function(){$(this).css({'background-color':'#8f9f9f','border':'none'});});
+	
 	$('#dropdownClose').click(function(){
 		$(this).css({'visibility':'hidden'});
 		$('#dropdownExtend').css({'visibility':'visible'});
 	});
+	
 	$('.customer').click(function(){
 		// make all checkboxes visible
 		id=$(this).attr('id');
