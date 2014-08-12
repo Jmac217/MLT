@@ -13,10 +13,12 @@ $(document).ready(function(){
 
 	$.getJSON('json/customers.json', function(data){
 		var customers = [];
+		alert(data.first);
 		$.each(data, function(key, val){
-			customers.push("<li>"+key+":"+val+"</li>");	
+			//customers.push("<li>"+key+":"+val+"</li>");	
+			console.log(key+val);
 		});
-		$('#dropdown').children('ul').append(customers);
+		//$('#dropdown').children('ul').append(customers);
 		
 	});
 	// Variables are set from JSON
