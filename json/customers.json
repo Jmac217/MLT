@@ -10,6 +10,7 @@
 	"appraisal_approved_date":"09-09-2014",
 	"appraisal_comments":"Another short comment, but this one is about appraisals.",
 	"loan_status":"processing-underwriting",
+	"loan_status_date":"09-09-2014",
 	"loan_status_comments":"Just a short comment",
 	"title_work_ordered":"bank",
 	"title_work_ordered_date":"09-09-2014",

@@ -1,26 +1,35 @@
 $(document).ready(function(){
 
 	// debug
-	$("#dropdown").animate({"height":"700px"},200);
+	// $("#dropdown").animate({"height":"620px"},200);
 
 	// New Dropdown 
 	$("#dropdownExtend").click(function(){
-		$("#dropdown").animate({"height":"700px"},200);
+		$("#dropdown").animate({"height":"620px"},200);
 	});
 	$("#dropdownClose").click(function(){
 		$("#dropdown").animate({"height":"10px"},200);
 	});
 
-	$.getJSON('json/customers.json', function(data){
+	// JSON-Based Dropdown Menu
+	// Come back to this
+	/*
+	$.getJSON('json/customers.json', function(json){
 		var customers = [];
-		alert(data.first);
-		$.each(data, function(key, val){
+
+		var first = json.first;
+		var last = json.last;
+
+		$('#dropdown').children('ul').html("<li>"+first+" "+last+"</li>");
+
+		$.each(json, function(key, val){
 			//customers.push("<li>"+key+":"+val+"</li>");	
 			console.log(key+val);
 		});
 		//$('#dropdown').children('ul').append(customers);
 		
 	});
+	*/
 	// Variables are set from JSON
 	// ---
 	// get json object
@@ -160,38 +169,30 @@ $(document).ready(function(){
 		// make all checkboxes visible
 		id=$(this).attr('id');
 		// get name from id through post
-		//resetCheckboxes();
+		// resetCheckboxes();
 		$.post('php/getProfile.php',{id:id},function(data){
-			// accept passed XML form
-			var xml = data;
-			// call xmlDoc and the jQuery function 'parseXML' to parse var xml
-			xmlDoc = $.parseXML(xml);
-			// xml documentation states the usage of the '$' operator.
-			$xml = $(xmlDoc);	
-			// name
+			var xml = data; // accept passed XML form
+			xmlDoc = $.parseXML(xml); // call xmlDoc and the jQuery function 'parseXML' to parse var xml
+			$xml = $(xmlDoc);	// xml documentation states the usage of the '$' operator.
 			$first = $xml.find('first'); // searches for the <first></first> tag(s)
 			$last = $xml.find('last');
-			// dates
-			$acceptedDate = $xml.find('acceptedDate');
-			$appraisalOrderDate = $xml.find('appraisalOrderDate');
-			$appraisalReceiveDate = $xml.find('appraisalReceiveDate');
-			$titleOrderDate = $xml.find('titleOrderDate');
-			$titleReceiveDate = $xml.find('titleReceiveDate');
-			$closeDate = $xml.find('closeDate');
-			$lockDate = $xml.find('lockDate');
-			$expirationDate = $xml.find('expirationDate');
-			// comments
-			$appraisalComment = $xml.find('appraisalComment');
-			$titleComment = $xml.find('titleComment');
-			$lockComment = $xml.find('lockComment');
-			// booleans
-			$wasLoanAccepted = $xml.find('wasLoanAccepted');
-			$isGovMonitoring = $xml.find('isGovMonitoring');
-			$willBeRejected = $xml.find('willBeRejected');
-			$isAdverseAction = $xml.find('isAdverseAction');
-			$wasEarlyDisclosure = $xml.find('wasEarlyDisclosure');
-			$deliveredToHMDA = $xml.find('deliveredToHMDA');
+			$conditionally_approved = $xml.find('conditionally_approved');
+			$conditionally_approved_date = $xml.find('conditionally_approved_date');
+			$appraisal_ordered = $xml.find('appraisal_ordered');
+			$appraisal_ordered_date = $xml.find('appraisal_ordered_date');
+			$appraisal_approved = $xml.find('appraisal_approved');
+			$appraisal_approved_date = $xml.find('appraisal_approved_date');
+			$appraisal_comments = $xml.find('appraisal_comments');
+			$loan_status = $xml.find('loan_status');
+			$loan_status_comments = $xml.find('loan_status_comments');
+			$title_work_ordered = $xml.find('title_work_ordered');
+			$title_work_ordered_date = $xml.find('title_work_ordered_date');
+			$title_work_approved = $xml.find('title_work_approved');
+			$title_work_approved_date = $xml.find('title_work_approved_date');
+			$title_comments = $xml.find('title_comments');
+			$target_closing_date = $xml.find('target_closing_date');
 			
+			/*
 			acceptedDateUpdate = $acceptedDate.text();
 			appraisalOrderDateUpdate = $appraisalOrderDate.text();
 			appraisalReceiveDateUpdate = $appraisalReceiveDate.text();
@@ -200,6 +201,7 @@ $(document).ready(function(){
 			closeDateUpdate = $closeDate.text();
 			lockDateUpdate = $lockDate.text();
 			expirationDateUpdate = $expirationDate.text();
+			*/
 
 			// name
 			$('#dropdown_title').html($first.text()+' '+$last.text()).css({'color':'#000'});// displays what's between the <first> tags
@@ -503,37 +505,25 @@ $(document).ready(function(){
 	// Customer Name
 	// when focused, field.value =''. Ignore the css(color) -> it was just eyecandy.
 	// when blured value = field.alt (check index.php for inline alt attribute)
-	$('#customerFirst').focus(function(){
-		$(this).attr('value', '').css({'color':'black'});
+	$('input[type="text"]').focus(function(){
+		$(this).attr('value', '').css({'color':'black'}).select();
 	}).blur(function(){
 		var alt = $(this).attr('alt');
 		$(this).attr('value', alt);
+		if($(this).val()==alt){
+			$(this).css({'color':'gray'});
+		}
 	});
-	$('#customerLast').focus(function(){
-		$(this).attr('value', '').css({'color':'black'});
-	}).blur(function(){
-		var alt=$(this).attr('alt');
-		$(this).attr('value', alt);
-	});
-	
+
 	// Comments
-	$('#lockComment').focus(function(){
-		$(this).attr('value','');
+	$('textarea').focus(function(){
+		$(this).html('').css({'color':'black','text-align':'left'}).select();
 	}).blur(function(){
 		var alt=$(this).attr('alt');
-		$(this).attr('value', alt);
-	});
-	$('#appraisalComment').focus(function(){
-		$(this).attr('value','');
-	}).blur(function(){
-		var alt=$(this).attr('alt');
-		$(this).attr('value', alt);
-	});
-	$('#titleComment').focus(function(){
-		$(this).attr('value', '');
-	}).blur(function(){
-		var alt=$(this).attr('alt');
-		$(this).attr('value', alt);
+		$(this).html(alt);
+		if($(this).val()==alt){
+			$(this).css({'color':'gray','text-align':'center'});
+		}
 	});
 		
 	// Checkbox Functions

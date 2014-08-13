@@ -12,7 +12,7 @@ $last = $_POST['customerLast'];
 //$last = 'a';
 
 // search db for first and last, returns an error
-$query = mysql_query("SELECT id FROM loan WHERE first='$first' and last='$last'")or die(mysql_error());
+$query = mysql_query("SELECT id FROM customers WHERE first='$first' and last='$last'")or die(mysql_error());
 $row = mysql_fetch_assoc($query);
 //echo $row['id'];
 

@@ -5,39 +5,35 @@
 
 $id = $_POST['id'];
 
-$query = mysql_query("SELECT * FROM loan WHERE id='$id'")or die(mysql_error());
+$query = mysql_query("SELECT * FROM customers WHERE id='$id'")or die(mysql_error());
 $row = mysql_fetch_assoc($query);
 
 $first = $row['first'];
 $last = $row['last'];
-$acceptedDate = $row['acceptedDate'];
-$appraisalOrderDate = $row['appraisalOrderDate'];
-$appraisalReceiveDate = $row['appraisalReceiveDate'];
-$titleOrderDate = $row['titleOrderDate'];
-$titleReceiveDate = $row['titleReceiveDate'];
-$closeDate = $row['closeDate'];
-$lockDate = $row['lockDate'];
-$expirationDate = $row['expirationDate'];
-$appraisalComment = $row['appraisalComment'];
-$titleComment = $row['titleComment'];
-$lockComment = $row['lockComment'];
-$wasLoanAccepted = $row['wasLoanAccepted'];
-$isGovMonitoring = $row['isGovMonitoring'];
-$willBeRejected = $row['willBeRejected'];
-$isAdverseAction = $row['isAdverseAction'];
-$wasEarlyDisclosure = $row['wasEarlyDisclosure'];
-$deliveredToHMDA = $row['deliveredToHMDA'];
+$conditionally_approved = $row['conditionally_approved'];
+$conditionally_approved_date = $row['conditionally_approved_date'];
+$appraisal_ordered = $row['appraisal_ordered'];
+$appraisal_ordered_date = $row['appraisal_ordered_date'];
+$appraisal_approved = $row['appraisal_approved'];
+$appraisal_approved_date = $row['appraisal_approved_date'];
+$appraisal_comments = $row['appraisal_comments'];
+$loan_status = $row['loan_status'];
+$loan_status_comments = $row['loan_status_comments'];
+$title_work_ordered = $row['title_work_ordered'];
+$title_work_ordered_date = $row['title_work_ordered_date'];
+$title_work_approved = $row['title_work_approved'];
+$title_work_approved_date = $row['title_work_approved_date'];
+$title_comments = $row['title_comments'];
+$target_closing_date = $row['target_closing_date'];
 
-// set dates of '0000-00-00' to N/A or something like that
+// This might be done away with, but for now the default date will be displayed as 'N/A' if '0000-00-00' is displayed in the database.
 $default = 'N/A';
-if ($acceptedDate == '0000-00-00'){$acceptedDate = $default;}
-if ($appraisalOrderDate == '0000-00-00'){$appraisalOrderDate = $default;}
-if ($appraisalReceiveDate == '0000-00-00'){$appraisalReceiveDate = $default;}
-if ($titleOrderDate == '0000-00-00'){$titleOrderDate = $default;}
-if ($titleReceiveDate == '0000-00-00'){$titleReceiveDate = $default;}
-if ($closeDate == '0000-00-00'){$closeDate = $default;}
-if ($lockDate == '0000-00-00'){$lockDate = $default;}
-if ($expirationDate == '0000-00-00'){$expirationDate = $default;}
+if ($conditionally_approved_date == '0000-00-00'){$conditionally_approved_date = $default;}
+if ($appraisal_ordered_date == '0000-00-00'){$appraisal_ordered_date = $default;}
+if ($appraisal_approved_date == '0000-00-00'){$appraisal_approved_date = $default;}
+if ($title_work_ordered_date == '0000-00-00'){$title_work_ordered_date = $default;}
+if ($title_work_approved_date == '0000-00-00'){$title_work_approved_date = $default;}
+if ($target_closing_date == '0000-00-00'){$target_closing_date = $default;}
 
 // start xml
 
@@ -45,23 +41,21 @@ echo $xml = '
 	<xml>
 		<first>'.$first.'</first>
 		<last>'.$last.'</last>
-		<acceptedDate>'.$acceptedDate.'</acceptedDate>
-		<appraisalOrderDate>'.$appraisalOrderDate.'</appraisalOrderDate>
-		<appraisalReceiveDate>'.$appraisalReceiveDate.'</appraisalReceiveDate>
-		<titleOrderDate>'.$titleOrderDate.'</titleOrderDate>
-		<titleReceiveDate>'.$titleReceiveDate.'</titleReceiveDate>
-		<closeDate>'.$closeDate.'</closeDate>
-		<lockDate>'.$lockDate.'</lockDate>
-		<expirationDate>'.$expirationDate.'</expirationDate>
-		<appraisalComment>'.$appraisalComment.'</appraisalComment>
-		<titleComment>'.$titleComment.'</titleComment>
-		<lockComment>'.$lockComment.'</lockComment>
-		<wasLoanAccepted>'.$wasLoanAccepted.'</wasLoanAccepted>
-		<isGovMonitoring>'.$isGovMonitoring.'</isGovMonitoring>
-		<willBeRejected>'.$willBeRejected.'</willBeRejected>
-		<isAdverseAction>'.$isAdverseAction.'</isAdverseAction>
-		<wasEarlyDisclosure>'.$wasEarlyDisclosure.'</wasEarlyDisclosure>
-		<deliveredToHMDA>'.$deliveredToHMDA.'</deliveredToHMDA>
+		<conditionally_approved>'.$conditionally_approved.'</conditionally_approved>
+		<conditionally_approved_date>'.$conditionally_approved_date.'</conditionally_approved_date>
+		<appraisal_ordered>'.$appraisal_ordered.'</appraisal_ordered>
+		<appraisal_ordered_date>'.$appraisal_ordered_date.'</appraisal_ordered_date>
+		<appraisal_approved>'.$appraisal_approved.'</appraisal_approved>
+		<appraisal_approved_date>'.$appraisal_approved_date.'</appraisal_approved_date>
+		<appraisal_comments>'.$appraisal_comments.'</appraisal_comments>
+		<loan_status>'.$loan_status.'</loan_status>
+		<loan_status_comments>'.$loan_status_comments.'</loan_status_comments>
+		<title_work_ordered>'.$title_work_ordered.'</title_work_ordered>
+		<title_work_ordered_date>'.$title_work_ordered_date.'</title_work_ordered_date>
+		<title_work_approved>'.$title_work_approved.'</title_work_approved>
+		<title_work_approved_date>'.$title_work_approved_date.'</title_work_approved_date>
+		<title_comments>'.$title_comments.'</title_comments>
+		<target_closing_date>'.$target_closing_date.'</target_closing_date>
 	</xml>
 ';
 

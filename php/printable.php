@@ -5,7 +5,7 @@ session_start();
 $id = $_SESSION['id'];
 
 // select everything from row where id = session id
-$query = mysql_query("SELECT * FROM loan WHERE id='$id'")or die(mysql_error());
+$query = mysql_query("SELECT * FROM customers WHERE id='$id'")or die(mysql_error());
 $row = mysql_fetch_assoc($query);
 
 // assign variables from $row

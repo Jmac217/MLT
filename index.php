@@ -14,7 +14,7 @@
 	<center>
 		<div id='header'>
 			<span id='headerText'>Mortgage Loans Tracker</span>
-			<span id='version'>Beta 1.2</span>
+			<span id='version'>Beta 1.3</span>
 		</div>
 		<div id='body'>
 			<div id='doc'>
@@ -635,14 +635,18 @@
 
 <!-- Dropdown.php
 <!=================-->
+
 	<div id="dropdownContainer">
 		<div id="dropdownSelected" class="dropdown_box">
 			<i id="dropdown_title">Customers</i>
-			<input id="customer_search" type="text" value="Customer Last Name Search..."/>
+			<input id="customer_search" type="text" value="Customer Last Name Search..." alt="Customer Last Name Search..."/>
 		</div>
 		<div id="dropdown" class="dropdown_box">
+			<!--
 			<ul>
 			</ul>
+			-->
+			<?php include 'php/dropdown.php'; ?>
 
 <!--
 	while($i<=$cap){ // loop through all rows
@@ -681,12 +685,11 @@
 	} if($top=0){$dropHeight=0;}else{$dropHeight=($height*$t+10);};
 -->
 
-
 			<div id="dropdownExtend" class="bordered"><div id="dropdownExtendText">Extend</div></div>
 				<div id="dropdownClose" class="bordered"><div id="dropdownCloseText">Close</div></div>
 			</div>
 	</div>
-	
+
 		<?php include 'php/bug.php'; ?>
 
 		<script type='text/javascript' src='js/jquery.js'></script>

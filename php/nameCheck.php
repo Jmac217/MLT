@@ -9,7 +9,7 @@ $last = $_POST['last'];
 //$last = 'a';
 
 // search for existing names
-$query = mysql_query("SELECT first,last FROM loan WHERE first='$first' and last='$last'");
+$query = mysql_query("SELECT first,last FROM customers WHERE first='$first' and last='$last'");
 $row = mysql_fetch_assoc($query);
 
 // sets first and last as one, 'fullname', variable.
