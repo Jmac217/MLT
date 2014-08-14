@@ -19,7 +19,7 @@
 				$id=$row['id']; // this message_id
 						
 						echo '
-						<div class="customerContainer" style="top:'.$top.'px">
+						<div class="customer_container" style="top:'.$top.'px">
 							<div class="customer" id="'.$i.'">
 								'.$row['first'].' '.$row['last'].'
 							</div>

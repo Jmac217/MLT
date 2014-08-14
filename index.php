@@ -13,7 +13,7 @@
 	<body>
 	<center>
 		<div id='header'>
-			<span id='headerText'>Mortgage Loans Tracker</span>
+			<span id='header_text'>Mortgage Loans Tracker</span>
 			<span id='version'>Beta 1.3</span>
 		</div>
 		<div id='body'>
@@ -24,34 +24,34 @@
 				<table id='customer_input'><!-- Table is a placeholder, finished will be transformed into spans, with css... well eventually xD-->
 					<tr><td>Today's Date:</td><td colspan='2'><center><i><?php echo Date("m-d-Y"); ?></i></center></td></tr><!-- should grab date from db -> receivedDate -->
 					<tr><td>Customer Name:</td>
-							<td><input id='customerFirst' type='text' value='First Name' alt='First Name'></input></td>
-							<td><input id='customerLast' type='text' value='Last Name' alt='Last Name'></input></td>
+							<td><input id='first' type='text' value='First Name' alt='First Name'></input></td>
+							<td><input id='last' type='text' value='Last Name' alt='Last Name'></input></td>
 					</tr>
-					<tr><td colspan='3'><span id='customerNameCheck'>&nbsp;</span></td></tr>
+					<tr><td colspan='3'><span id='customer_name_check'>&nbsp;</span></td></tr>
 				
 					<!-- Checkboxes -->
 					
 					<!-- Conditionally Approved -->
-					<tr id='conditionallyApproved'>
+					<tr id='conditionally_approved'>
 						<td>
-							<span id='conditionallyApprovedTitle' class='title'>
+							<span id='conditionally_approved_title' class='title'>
 								Conditionally Approved
 							</span>
 						</td>
-						<td id='conditionallyApprovedInput' colspan='2'  class='input'>
+						<td id='conditionally_approved_input' colspan='2'  class='input'>
 							<div class='table_wrapper'>
-								<span id='conditionallyApprovedCheckbox'  class='checkbox'>
-									<input id='wasConditionallyApproved' type='checkbox' class='checkbox'/>
+								<span id='conditionally_approved_checkbox'  class='checkbox'>
+									<input id='was_conditionally_approved' type='checkbox' class='checkbox'/>
 								</span>
-								<span id='conditionallyApprovedFeedback'  class='feedback'>
+								<span id='conditionally_approved_feedback'  class='feedback'>
 									Yes/No
 								</span>
-								<a id='conditionallyApprovedEdit'  class='field_edit'>
+								<a id='conditionally_approved_edit'  class='field_edit'>
 									Edit
 								</a>
-								<span id='conditionallyApprovedDate' class='date'>
-									<span id='conditionallyApprovedDateWrapper'  class='date_wrapper'>
-										<select id ='conditionallyApprovedMonth' name="month">
+								<span id='conditionally_approved_date' class='date'>
+									<span id='conditionally_approved_date_wrapper'  class='date_wrapper'>
+										<select id ='conditionally_approved_month' name="month">
 											<option value="01">January
 											<option value="02">February
 											<option value="03">March
@@ -65,7 +65,7 @@
 											<option value="11">November
 											<option value="12">December
 										</select>
-										<select id='conditionallyApprovedDay' name="day">
+										<select id='conditionally_approved_day' name="day">
 											<option value="01">1
 											<option value="02">2
 											<option value="03">3
@@ -98,14 +98,14 @@
 											<option value="30">30
 											<option value="31">31
 										</select>
-										<select id='conditionallyApprovedYear' name="year">
+										<select id='conditionally_approved_year' name="year">
 											<option value="2014">2014
 											<option value="2015">2015
 										</select>
 									</span>
-									<span id='conditionallyApprovedDateInfo'  class='date_info'>
-										<span id='conditionallyApprovedDateInfoDate'  class='date_return'></span>
-										<a id='conditionallyApprovedDateInfoLink'  class='date_edit'>Edit</a>
+									<span id='conditionally_approved_date_info'  class='date_info'>
+										<span id='conditionally_approved_date_info_date'  class='date_return'></span>
+										<a id='conditionally_approved_date_info_link'  class='date_edit'>Edit</a>
 									</span>
 								</span>
 							</div>
@@ -113,26 +113,26 @@
 					</tr>
 					
 					<!-- Appraisal Ordered -->
-					<tr id='appraisalOrdered'>
+					<tr id='appraisal_ordered'>
 						<td>
-							<span id='appraisalOrderedTitle' class='title'>
+							<span id='appraisal_ordered_title' class='title'>
 								Appraisal Ordered
 							</span>
 						</td>
-						<td id='appraisalOrderedInput' colspan='2' class='input'>
+						<td id='appraisal_ordered_input' colspan='2' class='input'>
 							<div class='table_wrapper'>
-								<span id='appraisalOrderedCheckbox' class='checkbox'>
-									<input id='wasAppraisalOrdered' type='checkbox' />
+								<span id='appraisal_ordered_checkbox' class='checkbox'>
+									<input id='was_appraisal_ordered' type='checkbox' />
 								</span>
-								<span id='appraisalOrderedFeedback' class='feedback'>
+								<span id='appraisal_ordered_feedback' class='feedback'>
 									Yes/No
 								</span>
-								<a id='appraisalOrderedEdit' class='field_edit'>
+								<a id='appraisal_ordered_edit' class='field_edit'>
 									Edit
 								</a>
-								<span id='appraisalOrderedDate' class='date'>
-									<span id='appraisalOrderedDateWrapper' class='date_wrapper'>
-										<select id ='appraisalOrderedMonth' name="month">
+								<span id='appraisal_ordered_date' class='date'>
+									<span id='appraisal_ordered_date_wrapper' class='date_wrapper'>
+										<select id ='appraisal_ordered_month' name="month">
 											<option value="01">January
 											<option value="02">February
 											<option value="03">March
@@ -146,7 +146,7 @@
 											<option value="11">November
 											<option value="12">December
 										</select>
-										<select id='appraisalOrderedDay' name="day">
+										<select id='appraisal_ordered_day' name="day">
 											<option value="01">1
 											<option value="02">2
 											<option value="03">3
@@ -179,41 +179,41 @@
 											<option value="30">30
 											<option value="31">31
 										</select>
-										<select id='appraisalOrderedYear' name="year">
+										<select id='appraisal_ordered_year' name="year">
 											<option value="2014">2014
 											<option value="2015">2015
 										</select>
 									</span>
 								</span>
-								<span id='appraisalOrderedDateInfo' class='date_info'>
-									<span id='appraisalOrderedDateInfoDate' class='date_return'></span>
-									<a id='appraisalOrderedDateInfoLink' class='date_edit'>Edit</a>
+								<span id='appraisal_ordered_date_info' class='date_info'>
+									<span id='appraisal_ordered_date_info_date' class='date_return'></span>
+									<a id='appraisal_ordered_date_info_link' class='date_edit'>Edit</a>
 								</span>
 							</div>
 						</td>
 					</tr>
 					
 					<!-- Appraisal Ordered -->
-					<tr id='appraisalApproved'>
+					<tr id='appraisal_approved'>
 						<td>
-							<span id='appraisalApprovedTitle' class='title'>
+							<span id='appraisal_approved_title' class='title'>
 								Appraisal Approved
 							</span>
 						</td>
-						<td id='appraisalApprovedInput' colspan='2'>
+						<td id='appraisal_approved_input' colspan='2'>
 								<div class='table_wrapper'>
-								<span id='appraisalApprovedCheckbox' class='checkbox'>
-									<input id='wasAppraisalApproved' type='checkbox' />
+								<span id='appraisal_approved_checkbox' class='checkbox'>
+									<input id='was_appraisal_approved' type='checkbox' />
 								</span>
-								<span id='appraisalApprovedFeedback' class='feedback'>
+								<span id='appraisal_approved_feedback' class='feedback'>
 									Yes/No
 								</span>
-								<a id='appraisalApprovedEdit' class='field_edit'>
+								<a id='appraisal_approved_edit' class='field_edit'>
 									Edit
 								</a>
-								<span id='appraisalApprovedDate' class='date'>
-									<span id='appraisalApprovedDateWrapper'  class='date_wrapper'>
-										<select id ='appraisalApprovedMonth' name="month">
+								<span id='appraisal_approved_date' class='date'>
+									<span id='appraisal_approved_date_wrapper'  class='date_wrapper'>
+										<select id ='appraisal_approved_month' name="month">
 											<option value="01">January
 											<option value="02">February
 											<option value="03">March
@@ -227,7 +227,7 @@
 											<option value="11">November
 											<option value="12">December
 										</select>
-										<select id='appraisalApprovedDay' name="day">
+										<select id='appraisal_approved_day' name="day">
 											<option value="01">1
 											<option value="02">2
 											<option value="03">3
@@ -260,15 +260,15 @@
 											<option value="30">30
 											<option value="31">31
 										</select>
-										<select id='appraisalApprovedYear' name="year">
+										<select id='appraisal_approved_year' name="year">
 											<option value="2014">2014
 											<option value="2015">2015
 										</select>
 									</span>
 								</span>
-								<span id='appraisalApprovedDateInfo' class='date_info'>
-									<span id='appraisalApprovedDateInfoDate'  class='date_return'></span>
-									<a id='appraisalApprovedDateInfoLink'  class='date_edit'>Edit</a>
+								<span id='appraisal_approved_date_info' class='date_info'>
+									<span id='appraisal_approved_date_info_date'  class='date_return'></span>
+									<a id='appraisal_approved_date_info_link'  class='date_edit'>Edit</a>
 								</span>
 							</div>
 						</td>
@@ -277,33 +277,33 @@
 					<tr>
 						<td colspan='3'>
 							<!--<input type='input' value='Appraisal Comments' id='appraisalComment' alt='Appraisal Comments' style='width:100%;' />-->
-							<textarea id='appraisalComment' alt='Appraisal Comments'>Appraisal Comments</textarea>
+							<textarea id='appraisal_comment' alt='Appraisal Comments'>Appraisal Comments</textarea>
 						</td>
 					</tr>
 
 					<!-- Loan Status -->
 					<!-- Three Checkboxes -->
-					<tr id='loanStatus'>
+					<tr id='loan_status'>
 						<td>
-							<span id='loanStatusTitle' class='title'>
+							<span id='loan_status_title' class='title'>
 								Loan Status
 							</span>
 						</td>
-						<td id='loanStatusInput' colspan='2'>
-							<span id='loanStatusCheckbox'>
-								<span class='radio'>Processing/Underwriting <input id='loanStatusProcessing' type='radio' /></span><br />
-								<span class='radio'>Awaiting Response <input id='loanStatusApproved' type='radio' /></span><br />
-								<span class='radio'>Closing Prep <input id='loanStatusClosing' type='radio' /></span><br />
+						<td id='loan_status_input' colspan='2'>
+							<span id='loan_status_checkbox'>
+								<span class='radio'>Processing/Underwriting <input id='loan_status_processing' type='radio' /></span><br />
+								<span class='radio'>Awaiting Response <input id='loan_status_approved' type='radio' /></span><br />
+								<span class='radio'>Closing Prep <input id='loan_status_closing' type='radio' /></span><br />
 							</span>
-							<span id='loanStatusFeedback' class='feedback'>
+							<span id='loan_status_feedback' class='feedback'>
 								Yes/No
 							</span>
-							<a id='loanStatusEdit' class='field_edit'>
+							<a id='loan_status_edit' class='field_edit'>
 								Edit
 							</a>
-							<span id='loanStatusDate' class='date'>
-								<span id='loanStatusDateWrapper' class='date_wrapper'>
-									<select id ='loanStatusMonth' name="month">
+							<span id='loan_status_date' class='date'>
+								<span id='loan_status_date_wrapper' class='date_wrapper'>
+									<select id ='loan_status_month' name="month">
 										<option value="01">January
 										<option value="02">February
 										<option value="03">March
@@ -317,7 +317,7 @@
 										<option value="11">November
 										<option value="12">December
 									</select>
-									<select id='loanStatusDay' name="day">
+									<select id='loan_status_day' name="day">
 										<option value="01">1
 										<option value="02">2
 										<option value="03">3
@@ -350,15 +350,15 @@
 										<option value="30">30
 										<option value="31">31
 									</select>
-									<select id='loanStatusYear' name="year">
+									<select id='loan_status_year' name="year">
 										<option value="2014">2014
 										<option value="2015">2015
 									</select>
 								</span>
 							</span>
-							<span id='loanStatusDateInfo'>
-								<span id='loanStatusDateInfoDate' class='date_return'></span>
-								<a id='loanStatusDateInfoLink' class='date_edit'>Edit</a>
+							<span id='loan_status_date_info'>
+								<span id='loan_status_date_info_date' class='date_return'></span>
+								<a id='loan_status_date_info_link' class='date_edit'>Edit</a>
 							</span>
 						</td>
 					</tr>
@@ -366,33 +366,33 @@
 					<tr>
 						<td colspan='3'>
 							<!--<input type='input' value='Loan Status Comments' id='loanStatusComment' alt='Loan Status Comments'  style='width:100%;' />-->
-							<textarea id='loanStatusComment' alt='Loan Status Comments'>Loan Status Comments</textarea>
+							<textarea id='loan_status_comment' alt='Loan Status Comments'>Loan Status Comments</textarea>
 						</td>
 					</tr>
 
 					<!-- Title Work Ordered -->
 					<!-- Three Checkboxes -->
-					<tr id='titleOrdered'>
+					<tr id='title_ordered'>
 						<td>
-							<span id='titleOrderedTitle' class='title'>
+							<span id='title_ordered_title' class='title'>
 								Title Work Ordered
 							</span>
 						</td>
-						<td id='titleOrderedInput' colspan='2' class='input'>
-							<span id='titleOrderedCheckbox'>
-								<span class='radio'>No <input id='titleOrderedNo' type='radio' /></span><br />
-								<span class='radio'>By Bank <input id='titleOrderedBank' type='radio' /></span><br />
-								<span class='radio'>By Realtor <input id='titleOrderedRealtor' type='radio' /></span><br />
+						<td id='title_ordered_input' colspan='2' class='input'>
+							<span id='title_ordered_checkbox'>
+								<span class='radio'>No <input id='title_ordered_no' type='radio' /></span><br />
+								<span class='radio'>By Bank <input id='title_ordered_bank' type='radio' /></span><br />
+								<span class='radio'>By Realtor <input id='title_ordered_realtor' type='radio' /></span><br />
 							</span>
-							<span id='titleOrderedFeedback' class='feedback'>
+							<span id='title_ordered_feedback' class='feedback'>
 								Yes/No
 							</span>
-							<a id='titleOrderedEdit' class='field_edit'>
+							<a id='title_ordered_edit' class='field_edit'>
 								Edit
 							</a>
-							<span id='titleOrderedDate' class='date'>
-								<span id='titleOrderedDateWrapper' class='date_wrapper'>
-									<select id ='titleOrderedMonth' name="month">
+							<span id='title_ordered_date' class='date'>
+								<span id='title_ordered_date_wrapper' class='date_wrapper'>
+									<select id ='title_ordered_month' name="month">
 										<option value="01">January
 										<option value="02">February
 										<option value="03">March
@@ -406,7 +406,7 @@
 										<option value="11">November
 										<option value="12">December
 									</select>
-									<select id='titleOrderedDay' name="day">
+									<select id='title_ordered_day' name="day">
 										<option value="01">1
 										<option value="02">2
 										<option value="03">3
@@ -439,46 +439,46 @@
 										<option value="30">30
 										<option value="31">31
 									</select>
-									<select id='titleOrderedYear' name="year">
+									<select id='title_ordered_year' name="year">
 										<option value="2014">2014
 										<option value="2015">2015
 									</select>
 								</span>
 							</span>
-						<span id='titleOrderedDateInfo'>
-							<span id='titleOrderedDateInfoDate' class='date_return'></span>
-							<a id='titleOrderedDateInfoLink' class='date_edit'>Edit</a>
+						<span id='title_ordered_date_info'>
+							<span id='title_ordered_date_info_date' class='date_return'></span>
+							<a id='title_ordered_date_info_link' class='date_edit'>Edit</a>
 						</span>
 					</tr>
 					<!-- Title Comment -->
 					<tr>
 						<td colspan='3'>
 							<!--<input type='input' value='Title Comments' id='titleComment' alt='Title Comments' style='width:100%;' />-->
-							<textarea id='titleComment' alt='Title Comments'>Title Comments</textarea>
+							<textarea id='title_comment' alt='Title Comments'>Title Comments</textarea>
 						</td>
 					</tr>
 					
 					<!-- Title Work Approved -->
-					<tr id='titleApproved'>
+					<tr id='title_approved'>
 						<td>
-							<span id='titleApprovedTitle' class='title'>
+							<span id='title_approved_title' class='title'>
 								Title Work Approved
 							</span>
 						</td>
-						<td id='titleApprovedInput' colspan='2'>
+						<td id='title_approved_input' colspan='2'>
 							<div class='table_wrapper'>
-								<span id='titleApprovedCheckbox' class='checkbox'>
-									<input id='wasTitleApproved' type='checkbox' />
+								<span id='title_approved_checkbox' class='checkbox'>
+									<input id='was_title_approved' type='checkbox' />
 								</span>
-								<span id='titleApprovedFeedback' class='feedback'>
+								<span id='title_approved_feedback' class='feedback'>
 									Yes/No
 								</span>
-								<a id='titleApprovedEdit' class='field_edit'>
+								<a id='title_approved_edit' class='field_edit'>
 									Edit
 								</a>
-								<span id='titleApprovedDate' class='date'>
-									<span id='titleApprovedDateWrapper' class='date_wrapper'>
-										<select id ='titleApprovedMonth' name="month">
+								<span id='title_approved_date' class='date'>
+									<span id='title_approved_date_wrapper' class='date_wrapper'>
+										<select id ='title_approved_month' name="month">
 											<option value="01">January
 											<option value="02">February
 											<option value="03">March
@@ -492,7 +492,7 @@
 											<option value="11">November
 											<option value="12">December
 										</select>
-										<select id='titleApprovedDay' name="day">
+										<select id='title_approved_day' name="day">
 											<option value="01">1
 											<option value="02">2
 											<option value="03">3
@@ -525,15 +525,15 @@
 											<option value="30">30
 											<option value="31">31
 										</select>
-										<select id='titleApprovedYear' name="year">
+										<select id='title_approved_year' name="year">
 											<option value="2014">2014
 											<option value="2015">2015
 										</select>
 									</span>
 								</span>
-								<span id='titleApprovedDateInfo'>
-									<span id='titleApprovedDateInfoDate' class='date_info'></span>
-									<a id='titleApprovedDateInfoLink' class='date_edit'>Edit</a>
+								<span id='title_approved_date_info'>
+									<span id='title_approved_date_info_date' class='date_info'></span>
+									<a id='title_approved_date_info_link' class='date_edit'>Edit</a>
 								</span>
 							</div>
 						</td>
@@ -541,16 +541,16 @@
 
 					<!-- Target Closing Date -->
 					<!-- only a date -->
-					<tr id='targetCloseDate'>
+					<tr id='target_close_date'>
 						<td>
-							<span id='targetCloseDateTitle' class='title'>
+							<span id='target_close_date_title' class='title'>
 								Target Closing Date
 							</span>
 						</td>
-						<td id='targetCloseDateInput' colspan='2' class='date_only'>
+						<td id='target_close_date_input' colspan='2' class='date_only'>
 							<div class='table_wrapper'>
-								<span id='targetCloseDateWrapper' class='date_wrapper'>
-									<select id ='targetCloseMonth' name="month">
+								<span id='target_close_date_wrapper' class='date_wrapper'>
+									<select id ='target_close_month' name="month">
 										<option value="01">January
 										<option value="02">February
 										<option value="03">March
@@ -564,7 +564,7 @@
 										<option value="11">November
 										<option value="12">December
 									</select>
-									<select id='targetCloseDay' name="day">
+									<select id='target_close_day' name="day">
 										<option value="01">1
 										<option value="02">2
 										<option value="03">3
@@ -597,14 +597,14 @@
 										<option value="30">30
 										<option value="31">31
 									</select>
-									<select id='targetCloseYear' name="year">
+									<select id='target_close_year' name="year">
 										<option value="2014">2014
 										<option value="2015">2015
 									</select>
 								</span>
-								<span id='targetCloseDateInfo'>
-									<span id='targetCloseDateInfoDate' class='date_info'></span>
-									<a id='targetCloseDateInfoLink' class='date_edit'>Edit</a>
+								<span id='target_close_date_info'>
+									<span id='target_close_date_info_date' class='date_info'></span>
+									<a id='target_close_date_info_link' class='date_edit'>Edit</a>
 								</span>
 							</div>
 						</td>
@@ -612,16 +612,16 @@
 				</table>
 				
 				<div id='footer'>
-					<div id='requestAlert'></div>
-					<input id='sendRequest' type='button' value='Add' />
-					<input id='updateRequest' type='button' value='Update' />
-					<input id='cancelUpdate' type='button' value='Cancel' />
-					<input id='printPreview' type='button' value ='Print Preview' />
+					<div id='request_alert'></div>
+					<input id='send_request' type='button' value='Add' />
+					<input id='update_request' type='button' value='Update' />
+					<input id='cancel_update' type='button' value='Cancel' />
+					<input id='print_preview' type='button' value ='Print Preview' />
 				</div>
 			</div>
 		</div>
 		<!--<div id='box'></div>-->
-		<div id='dropdownFeedback' alt='0'></div>
+		<div id='dropdown_feedback' alt='0'></div>
 		<?php //include 'php/dropdown.php'; ?>
 		<!--<div id='footer'></div>-->
 
@@ -636,8 +636,8 @@
 <!-- Dropdown.php
 <!=================-->
 
-	<div id="dropdownContainer">
-		<div id="dropdownSelected" class="dropdown_box">
+	<div id="dropdown_container">
+		<div id="dropdown_selected" class="dropdown_box">
 			<i id="dropdown_title">Customers</i>
 			<input id="customer_search" type="text" value="Customer Last Name Search..." alt="Customer Last Name Search..."/>
 		</div>
@@ -685,8 +685,8 @@
 	} if($top=0){$dropHeight=0;}else{$dropHeight=($height*$t+10);};
 -->
 
-			<div id="dropdownExtend" class="bordered"><div id="dropdownExtendText">Extend</div></div>
-				<div id="dropdownClose" class="bordered"><div id="dropdownCloseText">Close</div></div>
+			<div id="dropdown_extend" class="bordered"><div id="dropdown_extend_text">Extend</div></div>
+				<div id="dropdown_close" class="bordered"><div id="dropdown_close_text">Close</div></div>
 			</div>
 	</div>
 
