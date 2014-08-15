@@ -10,7 +10,13 @@
 	$t=0;
 						
 	while($i<=$cap){ // loop through all rows
-		$row = mysql_fetch_assoc(mysql_query("SELECT id,first,last FROM customers WHERE id='$i'")); // select only the rows where user exists and that are unread
+
+		if(isset($_POST['search'])&&$_POST['search']!==''){
+			$search=addslashes($_POST['search']);
+			$row = mysql_fetch_assoc(mysql_query("SELECT id,first,last FROM customers WHERE id='$i' and last='$search'"));
+		}else{
+			$row = mysql_fetch_assoc(mysql_query("SELECT id,first,last FROM customers WHERE id='$i'")); // select only the rows where user exists and that are unread
+		}
 		if(isset($row['first'])&&isset($row['last'])){
 			if($row['id']==$i){
 				//if($t=0){$top=0;}else{

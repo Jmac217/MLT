@@ -14,7 +14,7 @@
 	<center>
 		<div id='header'>
 			<span id='header_text'>Mortgage Loans Tracker</span>
-			<span id='version'>Beta 1.3</span>
+			<span id='version'>Beta 1.4</span>
 		</div>
 		<div id='body'>
 			<div id='doc'>
@@ -547,9 +547,9 @@
 								Target Closing Date
 							</span>
 						</td>
-						<td id='target_close_date_input' colspan='2' class='date_only'>
+						<td id='target_close_date_input' colspan='2'>
 							<div class='table_wrapper'>
-								<span id='target_close_date_wrapper' class='date_wrapper'>
+								<span id='target_close_date_wrapper' class='date_wrapper_visible'>
 									<select id ='target_close_month' name="month">
 										<option value="01">January
 										<option value="02">February

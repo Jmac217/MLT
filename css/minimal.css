@@ -31,8 +31,8 @@ textarea{border-style:none;border:solid 1px #333;height:20px;width:527px;max-hei
 .feedback{position:absolute;right:0px;visibility:hidden;}
 .field_edit{position:absolute;right:0px;visibility:hidden;}
 .date{}
-.date_only{visibility:visible;}
 .date_wrapper{position:absolute;right:20px;height:19px;width:204px;visibility:hidden;}
+.date_wrapper_visible{position:absolute;right:20px;height:19px;width:204px;visibility:visible;}
 .date_info{position:absolute;right:0px;visibility:hidden;}
 .date_return{position:absolute;right:0px;visibility:hidden;}
 .date_edit{position:absolute;right:0px;visibility:hidden;}
