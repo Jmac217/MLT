@@ -418,8 +418,13 @@ function split_date(date, selection){
 	
 	// Print Preview
 	$('#print_preview').click(function(){
-		// redirect to printable form
-		window.location.href='php/printable.php';
+		// redirect to printable form in a new tab
+		window.open('php/printable.php', '_blank').focus();
+		/*
+			$.getScript('js/jspdf.js');
+			var pdf = new jsPDF();
+			pdf.text('20','20', 'Heyo');
+		*/
 	});
 	
 	// Cancel
