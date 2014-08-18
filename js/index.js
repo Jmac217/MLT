@@ -45,7 +45,6 @@ $(document).ready(function(){
 	});
 
 	// Checkboxes
-
 	$('input[type="checkbox"]').click(function(){
 		if(this.checked){
 			$(this).parent().siblings('.date').children('.date_wrapper').css({'visibility':'visible'})
@@ -53,8 +52,6 @@ $(document).ready(function(){
 			$(this).parent().siblings('.date').children('.date_wrapper').css({'visibility':'hidden'})
 		}
 	});
-
-
 
 	// Radio Button Sets
 	// ============
@@ -72,17 +69,17 @@ $(document).ready(function(){
 		$('#loan_status_processing').prop('checked',false);	
 	});
 	// Title Work Ordered
-	$('#title_ordered_no').click(function(){
-		$('#title_ordered_bank').prop('checked',false);	
-		$('#title_ordered_realtor').prop('checked',false);	
+	$('#title_work_ordered_no').click(function(){
+		$('#title_work_ordered_bank').prop('checked',false);	
+		$('#title_work_ordered_realtor').prop('checked',false);	
 	});
-	$('#title_ordered_bank').click(function(){
-		$('#title_ordered_no').prop('checked',false);	
-		$('#title_ordered_realtor').prop('checked',false);	
+	$('#title_work_ordered_bank').click(function(){
+		$('#title_work_ordered_no').prop('checked',false);	
+		$('#title_work_ordered_realtor').prop('checked',false);	
 	});
-	$('#title_ordered_realtor').click(function(){
-		$('#title_ordered_no').prop('checked',false);	
-		$('#title_ordered_bank').prop('checked',false);	
+	$('#title_work_ordered_realtor').click(function(){
+		$('#title_work_ordered_no').prop('checked',false);	
+		$('#title_work_ordered_bank').prop('checked',false);	
 	});
 
 function split_date(date, selection){
@@ -119,6 +116,7 @@ function split_date(date, selection){
 	$('.customer').click(function(){
 		id=$(this).attr('id'); // get name from id through post
 		$.post('php/getProfile.php',{id:id},function(data){
+			$('#send_request').val('Update').attr('alt',id);
 			//alert(data);
 			var xml = data; // accept passed XML form
 			xmlDoc = $.parseXML(xml); // call xmlDoc and the jQuery function 'parseXML' to parse var xml
@@ -146,7 +144,7 @@ function split_date(date, selection){
 			$('#first').val($first.text()).attr('alt',$first.text());
 			$('#last').val($last.text()).attr('alt',$last.text());
 
-			// boolean comparisons
+			// boolean comparisons | string-bool conversion method
 			var conditionally_approved = $conditionally_approved.text() === 'true';
 			var appraisal_ordered = $appraisal_ordered.text() === 'true';
 			var appraisal_approved = $appraisal_approved.text() === 'true';
@@ -155,11 +153,11 @@ function split_date(date, selection){
 			$('#was_conditionally_approved').prop('checked', conditionally_approved);
 			$('#was_appraisal_ordered').prop('checked', appraisal_ordered);
 			$('#was_appraisal_approved').prop('checked', appraisal_approved);
-			$('#was_title_approved').prop('checked', title_work_approved);
+			$('#was_title_work_approved').prop('checked', title_work_approved);
 
-			$('#appraisal_comment').attr('alt', $appraisal_comments.text()).html($appraisal_comments.text());
-			$('#loan_status_comment').attr('alt', $loan_status_comments.text()).html($loan_status_comments.text());
-			$('#title_comment').attr('alt', $title_comments.text()).html($title_comments.text());
+			$('#appraisal_comments').attr('alt', $appraisal_comments.text()).html($appraisal_comments.text());
+			$('#loan_status_comments').attr('alt', $loan_status_comments.text()).html($loan_status_comments.text());
+			$('#title_comments').attr('alt', $title_comments.text()).html($title_comments.text());
 
 			if(conditionally_approved){
 				$('#conditionally_approved_date_wrapper').css({'visibility':'visible'});
@@ -177,15 +175,15 @@ function split_date(date, selection){
 				$('#appraisal_approved_date_wrapper').css({'visibility':'hidden'});
 			}
 			if(title_work_approved){
-				$('#title_approved_date_wrapper').css({'visibility':'visible'});
+				$('#title_work_approved_date_wrapper').css({'visibility':'visible'});
 			}else{
-				$('#title_approved_date_wrapper').css({'visibility':'hidden'});
+				$('#title_work_approved_date_wrapper').css({'visibility':'hidden'});
 			}
 
 			// date testing
-			$('#target_close_month').val(split_date($target_closing_date.text(), "month"));
-			$('#target_close_day').val(split_date($target_closing_date.text(), "day"));
-			$('#target_close_year').val(split_date($target_closing_date.text(), "year"));
+			$('#target_closing_month').val(split_date($target_closing_date.text(), "month"));
+			$('#target_closing_day').val(split_date($target_closing_date.text(), "day"));
+			$('#target_closing_year').val(split_date($target_closing_date.text(), "year"));
 			$('#conditionally_approved_month').val(split_date($conditionally_approved_date.text(), "month"));
 			$('#conditionally_approved_day').val(split_date($conditionally_approved_date.text(), "day"));
 			$('#conditionally_approved_year').val(split_date($conditionally_approved_date.text(), "year"));
@@ -195,11 +193,9 @@ function split_date(date, selection){
 			$('#appraisal_approved_month').val(split_date($appraisal_approved_date.text(), "month"));
 			$('#appraisal_approved_day').val(split_date($appraisal_approved_date.text(), "day"));
 			$('#appraisal_approved_year').val(split_date($appraisal_approved_date.text(), "year"));
-			$('#title_approved_month').val(split_date($title_work_approved_date.text(), "month"));
-			$('#title_approved_day').val(split_date($title_work_approved_date.text(), "day"));
-			$('#title_approved_year').val(split_date($title_work_approved_date.text(), "year"));
-
-		$conditionally_approved_date
+			$('#title_work_approved_month').val(split_date($title_work_approved_date.text(), "month"));
+			$('#title_work_approved_day').val(split_date($title_work_approved_date.text(), "day"));
+			$('#title_work_approved_year').val(split_date($title_work_approved_date.text(), "year"));
 
 			console.log($conditionally_approved.text()+', '+$appraisal_ordered.text()+', '+$appraisal_approved.text()+', '+$title_work_approved.text()+' | '+$loan_status.text()+', '+$title_work_ordered.text());
 
@@ -223,19 +219,19 @@ function split_date(date, selection){
 			}
 			switch($title_work_ordered.text()){
 				case 'no':
-					$('#title_ordered_no').prop('checked', true);
-					$('#title_ordered_bank').prop('checked', false);
-					$('#title_ordered_realtor').prop('checked', false);
+					$('#title_work_ordered_no').prop('checked', true);
+					$('#title_work_ordered_bank').prop('checked', false);
+					$('#title_work_ordered_realtor').prop('checked', false);
 				break;
 				case 'bank':
-					$('#title_ordered_bank').prop('checked', true);
-					$('#title_ordered_no').prop('checked', false);
-					$('#title_ordered_realtor').prop('checked', false);
+					$('#title_work_ordered_bank').prop('checked', true);
+					$('#title_work_ordered_no').prop('checked', false);
+					$('#title_work_ordered_realtor').prop('checked', false);
 				break;
 				case 'realtor':
-					$('#title_ordered_realtor').prop('checked', true);
-					$('#title_ordered_no').prop('checked', false);
-					$('#title_ordered_bank').prop('checked', false);
+					$('#title_work_ordered_realtor').prop('checked', true);
+					$('#title_work_ordered_no').prop('checked', false);
+					$('#title_work_ordered_bank').prop('checked', false);
 				break;
 			}
 		});
@@ -328,25 +324,26 @@ function split_date(date, selection){
 	
 	// Send
 	$('#send_request').click(function(){
+		var id=$(this).attr('alt');
+		var request_type = $(this).val();
 		// get name
 		var first = $('#first').val();
 		var last = $('#last').val();
-		var conditionally_approved = $('#conditionally_approved').val();
+		var conditionally_approved = $('#was_conditionally_approved').prop('checked');
 		var conditionally_approved_date = $('#conditionally_approved_year').val()+'-'+$('#conditionally_approved_month').val()+'-'+$('#conditionally_approved_day').val();
-		var appraisal_ordered = $('#appraisal_ordered').val();
+		var appraisal_ordered = $('#was_appraisal_ordered').prop('checked');
 		var appraisal_ordered_date = $('#appraisal_ordered_year').val()+'-'+$('#appraisal_ordered_month').val()+'-'+$('#appraisal_ordered_day').val();
-		var appraisal_approved = $('#appraisal_approved').val();
-		var appraisal_approved_date = $('#appraisal_approved_year').val()+'+'+$('#appraisal_approved_month').val()+'-'+$('#appraisal_approved_day').val();
+		var appraisal_approved = $('#was_appraisal_approved').prop('checked');
+		var appraisal_approved_date = $('#appraisal_approved_year').val()+'-'+$('#appraisal_approved_month').val()+'-'+$('#appraisal_approved_day').val();
 		var appraisal_comments = $('#appraisal_comments').val();
-		var loan_status = $('#loan_status').val();
+		var loan_status = $('#loan_status_checkbox').children('.radio').children('input[type=radio]:checked').attr('alt');
 		var loan_status_comments = $('#loan_status_comments').val();
-		var title_work_ordered = $('#title_work_ordered').val();
+		var title_work_ordered = $('#title_work_ordered_checkbox').children('.radio').children('input[type=radio]:checked').attr('alt');
 		var title_work_ordered_date = $('#title_work_ordered_year').val()+'-'+$('#title_work_ordered_month').val()+'-'+$('#title_work_ordered_day').val();
-		var title_work_approved = $('#title_work_approved').val();
+		var title_work_approved = $('#was_title_work_approved').prop('checked');
 		var title_work_approved_date = $('#title_work_approved_year').val()+'-'+$('#title_work_approved_month').val()+'-'+$('#title_work_approved_day').val();
 		var title_comments = $('#title_comments').val();
 		var target_closing_date = $('#target_closing_year').val()+'-'+$('#target_closing_month').val()+'-'+$('#target_closing_day').val();
-
 
 		if($('#appraisal_comments').val()==$('#appraisal_comments').attr('alt')||$('#appraisal_comments').val()==''){appraisal_comments='none';}
 		if($('#loan_status_comments').val()==$('#loan_status_comments').attr('alt')||$('#loan_status_comments').val()==''){loan_status_comments='none';}
@@ -360,10 +357,22 @@ function split_date(date, selection){
 		if(title_work_approved_date=='2014-01-01'){title_work_approved_date='0000-00-00';}
 		if(target_closing_date=='2014-01-01'){target_closing_date='0000-00-00';}
 
+		console.log(first+', '+last+', '+conditionally_approved+', '+conditionally_approved_date+', '+appraisal_ordered+', '+appraisal_ordered_date+', '+appraisal_approved+', '+appraisal_approved_date+', '+appraisal_comments+', '+loan_status+', '+loan_status_comments+', '+title_work_ordered+', '+title_work_ordered_date+', '+title_work_approved+', '+title_work_approved_date+', '+title_comments+', '+target_closing_date);
+
 		// If customer doesn't enter a name, alert them to enter one. Post will not occur without a name.
-		if(($('#first').val()==''||$('#first').val()=='First Name')||($('#last').val()==''||$('#last').val()=='Last Name')){alert('Check Name');}else{// this should be cleaner
+		if(($('#first').val()==''||$('#first').val()=='First Name')||($('#last').val()==''||$('#last').val()=='Last Name')){
+			// Name Check
+			$('#request_alert').animate({'opacity':'1'},500).css({'height':'50px','visibility':'visible','color':'#FF5555','font-size':'18px'}).html('Make sure to enter a proper name. <br />This name may already exist in the database, please check the dropdown.');
+			setTimeout(function(){
+				$('#request_alert').animate({'opacity':'0'},500,function(){
+					$(this).css({'height':'25px','visibility':'hidden'});
+				});
+			},3000);
+		}else{// this should be cleaner
 //			if(nameCheck=='true'){
 				$.post('php/submit.php',{
+					id:id,
+					request_type:request_type,
 					first:first,
 					last:last,
 					conditionally_approved:conditionally_approved,
@@ -382,9 +391,10 @@ function split_date(date, selection){
 					title_comments:title_comments,
 					target_closing_date:target_closing_date
 				},function(data){
+//					alert(data);
 					if(data=='0'){
 						$('#request_alert').animate({'opacity':'1'},500).css({'visibility':'visible','color':'#55FF55','font-size':'18px'}).html('Your loan was entered succesfully.');
-					}else if(data=='1'){
+					}else{
 						$('#request_alert').animate({'opacity':'1'},500).css({'height':'50px','visibility':'visible','color':'#FF5555','font-size':'18px'}).html('There was a problem processing your loan.<br /> Please contact an administrator for further assistance.');
 					}
 					// shut it down before someone gets confused

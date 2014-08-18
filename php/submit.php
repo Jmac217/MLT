@@ -16,11 +16,10 @@ if ($db = 1){echo 'connected to DB';
 */
 
 // declare variables from POST
-//session_start();
-//$id = $_SESSION['id'];
+$id = $_POST['id'];
+$request_type=$_POST['request_type'];
 $first=$_POST['first'];
 $last=$_POST['last'];
-//$receiveDate=date('Y-m-d');
 $conditionally_approved=$_POST['conditionally_approved'];
 $conditionally_approved_date=$_POST['conditionally_approved_date'];
 $appraisal_ordered=$_POST['appraisal_ordered'];
@@ -53,6 +52,13 @@ $target_closing_date = $_POST['target_closing_date'];
 
 // query -> insert values into db.loan
 //$query = mysql_query("INSERT INTO loan (first,last,isGovMonitoring,wasLoanAccepted,isAdverseAction,willBeRejected,deliveredToHMDA,wasEarlyDisclosure) VALUES('$first','$last','$monitor','$loan','$adverse','$rejected','$delivered','$disclosure')") or die(mysql_error());// plus a bunch of dates
-$query = mysql_query("INSERT INTO customers (first,last,conditionally_approved,conditionally_approved_date,appraisal_ordered,appraisal_ordered_date,appraisal_approved,appraisal_approved_date,appraisal_comments,loan_status,loan_status_comments,title_work_ordered,title_work_ordered_date,title_work_approved,title_work_approved_date,title_comments,target_closing_date) VALUES('$first','$last','$conditionally_approved','$conditionally_approved_date','$appraisal_ordered','$appraisal_ordered_date','$appraisal_approved','$appraisal_approved_date','$appraisal_approved_comments','$loan_status','$loan_status_comments','$title_work_ordered','$title_work_ordered_date','$title_work_approved','$title_work_approved_date','$title_comments','$target_closing_date')") or die('1');// plus a bunch of dates
-echo '0';
+if($request_type=='Add'){
+	$query = mysql_query("INSERT INTO customers (first,last,conditionally_approved,conditionally_approved_date,appraisal_ordered,appraisal_ordered_date,appraisal_approved,appraisal_approved_date,appraisal_comments,loan_status,loan_status_comments,title_work_ordered,title_work_ordered_date,title_work_approved,title_work_approved_date,title_comments,target_closing_date) VALUES('$first','$last','$conditionally_approved','$conditionally_approved_date','$appraisal_ordered','$appraisal_ordered_date','$appraisal_approved','$appraisal_approved_date','$appraisal_comments','$loan_status','$loan_status_comments','$title_work_ordered','$title_work_ordered_date','$title_work_approved','$title_work_approved_date','$title_comments','$target_closing_date')") or die(mysql_error());// plus a bunch of dates
+	echo '0';
+}else if($request_type=='Update'){
+	$query = mysql_query("UPDATE customers SET first='$first',last='$last',conditionally_approved='$conditionally_approved',conditionally_approved_date='$conditionally_approved_date',appraisal_ordered='$appraisal_ordered',appraisal_ordered_date='$appraisal_ordered_date',appraisal_approved='$appraisal_approved',appraisal_approved_date='$appraisal_approved_date',appraisal_comments='$appraisal_comments',loan_status='$loan_status',loan_status_comments='$loan_status_comments',title_work_ordered='$title_work_ordered',title_work_ordered_date='$title_work_ordered_date',title_work_approved='$title_work_approved',title_work_approved_date='$title_work_approved_date',title_comments='$title_comments',target_closing_date='$target_closing_date' WHERE id='$id'") or die(mysql_error());// plus a bunch of dates
+	echo '0';
+}else{
+die('Request Error');
+}
 ?>

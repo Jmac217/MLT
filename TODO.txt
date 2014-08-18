@@ -1,18 +1,19 @@
 TODO
 
-Converge everything into a single list. This form is not two sections any more. Dates and check-boxes are of the same list now.
+Implement jsPDF for printer page
 
-Remove
-=====
-x HMDA
-x Has this loan been approved?
-x Lock Date
-x Expiration Date
-x Will this loan be turned down in 3 days?
-x Notice of adverse action
+search is being funky, overwrites dropdown extend/collapse button because of post.html() call, and also script functionality gets lost on reload
+- .customer.click might need added to a dropdown.js file and reloaded on search event
 
-x redundancy on title work ordered & title work approved
-x move title work ordered & title work approved to down below appraisal and still needs buttons like up top
+There's no proper check for duplicate name entry on submit. That must have been what 'nameCheck' was for, but it's been commented out.
+
+Default dates to use "today's date", and possibly add a new checkbox that says 'no date,' or 'none' that will void the date instead of it being based on 2014-01-01.
+
+comment alt check/replacement is just a little too touchy
+
+Customer Container needs restyled
+
+If a checkbox is false, make sure to set the dates back to default 0000-00-00
 
 index.js
 =====

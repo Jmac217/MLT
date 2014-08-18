@@ -277,7 +277,7 @@
 					<tr>
 						<td colspan='3'>
 							<!--<input type='input' value='Appraisal Comments' id='appraisalComment' alt='Appraisal Comments' style='width:100%;' />-->
-							<textarea id='appraisal_comment' alt='Appraisal Comments'>Appraisal Comments</textarea>
+							<textarea id='appraisal_comments' alt='Appraisal Comments'>Appraisal Comments</textarea>
 						</td>
 					</tr>
 
@@ -291,9 +291,9 @@
 						</td>
 						<td id='loan_status_input' colspan='2'>
 							<span id='loan_status_checkbox'>
-								<span class='radio'>Processing/Underwriting <input id='loan_status_processing' type='radio' /></span><br />
-								<span class='radio'>Awaiting Response <input id='loan_status_approved' type='radio' /></span><br />
-								<span class='radio'>Closing Prep <input id='loan_status_closing' type='radio' /></span><br />
+								<span class='radio'>Processing/Underwriting <input id='loan_status_processing' type='radio' alt='processing-underwriting' /></span><br />
+								<span class='radio'>Awaiting Response <input id='loan_status_approved' type='radio' alt='awaiting_response' /></span><br />
+								<span class='radio'>Closing Prep <input id='loan_status_closing' type='radio' alt='closing_prep' /></span><br />
 							</span>
 							<span id='loan_status_feedback' class='feedback'>
 								Yes/No
@@ -366,33 +366,33 @@
 					<tr>
 						<td colspan='3'>
 							<!--<input type='input' value='Loan Status Comments' id='loanStatusComment' alt='Loan Status Comments'  style='width:100%;' />-->
-							<textarea id='loan_status_comment' alt='Loan Status Comments'>Loan Status Comments</textarea>
+							<textarea id='loan_status_comments' alt='Loan Status Comments'>Loan Status Comments</textarea>
 						</td>
 					</tr>
 
 					<!-- Title Work Ordered -->
 					<!-- Three Checkboxes -->
-					<tr id='title_ordered'>
+					<tr id='title_work_ordered'>
 						<td>
-							<span id='title_ordered_title' class='title'>
+							<span id='title_work_ordered_title' class='title'>
 								Title Work Ordered
 							</span>
 						</td>
-						<td id='title_ordered_input' colspan='2' class='input'>
-							<span id='title_ordered_checkbox'>
-								<span class='radio'>No <input id='title_ordered_no' type='radio' /></span><br />
-								<span class='radio'>By Bank <input id='title_ordered_bank' type='radio' /></span><br />
-								<span class='radio'>By Realtor <input id='title_ordered_realtor' type='radio' /></span><br />
+						<td id='title_work_ordered_input' colspan='2' class='input'>
+							<span id='title_work_ordered_checkbox'>
+								<span class='radio'>No <input id='title_work_ordered_no' type='radio' alt='no' /></span><br />
+								<span class='radio'>By Bank <input id='title_work_ordered_bank' type='radio' alt='bank' /></span><br />
+								<span class='radio'>By Realtor <input id='title_work_ordered_realtor' type='radio' alt='realtor' /></span><br />
 							</span>
-							<span id='title_ordered_feedback' class='feedback'>
+							<span id='title_work_ordered_feedback' class='feedback'>
 								Yes/No
 							</span>
-							<a id='title_ordered_edit' class='field_edit'>
+							<a id='title_work_ordered_edit' class='field_edit'>
 								Edit
 							</a>
-							<span id='title_ordered_date' class='date'>
-								<span id='title_ordered_date_wrapper' class='date_wrapper'>
-									<select id ='title_ordered_month' name="month">
+							<span id='title_work_ordered_date' class='date'>
+								<span id='title_work_ordered_date_wrapper' class='date_wrapper'>
+									<select id ='title_work_ordered_month' name="month">
 										<option value="01">January
 										<option value="02">February
 										<option value="03">March
@@ -406,7 +406,7 @@
 										<option value="11">November
 										<option value="12">December
 									</select>
-									<select id='title_ordered_day' name="day">
+									<select id='title_work_ordered_day' name="day">
 										<option value="01">1
 										<option value="02">2
 										<option value="03">3
@@ -439,46 +439,46 @@
 										<option value="30">30
 										<option value="31">31
 									</select>
-									<select id='title_ordered_year' name="year">
+									<select id='title_work_ordered_year' name="year">
 										<option value="2014">2014
 										<option value="2015">2015
 									</select>
 								</span>
 							</span>
-						<span id='title_ordered_date_info'>
-							<span id='title_ordered_date_info_date' class='date_return'></span>
-							<a id='title_ordered_date_info_link' class='date_edit'>Edit</a>
+						<span id='title_work_ordered_date_info'>
+							<span id='title_work_ordered_date_info_date' class='date_return'></span>
+							<a id='title_work_ordered_date_info_link' class='date_edit'>Edit</a>
 						</span>
 					</tr>
 					<!-- Title Comment -->
 					<tr>
 						<td colspan='3'>
 							<!--<input type='input' value='Title Comments' id='titleComment' alt='Title Comments' style='width:100%;' />-->
-							<textarea id='title_comment' alt='Title Comments'>Title Comments</textarea>
+							<textarea id='title_comments' alt='Title Comments'>Title Comments</textarea>
 						</td>
 					</tr>
 					
 					<!-- Title Work Approved -->
-					<tr id='title_approved'>
+					<tr id='title_work_approved'>
 						<td>
-							<span id='title_approved_title' class='title'>
+							<span id='title_work_approved_title' class='title'>
 								Title Work Approved
 							</span>
 						</td>
-						<td id='title_approved_input' colspan='2'>
+						<td id='title_work_approved_input' colspan='2'>
 							<div class='table_wrapper'>
-								<span id='title_approved_checkbox' class='checkbox'>
-									<input id='was_title_approved' type='checkbox' />
+								<span id='title_work_approved_checkbox' class='checkbox'>
+									<input id='was_title_work_approved' type='checkbox' />
 								</span>
-								<span id='title_approved_feedback' class='feedback'>
+								<span id='title_work_approved_feedback' class='feedback'>
 									Yes/No
 								</span>
-								<a id='title_approved_edit' class='field_edit'>
+								<a id='title_work_approved_edit' class='field_edit'>
 									Edit
 								</a>
-								<span id='title_approved_date' class='date'>
-									<span id='title_approved_date_wrapper' class='date_wrapper'>
-										<select id ='title_approved_month' name="month">
+								<span id='title_work_approved_date' class='date'>
+									<span id='title_work_approved_date_wrapper' class='date_wrapper'>
+										<select id ='title_work_approved_month' name="month">
 											<option value="01">January
 											<option value="02">February
 											<option value="03">March
@@ -492,7 +492,7 @@
 											<option value="11">November
 											<option value="12">December
 										</select>
-										<select id='title_approved_day' name="day">
+										<select id='title_work_approved_day' name="day">
 											<option value="01">1
 											<option value="02">2
 											<option value="03">3
@@ -525,15 +525,15 @@
 											<option value="30">30
 											<option value="31">31
 										</select>
-										<select id='title_approved_year' name="year">
+										<select id='title_work_approved_year' name="year">
 											<option value="2014">2014
 											<option value="2015">2015
 										</select>
 									</span>
 								</span>
-								<span id='title_approved_date_info'>
-									<span id='title_approved_date_info_date' class='date_info'></span>
-									<a id='title_approved_date_info_link' class='date_edit'>Edit</a>
+								<span id='title_work_approved_date_info'>
+									<span id='title_work_approved_date_info_date' class='date_info'></span>
+									<a id='title_work_approved_date_info_link' class='date_edit'>Edit</a>
 								</span>
 							</div>
 						</td>
@@ -541,16 +541,16 @@
 
 					<!-- Target Closing Date -->
 					<!-- only a date -->
-					<tr id='target_close_date'>
+					<tr id='target_closing_date'>
 						<td>
-							<span id='target_close_date_title' class='title'>
+							<span id='target_closing_date_title' class='title'>
 								Target Closing Date
 							</span>
 						</td>
-						<td id='target_close_date_input' colspan='2'>
+						<td id='target_closing_date_input' colspan='2'>
 							<div class='table_wrapper'>
-								<span id='target_close_date_wrapper' class='date_wrapper_visible'>
-									<select id ='target_close_month' name="month">
+								<span id='target_closing_date_wrapper' class='date_wrapper_visible'>
+									<select id ='target_closing_month' name="month">
 										<option value="01">January
 										<option value="02">February
 										<option value="03">March
@@ -564,7 +564,7 @@
 										<option value="11">November
 										<option value="12">December
 									</select>
-									<select id='target_close_day' name="day">
+									<select id='target_closing_day' name="day">
 										<option value="01">1
 										<option value="02">2
 										<option value="03">3
@@ -597,14 +597,14 @@
 										<option value="30">30
 										<option value="31">31
 									</select>
-									<select id='target_close_year' name="year">
+									<select id='target_closing_year' name="year">
 										<option value="2014">2014
 										<option value="2015">2015
 									</select>
 								</span>
-								<span id='target_close_date_info'>
-									<span id='target_close_date_info_date' class='date_info'></span>
-									<a id='target_close_date_info_link' class='date_edit'>Edit</a>
+								<span id='target_closing_date_info'>
+									<span id='target_closing_date_info_date' class='date_info'></span>
+									<a id='target_closing_date_info_link' class='date_edit'>Edit</a>
 								</span>
 							</div>
 						</td>
