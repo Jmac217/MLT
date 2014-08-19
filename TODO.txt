@@ -15,6 +15,8 @@ Customer Container needs restyled
 
 If a checkbox is false, make sure to set the dates back to default 0000-00-00
 
+still missing date for Title Work Ordered
+
 index.js
 =====
 All of those variables in index.js are going to be added to a JSON object array
@@ -23,3 +25,12 @@ Dropdown states should be conditional, rather than separate similar functions.
 Major eventual reworks
 ===============
 The dropdown will be rewritten in Javascript, which allows for seamless refreshes, and JSON; dropdown.close.click functionality could be changed from XML, which does work, into a real JSON file.
+
+Logger
+======
+the following functions need to be logged
+
+Customer Addition or Update
+reset
+removal
+User log in/out

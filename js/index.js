@@ -99,6 +99,15 @@ function split_date(date, selection){
 		break;
 	}
 }
+
+function set_session(first,last){
+	// send this first and last name to setSession.php
+	$.post('php/setSession.php',{first:first,last:last},function(){
+		$('#send_request').css({'left':'270px'});
+		$('#print_preview').css({'visibility':'visible'});
+	});
+}
+
 // alert(split_date(conditionally_approved_date, "year"));
 	
 	// Dropdown
@@ -116,7 +125,7 @@ function split_date(date, selection){
 	$('.customer').click(function(){
 		id=$(this).attr('id'); // get name from id through post
 		$.post('php/getProfile.php',{id:id},function(data){
-			$('#send_request').val('Update').attr('alt',id);
+			$('#send_request').val('Update');
 			//alert(data);
 			var xml = data; // accept passed XML form
 			xmlDoc = $.parseXML(xml); // call xmlDoc and the jQuery function 'parseXML' to parse var xml
@@ -234,6 +243,7 @@ function split_date(date, selection){
 					$('#title_work_ordered_bank').prop('checked', false);
 				break;
 			}
+			set_session($first.text(), $last.text());
 		});
 	});
 	$('#customer_search').click(function(){
@@ -356,6 +366,9 @@ function split_date(date, selection){
 		if(title_work_ordered_date=='2014-01-01'){title_work_ordered_date='0000-00-00';}
 		if(title_work_approved_date=='2014-01-01'){title_work_approved_date='0000-00-00';}
 		if(target_closing_date=='2014-01-01'){target_closing_date='0000-00-00';}
+		
+		loan_status = (title_work_ordered == 'undefined') ? 'true' : 'false';
+		title_work_ordered = (title_work_ordered == 'undefined') ? 'true' : 'false';
 
 		console.log(first+', '+last+', '+conditionally_approved+', '+conditionally_approved_date+', '+appraisal_ordered+', '+appraisal_ordered_date+', '+appraisal_approved+', '+appraisal_approved_date+', '+appraisal_comments+', '+loan_status+', '+loan_status_comments+', '+title_work_ordered+', '+title_work_ordered_date+', '+title_work_approved+', '+title_work_approved_date+', '+title_comments+', '+target_closing_date);
 
@@ -368,8 +381,9 @@ function split_date(date, selection){
 					$(this).css({'height':'25px','visibility':'hidden'});
 				});
 			},3000);
-		}else{// this should be cleaner
-//			if(nameCheck=='true'){
+		}else{
+				// this should be cleaner
+				// if(nameCheck=='true'){
 				$.post('php/submit.php',{
 					id:id,
 					request_type:request_type,
@@ -391,7 +405,6 @@ function split_date(date, selection){
 					title_comments:title_comments,
 					target_closing_date:target_closing_date
 				},function(data){
-//					alert(data);
 					if(data=='0'){
 						$('#request_alert').animate({'opacity':'1'},500).css({'visibility':'visible','color':'#55FF55','font-size':'18px'}).html('Your loan was entered succesfully.');
 					}else{
@@ -403,11 +416,9 @@ function split_date(date, selection){
 							$(this).css({'height':'25px','visibility':'hidden'});
 						});
 					},3000);
-						// send this first and last name to setSession.php
-						$.post('php/setSession.php',{first:first,last:last},function(){
-							$('#send_request').css({'left':'270px'});
-							$('#print_preview').css({'visibility':'visible'});
-						});
+
+					set_session(first, last);
+
 						// now that id session var is set, refresh page to printable.php printable will have the print button
 						// this needs to be delayed for a while. Maybe pull '#requestAlert's function down to below here.
 						//window.location.href='index.php';
