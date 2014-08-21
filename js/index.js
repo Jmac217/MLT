@@ -221,9 +221,14 @@ function set_session(first,last){
 					$('#loan_status_closing').prop('checked', false);
 				break;
 				case 'closing_prep':
-				$('#loan_status_closing').prop('checked', true);
-				$('#loan_status_processing').prop('checked', false);
-				$('#loan_status_approved').prop('checked', false);
+					$('#loan_status_closing').prop('checked', true);
+					$('#loan_status_processing').prop('checked', false);
+					$('#loan_status_approved').prop('checked', false);
+				break;
+				default:
+					$('#loan_status_closing').prop('checked', false);
+					$('#loan_status_processing').prop('checked', false);
+					$('#loan_status_approved').prop('checked', false);
 				break;
 			}
 			switch($title_work_ordered.text()){
@@ -239,6 +244,11 @@ function set_session(first,last){
 				break;
 				case 'realtor':
 					$('#title_work_ordered_realtor').prop('checked', true);
+					$('#title_work_ordered_no').prop('checked', false);
+					$('#title_work_ordered_bank').prop('checked', false);
+				break;
+				default:
+					$('#title_work_ordered_realtor').prop('checked', false);
 					$('#title_work_ordered_no').prop('checked', false);
 					$('#title_work_ordered_bank').prop('checked', false);
 				break;
@@ -355,6 +365,8 @@ function set_session(first,last){
 		var title_comments = $('#title_comments').val();
 		var target_closing_date = $('#target_closing_year').val()+'-'+$('#target_closing_month').val()+'-'+$('#target_closing_day').val();
 
+		alert(loan_status+' '+title_work_ordered);
+
 		if($('#appraisal_comments').val()==$('#appraisal_comments').attr('alt')||$('#appraisal_comments').val()==''){appraisal_comments='none';}
 		if($('#loan_status_comments').val()==$('#loan_status_comments').attr('alt')||$('#loan_status_comments').val()==''){loan_status_comments='none';}
 		if($('#title_comments').val()==$('#title_comments').attr('alt')||$('#title_comments').val()==''){title_comments='none';}
@@ -367,8 +379,10 @@ function set_session(first,last){
 		if(title_work_approved_date=='2014-01-01'){title_work_approved_date='0000-00-00';}
 		if(target_closing_date=='2014-01-01'){target_closing_date='0000-00-00';}
 		
-		loan_status = (title_work_ordered == 'undefined') ? 'true' : 'false';
-		title_work_ordered = (title_work_ordered == 'undefined') ? 'true' : 'false';
+		/*
+		loan_status = (title_work_ordered == 'undefined') ? 'false' : 'true';
+		title_work_ordered = (title_work_ordered == 'undefined') ? 'false' : 'true';
+		*/
 
 		console.log(first+', '+last+', '+conditionally_approved+', '+conditionally_approved_date+', '+appraisal_ordered+', '+appraisal_ordered_date+', '+appraisal_approved+', '+appraisal_approved_date+', '+appraisal_comments+', '+loan_status+', '+loan_status_comments+', '+title_work_ordered+', '+title_work_ordered_date+', '+title_work_approved+', '+title_work_approved_date+', '+title_comments+', '+target_closing_date);
 
@@ -384,6 +398,7 @@ function set_session(first,last){
 		}else{
 				// this should be cleaner
 				// if(nameCheck=='true'){
+				alert(title_work_ordered+' '+loan_status);
 				$.post('php/submit.php',{
 					id:id,
 					request_type:request_type,
@@ -405,6 +420,7 @@ function set_session(first,last){
 					title_comments:title_comments,
 					target_closing_date:target_closing_date
 				},function(data){
+					alert(data);
 					if(data=='0'){
 						$('#request_alert').animate({'opacity':'1'},500).css({'visibility':'visible','color':'#55FF55','font-size':'18px'}).html('Your loan was entered succesfully.');
 					}else{

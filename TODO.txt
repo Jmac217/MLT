@@ -17,6 +17,8 @@ If a checkbox is false, make sure to set the dates back to default 0000-00-00
 
 still missing date for Title Work Ordered
 
+Radio buttons get a little messed up when there's nothing to go into them, add a default false value to them.
+
 index.js
 =====
 All of those variables in index.js are going to be added to a JSON object array
