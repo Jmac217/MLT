@@ -6,26 +6,25 @@
 <!--<html>-->
 	<head>
 		<title>Mortgage Loan Tracker</title>
-		<!--<link rel='stylesheet' type='text/css' href='css/index.css' />-->
-		<link rel='stylesheet' type='text/css' href='css/minimal.css' />
+		<link rel='stylesheet' type='text/css' href='css/minimal.css' /><!-- to be renamed to index.css at some point -->
 		<link rel='shortcut icon' href='res/favicon.png' />
 	</head>
 	<body>
 	<center>
 		<div id='header'>
 			<span id='header_text'>Mortgage Loans Tracker</span>
-			<span id='version'>Beta 1.4</span>
+			<span id='version'>Beta 1.5</span>
 		</div>
 		<div id='body'>
 			<div id='doc'>
 			
 				<!-- Customer Input -->
 				
-				<table id='customer_input'><!-- Table is a placeholder, finished will be transformed into spans, with css... well eventually xD-->
-					<tr><td>Today's Date:</td><td colspan='2'><center><i><?php echo Date("m-d-Y"); ?></i></center></td></tr><!-- should grab date from db -> receivedDate -->
+				<table id='customer_input'>
+					<tr><td>Today's Date:</td><td colspan='2'><center><i><?php echo Date("m-d-Y"); ?></i></center></td></tr>
 					<tr><td>Customer Name:</td>
-							<td><input id='first' type='text' value='First Name' alt='First Name'></input></td>
-							<td><input id='last' type='text' value='Last Name' alt='Last Name'></input></td>
+							<td><input id='first' type='text' value='First Name' alt='First Name' /></td>
+							<td><input id='last' type='text' value='Last Name' alt='Last Name' /></td>
 					</tr>
 					<tr><td colspan='3'><span id='customer_name_check'>&nbsp;</span></td></tr>
 				
@@ -43,6 +42,7 @@
 								<span id='conditionally_approved_checkbox'  class='checkbox'>
 									<input id='was_conditionally_approved' type='checkbox' class='checkbox'/>
 								</span>
+								<!-- these are unused and hidden, but still present, in every input block; to be used if necessary -->
 								<span id='conditionally_approved_feedback'  class='feedback'>
 									Yes/No
 								</span>
@@ -283,6 +283,7 @@
 
 					<!-- Loan Status -->
 					<!-- Three Checkboxes -->
+					<!-- no date -->
 					<tr id='loan_status'>
 						<td>
 							<span id='loan_status_title' class='title'>
@@ -372,6 +373,7 @@
 
 					<!-- Title Work Ordered -->
 					<!-- Three Checkboxes -->
+					<!-- has date -->
 					<tr id='title_work_ordered'>
 						<td>
 							<span id='title_work_ordered_title' class='title'>
@@ -614,82 +616,30 @@
 				<div id='footer'>
 					<div id='request_alert'></div>
 					<input id='send_request' type='button' value='Add' />
-					<input id='update_request' type='button' value='Update' />
-					<input id='cancel_update' type='button' value='Cancel' />
+					<input id='update_request' type='button' value='Update' /><!-- #update_request has become a part of #send_request -->
+					<input id='cancel_update' type='button' value='Cancel' /><!-- #cancel_request needs to be reimplemented -->
 					<input id='print_preview' type='button' value ='Print Preview' />
 				</div>
 			</div>
 		</div>
-		<!--<div id='box'></div>-->
+
+		<!-- Dropdown -->
 		<div id='dropdown_feedback' alt='0'></div>
-		<?php //include 'php/dropdown.php'; ?>
-		<!--<div id='footer'></div>-->
-
-
-
-
-
-
-
-
-
-<!-- Dropdown.php
-<!=================-->
-
-	<div id="dropdown_container">
-		<div id="dropdown_selected" class="dropdown_box">
-			<i id="dropdown_title">Customers</i>
-			<input id="customer_search" type="text" value="Customer Last Name Search..." alt="Customer Last Name Search..."/>
-		</div>
-		<div id="dropdown" class="dropdown_box">
-			<!--
-			<ul>
-			</ul>
-			-->
-			<?php include 'php/dropdown.php'; ?>
-
-<!--
-	while($i<=$cap){ // loop through all rows
-		$row = mysql_fetch_assoc(mysql_query("SELECT id,first,last FROM loan WHERE id='$i'")); // select only the rows where user exists and that are unread
-		if(isset($row['first'])&&isset($row['last'])){
-			if($row['id']=$i){
-				//if($t=0){$top=0;}else{
-				$top = ($t*$height)/*.'px'*/; // this dynamically sets message top
-				//}
-				$id=$row['id']; // this message_id
--->
-
-<!--
-
-					<div class="customerContainer" style="top:'.$top.'px">
-							<div class="customer" id="'.$i.'">
-								'.$row['first'].' '.$row['last'].'
-							</div>
-							<div class="options">
-								<div class="remove" id="'.$i.'"></div>
-							</div>
-						</div>
--->
-
-<!--
-				$i++;
-				$t++;
-			
-				// Message should start with the most recent date.
-				// There should be spans on top:0px and bottom:0px for previous_message and next_message.
-				// Add a link to display a send_message form 
-				// 	or
-				// If $_POST['id'] display a send_message form and auto-fill cc with users email.
-			}
-		}else{$i++;}
-	} if($top=0){$dropHeight=0;}else{$dropHeight=($height*$t+10);};
--->
-
-			<div id="dropdown_extend" class="bordered"><div id="dropdown_extend_text">Extend</div></div>
-				<div id="dropdown_close" class="bordered"><div id="dropdown_close_text">Close</div></div>
+		<div id="dropdown_container">
+			<div id="dropdown_selected" class="dropdown_box">
+				<i id="dropdown_title">Customers</i>
+				<input id="customer_search" type="text" value="Customer Last Name Search..." alt="Customer Last Name Search..."/>
 			</div>
-	</div>
+			<div id="dropdown" class="dropdown_box">
+				<div id='dropdown_area'>
+					<?php include 'php/dropdown.php'; ?>
+				</div>
+				<div id="dropdown_extend" class="bordered"><div id="dropdown_extend_text">Extend</div></div>
+					<div id="dropdown_close" class="bordered"><div id="dropdown_close_text">Close</div></div>
+				</div>
+		</div>
 
+		<!-- 'bug' has been hidden for now, but will need to be put back up for future bug reporting. -->
 		<?php include 'php/bug.php'; ?>
 
 		<script type='text/javascript' src='js/jquery.js'></script>

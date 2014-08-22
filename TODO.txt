@@ -1,13 +1,18 @@
 TODO
 
-Implement jsPDF for printer page
+Separate index.js into global.js, index.js, and dropdown.js.
+  - dropdown.js needs to be able to be called from $.getScript(), or included into dropdown.php, probably the latter.
+
+x Implement jsPDF for printer page 
+  - Doesn't retain style, come back to this at jspdf.php
 
 search is being funky, overwrites dropdown extend/collapse button because of post.html() call, and also script functionality gets lost on reload
-- .customer.click might need added to a dropdown.js file and reloaded on search event
+	- .customer.click might need added to a dropdown.js file and reloaded on search event
 
 There's no proper check for duplicate name entry on submit. That must have been what 'nameCheck' was for, but it's been commented out.
 
-Default dates to use "today's date", and possibly add a new checkbox that says 'no date,' or 'none' that will void the date instead of it being based on 2014-01-01.
+o Default dates to use "today's date", 
+  - and possibly add a new checkbox that says 'no date,' or 'none' that will void the date instead of it being based on 2014-01-01.
 
 comment alt check/replacement is just a little too touchy
 
@@ -17,7 +22,7 @@ If a checkbox is false, make sure to set the dates back to default 0000-00-00
 
 still missing date for Title Work Ordered
 
-Radio buttons get a little messed up when there's nothing to go into them, add a default false value to them.
+o Radio buttons get a little messed up when there's nothing to go into them, add a default false value to them.
 
 index.js
 =====

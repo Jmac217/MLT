@@ -1,5 +1,35 @@
 $(document).ready(function(){
 
+
+	// hack together the date in PHP/SQL format... jeez
+	var today = new Date();
+	var day = today.getDate();
+	if(today.getMonth()+1<10){
+		var month = today.getMonth()+1;
+		month = '0'+month;
+	}else{
+		var month = today.getMonth()+1;
+	}
+	var year = today.getFullYear();
+	var todays_date = year+'-'+month+'-'+day;
+
+	// set default dates for selectors
+	$('#target_closing_month').val(month);
+	$('#target_closing_day').val(day);
+	$('#target_closing_year').val(year);
+	$('#conditionally_approved_month').val(month);
+	$('#conditionally_approved_day').val(day);
+	$('#conditionally_approved_year').val(year);
+	$('#appraisal_ordered_month').val(month);
+	$('#appraisal_ordered_day').val(day);
+	$('#appraisal_ordered_year').val(year);
+	$('#appraisal_approved_month').val(month);
+	$('#appraisal_approved_day').val(day);
+	$('#appraisal_approved_year').val(year);
+	$('#title_work_approved_month').val(month);
+	$('#title_work_approved_day').val(day);
+	$('#title_work_approved_year').val(year);
+
 	// debug
 	// $("#dropdown").animate({"height":"620px"},200);
 
@@ -258,11 +288,19 @@ function set_session(first,last){
 	});
 	$('#customer_search').click(function(){
 		$("#dropdown").animate({"height":"620px"},200);
+	}).bind('keypress', function(e){
+		if(e.keyCode==13){
+			var search = $(this).val();
+			$.post('php/dropdown.php',{search:search},function(data){
+				$('#dropdown_area').html(data);	
+			});	
+		}
 	}).keyup(function(){
-		var search = $(this).val();
-		$.post('php/dropdown.php',{search:search},function(data){
-			$('#dropdown').html(data);	
-		});	
+		if($(this).val()==''){
+			$.post('php/dropdown.php',function(data){
+				$('#dropdown_area').html(data);	
+			});	
+		}
 	});
 	
 	$(".remove").hover(function(){
