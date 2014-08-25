@@ -43,9 +43,9 @@ echo '
 	<html>
 		<head>
 			<title>MLT Printable</title>
-			<link rel="stylesheet" type="text/css" href="../css/printable.css"/>
 			<script type="text/javascript" src="../js/jquery.js"></script>
 			<script type="text/javascript" src="../js/print.js"></script>
+			<link rel="stylesheet" type="text/css" href="../css/printable.css"/>
 		</head>
 		<body>
 			<div id="print">Print</div>

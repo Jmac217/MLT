@@ -1,3 +1,4 @@
+<?php session_start(); if(!isset($_SESSION['user'])){header('Location:login.php');};?>
 <!DOCTYPE HTML>
 <!--[if lt IE 7 ]> <html class="ie6" lang="en"> <![endif]-->
 <!--[if IE 7 ]>    <html class="ie7" lang="en"> <![endif]-->
@@ -13,7 +14,8 @@
 	<center>
 		<div id='header'>
 			<span id='header_text'>Mortgage Loans Tracker</span>
-			<span id='version'>Beta 1.5</span>
+			<span id='version'>Beta 1.6</span>
+			<span id='user'><?php echo $_SESSION['user']; ?></span>
 		</div>
 		<div id='body'>
 			<div id='doc'>
@@ -277,7 +279,7 @@
 					<tr>
 						<td colspan='3'>
 							<!--<input type='input' value='Appraisal Comments' id='appraisalComment' alt='Appraisal Comments' style='width:100%;' />-->
-							<textarea id='appraisal_comments' alt='Appraisal Comments'>Appraisal Comments</textarea>
+							<textarea id='appraisal_comments' default='Appraisal Comments' alt='Appraisal Comments'>Appraisal Comments</textarea>
 						</td>
 					</tr>
 
@@ -367,7 +369,7 @@
 					<tr>
 						<td colspan='3'>
 							<!--<input type='input' value='Loan Status Comments' id='loanStatusComment' alt='Loan Status Comments'  style='width:100%;' />-->
-							<textarea id='loan_status_comments' alt='Loan Status Comments'>Loan Status Comments</textarea>
+							<textarea id='loan_status_comments' default='Loan Status Comments' alt='Loan Status Comments'>Loan Status Comments</textarea>
 						</td>
 					</tr>
 
@@ -456,7 +458,7 @@
 					<tr>
 						<td colspan='3'>
 							<!--<input type='input' value='Title Comments' id='titleComment' alt='Title Comments' style='width:100%;' />-->
-							<textarea id='title_comments' alt='Title Comments'>Title Comments</textarea>
+							<textarea id='title_comments' default='Title Comments' alt='Title Comments'>Title Comments</textarea>
 						</td>
 					</tr>
 					

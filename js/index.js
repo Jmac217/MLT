@@ -70,8 +70,13 @@ $(document).ready(function(){
 	//date_selection("approvedDate", "Date Approved");
 
 	// reload the page
-	$('#header').click(function(){
+	$('#header_text').click(function(){
 		window.location.reload('true');
+	});
+	$('#user').click(function(){
+		$.post('php/logout.php',function(){
+			window.location.reload('true');
+		});	
 	});
 
 	// Checkboxes
@@ -316,6 +321,7 @@ function set_session(first,last){
 			if(data==0){
 				window.location.href='index.php';
 			}else{
+				// post into feedback, and remove alert
 				alert('deletion was unsuccessful, please contact an administrator.');
 			}
 		});
@@ -403,11 +409,11 @@ function set_session(first,last){
 		var title_comments = $('#title_comments').val();
 		var target_closing_date = $('#target_closing_year').val()+'-'+$('#target_closing_month').val()+'-'+$('#target_closing_day').val();
 
-		alert(loan_status+' '+title_work_ordered);
+		// alert(loan_status+' '+title_work_ordered);
 
-		if($('#appraisal_comments').val()==$('#appraisal_comments').attr('alt')||$('#appraisal_comments').val()==''){appraisal_comments='none';}
-		if($('#loan_status_comments').val()==$('#loan_status_comments').attr('alt')||$('#loan_status_comments').val()==''){loan_status_comments='none';}
-		if($('#title_comments').val()==$('#title_comments').attr('alt')||$('#title_comments').val()==''){title_comments='none';}
+		if($('#appraisal_comments').val()==$('#appraisal_comments').attr('default')||$('#appraisal_comments').val()==''){appraisal_comments='none';}
+		if($('#loan_status_comments').val()==$('#loan_status_comments').attr('default')||$('#loan_status_comments').val()==''){loan_status_comments='none';}
+		if($('#title_comments').val()==$('#title_comments').attr('default')||$('#title_comments').val()==''){title_comments='none';}
 		
 		// set defaults for returns.
 		if(conditionally_approved_date=='2014-01-01'){conditionally_approved_date='0000-00-00';}
@@ -436,7 +442,7 @@ function set_session(first,last){
 		}else{
 				// this should be cleaner
 				// if(nameCheck=='true'){
-				alert(title_work_ordered+' '+loan_status);
+				// alert(title_work_ordered+' '+loan_status);
 				$.post('php/submit.php',{
 					id:id,
 					request_type:request_type,
@@ -458,7 +464,7 @@ function set_session(first,last){
 					title_comments:title_comments,
 					target_closing_date:target_closing_date
 				},function(data){
-					alert(data);
+					// alert(data);
 					if(data=='0'){
 						$('#request_alert').animate({'opacity':'1'},500).css({'visibility':'visible','color':'#55FF55','font-size':'18px'}).html('Your loan was entered succesfully.');
 					}else{

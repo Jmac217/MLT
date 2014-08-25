@@ -24,7 +24,7 @@ $title_work_approved_date = $_POST['title_work_approved_date'];
 $title_comments = $_POST['title_comments'];
 $target_closing_date = $_POST['target_closing_date'];
 
-echo $title_work_ordered.' '.$loan_status;
+// echo $title_work_ordered.' '.$loan_status;
 
 // The difference between Add and Update are switched here via $_POST; probably not the best way to handle things, especially looking at the post request from index.js, but it works for now.
 if($request_type=='Add'){
