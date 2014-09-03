@@ -3,7 +3,10 @@ $(document).ready(function(){
 
 	// hack together the date in PHP/SQL format... jeez
 	var today = new Date();
-	var day = today.getDate();
+	if(today.getDate()+1<10){
+		var day = today.getDate();
+		day = '0'+day;
+	}
 	if(today.getMonth()+1<10){
 		var month = today.getMonth()+1;
 		month = '0'+month;

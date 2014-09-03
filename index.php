@@ -660,7 +660,7 @@
 		</div>
 
 		<!-- 'bug' has been hidden for now, but will need to be put back up for future bug reporting. -->
-		<?php include 'php/bug.php'; ?>
+		<?php // include 'php/bug.php'; ?>
 
 		<script type='text/javascript' src='js/jquery.js'></script>
 		<script type='text/javascript' src='js/index.js'></script>

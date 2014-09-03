@@ -1,1 +1,1 @@
-gvim -S C:\xampp\htdocs\TBOC\MLT_Rework\mlt.vim
+gvim -S C:\xampp\htdocs\TBOC\MLT\mlt.vim
