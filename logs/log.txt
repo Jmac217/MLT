@@ -1,0 +1,2 @@
+Log will be JSON eventually, but for now it's in raw text.
+

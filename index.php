@@ -1,10 +1,28 @@
-<?php session_start(); if(!isset($_SESSION['user'])){header('Location:login.php');};?>
+<?php /*session_start(); if(!isset($_SESSION['user'])){header('Location:login.php');};*/ ?>
 <!DOCTYPE HTML>
 <!--[if lt IE 7 ]> <html class="ie6" lang="en"> <![endif]-->
 <!--[if IE 7 ]>    <html class="ie7" lang="en"> <![endif]-->
 <!--[if IE 8 ]>    <html class="ie8" lang="en"> <![endif]-->
 <!--[if (gte IE 9)|!(IE)]><!--> <html lang="en"> <!--<![endif]-->
 <!--<html>-->
+<!--
+	Mortgage Loan Tracker: An interactive mortgage loan form
+	Copyright (C) 2014 Jordan Elder
+
+	This program is free software; you can redistribute it and/or
+	modify it under the terms of the GNU General Public License
+	as published by the Free Software Foundation; either version 2
+	of the License, or (at your option) any later version.
+
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU General Public License for more details.
+	
+	You should have received a copy of the GNU General Public License (see COPYING)
+	along with this program; if not, write to the Free Software
+	Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+-->
 	<head>
 		<title>Mortgage Loan Tracker</title>
 		<link rel='stylesheet' type='text/css' href='css/minimal.css' /><!-- to be renamed to index.css at some point -->
@@ -15,7 +33,7 @@
 		<div id='header'>
 			<span id='header_text'>Mortgage Loans Tracker</span>
 			<span id='version'>Beta 1.6</span>
-			<span id='user'><?php echo $_SESSION['user']; ?></span>
+			<span id='user'><?php /*echo $_SESSION['user'];*/ ?></span>
 		</div>
 		<div id='body'>
 			<div id='doc'>
