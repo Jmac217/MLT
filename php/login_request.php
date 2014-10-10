@@ -10,6 +10,7 @@ if ((isset($_POST['user'])&&isset($_POST['pass']))&&($_POST['user']!=='Username'
 	if(!isset($sql['pass'])){die("pass not set");}
 	session_start();
 	$_SESSION['user'] = $sql['user'];
+	$_SESSION['privileges'] = $sql['privileges'];
 	echo '0';
 }else{
 	die('Please enter a Username and a Password');

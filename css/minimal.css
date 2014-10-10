@@ -43,7 +43,10 @@ textarea{border-style:none;border:solid 1px #333;height:20px;width:527px;max-hei
 #header{position:absolute;left:0px;top:0px;width:500px;height:55px;cursor:pointer;}
 #header_text{position:absolute;bottom:0px;left:20px;color:#222;font-size:45px;}
 #version{position:absolute;bottom:10px;left:465px;color:#000;font-size:9px;}
-#user{position:absolute;bottom:3px;left:555px;color:#000;font-size:18px;}
+#user_container{position:absolute;top:15px;left:685px;height:30px;width:250px;color:#000;font-size:18px;display:box;background-color:#555;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;-ms-box-sizing:border-box;box-sizing:border-box;padding-top:4px;}
+	#user{margin:auto;color:white;}
+		#user_drop{position:absolute;top:0px;left:0px;height:300px;width:100%:backgroudnd-color:blue;}
+			.user_drop_li{width:100%;color:white;background-color:blue;}
 #body{position:absolute;top:55px;height:670px;left:0px;width:675px;background-color:#222222;border-radius:10px;}
 /*#doc{background-image:url("../res/doc.png");} *//*#224455 */
 

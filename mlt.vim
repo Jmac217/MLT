@@ -113,11 +113,15 @@ badd +1 php\remove.php
 badd +1 php\reset.php
 badd +1 php\setSession.php
 badd +1 php\setSessionFromID.php
-badd +1 php\submit.php
+badd +6 php\submit.php
 badd +1 php\submitBug.php
 badd +1 php\updateCustomer.php
-badd +1 css\minimal.css
-badd +0 TODO.txt
+badd +22 css\minimal.css
+badd +1 TODO.txt
+badd +0 login.php
+badd +0 js\login.js
+badd +1 php\login_request.php
+badd +0 css\login.css
 silent! argdel *
 edit css\minimal.css
 set splitbelow splitright
@@ -129,7 +133,9 @@ wincmd _ | wincmd |
 vsplit
 wincmd _ | wincmd |
 vsplit
-4wincmd h
+wincmd _ | wincmd |
+vsplit
+5wincmd h
 wincmd _ | wincmd |
 split
 wincmd _ | wincmd |
@@ -140,7 +146,11 @@ wincmd _ | wincmd |
 split
 wincmd _ | wincmd |
 split
-5wincmd k
+wincmd _ | wincmd |
+split
+6wincmd k
+wincmd w
+wincmd w
 wincmd w
 wincmd w
 wincmd w
@@ -150,7 +160,10 @@ wincmd w
 wincmd w
 wincmd _ | wincmd |
 split
-1wincmd k
+wincmd _ | wincmd |
+split
+2wincmd k
+wincmd w
 wincmd w
 wincmd w
 wincmd _ | wincmd |
@@ -186,7 +199,10 @@ wincmd _ | wincmd |
 split
 wincmd _ | wincmd |
 split
-11wincmd k
+wincmd _ | wincmd |
+split
+12wincmd k
+wincmd w
 wincmd w
 wincmd w
 wincmd w
@@ -202,55 +218,62 @@ set nosplitbelow
 set nosplitright
 wincmd t
 set winheight=1 winwidth=1
-exe '1resize ' . ((&lines * 7 + 30) / 60)
-exe 'vert 1resize ' . ((&columns * 46 + 118) / 236)
-exe '2resize ' . ((&lines * 9 + 30) / 60)
-exe 'vert 2resize ' . ((&columns * 46 + 118) / 236)
-exe '3resize ' . ((&lines * 34 + 30) / 60)
-exe 'vert 3resize ' . ((&columns * 46 + 118) / 236)
+exe '1resize ' . ((&lines * 24 + 30) / 60)
+exe 'vert 1resize ' . ((&columns * 56 + 118) / 236)
+exe '2resize ' . ((&lines * 23 + 30) / 60)
+exe 'vert 2resize ' . ((&columns * 56 + 118) / 236)
+exe '3resize ' . ((&lines * 1 + 30) / 60)
+exe 'vert 3resize ' . ((&columns * 56 + 118) / 236)
 exe '4resize ' . ((&lines * 1 + 30) / 60)
-exe 'vert 4resize ' . ((&columns * 46 + 118) / 236)
+exe 'vert 4resize ' . ((&columns * 56 + 118) / 236)
 exe '5resize ' . ((&lines * 1 + 30) / 60)
-exe 'vert 5resize ' . ((&columns * 46 + 118) / 236)
+exe 'vert 5resize ' . ((&columns * 56 + 118) / 236)
 exe '6resize ' . ((&lines * 1 + 30) / 60)
-exe 'vert 6resize ' . ((&columns * 46 + 118) / 236)
-exe 'vert 7resize ' . ((&columns * 164 + 118) / 236)
-exe '8resize ' . ((&lines * 56 + 30) / 60)
-exe 'vert 8resize ' . ((&columns * 1 + 118) / 236)
-exe '9resize ' . ((&lines * 1 + 30) / 60)
-exe 'vert 9resize ' . ((&columns * 1 + 118) / 236)
-exe '10resize ' . ((&lines * 1 + 30) / 60)
+exe 'vert 6resize ' . ((&columns * 56 + 118) / 236)
+exe '7resize ' . ((&lines * 1 + 30) / 60)
+exe 'vert 7resize ' . ((&columns * 56 + 118) / 236)
+exe 'vert 8resize ' . ((&columns * 27 + 118) / 236)
+exe 'vert 9resize ' . ((&columns * 77 + 118) / 236)
+exe '10resize ' . ((&lines * 28 + 30) / 60)
 exe 'vert 10resize ' . ((&columns * 1 + 118) / 236)
-exe '11resize ' . ((&lines * 52 + 30) / 60)
+exe '11resize ' . ((&lines * 27 + 30) / 60)
 exe 'vert 11resize ' . ((&columns * 1 + 118) / 236)
 exe '12resize ' . ((&lines * 1 + 30) / 60)
 exe 'vert 12resize ' . ((&columns * 1 + 118) / 236)
 exe '13resize ' . ((&lines * 1 + 30) / 60)
 exe 'vert 13resize ' . ((&columns * 1 + 118) / 236)
-exe '14resize ' . ((&lines * 1 + 30) / 60)
-exe 'vert 14resize ' . ((&columns * 20 + 118) / 236)
+exe '14resize ' . ((&lines * 52 + 30) / 60)
+exe 'vert 14resize ' . ((&columns * 1 + 118) / 236)
 exe '15resize ' . ((&lines * 1 + 30) / 60)
-exe 'vert 15resize ' . ((&columns * 20 + 118) / 236)
+exe 'vert 15resize ' . ((&columns * 1 + 118) / 236)
 exe '16resize ' . ((&lines * 1 + 30) / 60)
-exe 'vert 16resize ' . ((&columns * 20 + 118) / 236)
+exe 'vert 16resize ' . ((&columns * 1 + 118) / 236)
 exe '17resize ' . ((&lines * 1 + 30) / 60)
-exe 'vert 17resize ' . ((&columns * 20 + 118) / 236)
+exe 'vert 17resize ' . ((&columns * 69 + 118) / 236)
 exe '18resize ' . ((&lines * 1 + 30) / 60)
-exe 'vert 18resize ' . ((&columns * 20 + 118) / 236)
+exe 'vert 18resize ' . ((&columns * 69 + 118) / 236)
 exe '19resize ' . ((&lines * 1 + 30) / 60)
-exe 'vert 19resize ' . ((&columns * 20 + 118) / 236)
+exe 'vert 19resize ' . ((&columns * 69 + 118) / 236)
 exe '20resize ' . ((&lines * 1 + 30) / 60)
-exe 'vert 20resize ' . ((&columns * 20 + 118) / 236)
+exe 'vert 20resize ' . ((&columns * 69 + 118) / 236)
 exe '21resize ' . ((&lines * 1 + 30) / 60)
-exe 'vert 21resize ' . ((&columns * 20 + 118) / 236)
+exe 'vert 21resize ' . ((&columns * 69 + 118) / 236)
 exe '22resize ' . ((&lines * 1 + 30) / 60)
-exe 'vert 22resize ' . ((&columns * 20 + 118) / 236)
-exe '23resize ' . ((&lines * 36 + 30) / 60)
-exe 'vert 23resize ' . ((&columns * 20 + 118) / 236)
+exe 'vert 22resize ' . ((&columns * 69 + 118) / 236)
+exe '23resize ' . ((&lines * 1 + 30) / 60)
+exe 'vert 23resize ' . ((&columns * 69 + 118) / 236)
 exe '24resize ' . ((&lines * 1 + 30) / 60)
-exe 'vert 24resize ' . ((&columns * 20 + 118) / 236)
+exe 'vert 24resize ' . ((&columns * 69 + 118) / 236)
 exe '25resize ' . ((&lines * 1 + 30) / 60)
-exe 'vert 25resize ' . ((&columns * 20 + 118) / 236)
+exe 'vert 25resize ' . ((&columns * 69 + 118) / 236)
+exe '26resize ' . ((&lines * 18 + 30) / 60)
+exe 'vert 26resize ' . ((&columns * 69 + 118) / 236)
+exe '27resize ' . ((&lines * 17 + 30) / 60)
+exe 'vert 27resize ' . ((&columns * 69 + 118) / 236)
+exe '28resize ' . ((&lines * 1 + 30) / 60)
+exe 'vert 28resize ' . ((&columns * 69 + 118) / 236)
+exe '29resize ' . ((&lines * 1 + 30) / 60)
+exe 'vert 29resize ' . ((&columns * 69 + 118) / 236)
 argglobal
 setlocal keymap=
 setlocal noarabic
@@ -354,7 +377,119 @@ set nowrap
 setlocal nowrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 1 - ((0 * winheight(0) + 3) / 7)
+let s:l = 48 - ((23 * winheight(0) + 12) / 24)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+48
+normal! 04|
+lcd C:\xampp\htdocs\tboc\mlt
+wincmd w
+argglobal
+edit C:\xampp\htdocs\tboc\mlt\css\login.css
+setlocal keymap=
+setlocal noarabic
+setlocal autoindent
+setlocal balloonexpr=
+setlocal nobinary
+setlocal bufhidden=
+setlocal buflisted
+setlocal buftype=
+setlocal nocindent
+setlocal cinkeys=0{,0},0),:,0#,!^F,o,O,e
+setlocal cinoptions=
+setlocal cinwords=if,else,while,do,for,switch
+setlocal colorcolumn=
+setlocal comments=s1:/*,mb:*,ex:*/
+setlocal commentstring=/*%s*/
+setlocal complete=.,w,b,u,t,i
+setlocal concealcursor=
+setlocal conceallevel=0
+setlocal completefunc=
+setlocal copyindent
+setlocal cryptmethod=
+setlocal nocursorbind
+setlocal nocursorcolumn
+setlocal nocursorline
+setlocal define=
+setlocal dictionary=
+setlocal nodiff
+setlocal equalprg=
+setlocal errorformat=
+setlocal noexpandtab
+if &filetype != 'css'
+setlocal filetype=css
+endif
+setlocal foldcolumn=0
+setlocal foldenable
+setlocal foldexpr=0
+setlocal foldignore=#
+setlocal foldlevel=0
+setlocal foldmarker={{{,}}}
+setlocal foldmethod=manual
+setlocal foldminlines=1
+setlocal foldnestmax=20
+setlocal foldtext=foldtext()
+setlocal formatexpr=
+setlocal formatoptions=croql
+setlocal formatlistpat=^\\s*\\d\\+[\\]:.)}\\t\ ]\\s*
+setlocal grepprg=
+setlocal iminsert=2
+setlocal imsearch=2
+setlocal include=^\\s*@import\\s\\+\\%(url(\\)\\=
+setlocal includeexpr=
+setlocal indentexpr=GetCSSIndent()
+setlocal indentkeys=0{,0},!^F,o,O
+setlocal noinfercase
+setlocal iskeyword=@,48-57,_,192-255,-
+setlocal keywordprg=
+setlocal nolinebreak
+setlocal nolisp
+setlocal nolist
+setlocal makeprg=
+setlocal matchpairs=(:),{:},[:]
+setlocal modeline
+setlocal modifiable
+setlocal nrformats=octal,hex
+setlocal nonumber
+setlocal numberwidth=4
+setlocal omnifunc=csscomplete#CompleteCSS
+setlocal path=
+setlocal nopreserveindent
+setlocal nopreviewwindow
+setlocal quoteescape=\\
+setlocal noreadonly
+setlocal norelativenumber
+setlocal norightleft
+setlocal rightleftcmd=search
+setlocal noscrollbind
+setlocal shiftwidth=2
+setlocal noshortname
+setlocal nosmartindent
+setlocal softtabstop=0
+setlocal nospell
+setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
+setlocal spellfile=
+setlocal spelllang=en
+setlocal statusline=
+setlocal suffixesadd=
+setlocal noswapfile
+setlocal synmaxcol=3000
+if &syntax != 'css'
+setlocal syntax=css
+endif
+setlocal tabstop=2
+setlocal tags=C:/xampp/htdocs/tboc/mlt/.git/css.tags,C:/xampp/htdocs/tboc/mlt/.git/tags,./tags,tags
+setlocal textwidth=0
+setlocal thesaurus=
+setlocal noundofile
+setlocal nowinfixheight
+setlocal nowinfixwidth
+set nowrap
+setlocal nowrap
+setlocal wrapmargin=0
+silent! normal! zE
+let s:l = 1 - ((0 * winheight(0) + 11) / 23)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
@@ -466,7 +601,7 @@ set nowrap
 setlocal nowrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 1 - ((0 * winheight(0) + 4) / 9)
+let s:l = 1 - ((0 * winheight(0) + 0) / 1)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
@@ -578,7 +713,7 @@ set nowrap
 setlocal nowrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 1 - ((0 * winheight(0) + 17) / 34)
+let s:l = 1 - ((0 * winheight(0) + 0) / 1)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
@@ -690,11 +825,11 @@ set nowrap
 setlocal nowrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 4 - ((0 * winheight(0) + 0) / 1)
+let s:l = 1 - ((0 * winheight(0) + 0) / 1)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-4
+1
 normal! 0
 lcd C:\xampp\htdocs\tboc\mlt
 wincmd w
@@ -923,6 +1058,123 @@ normal! 0
 lcd C:\xampp\htdocs\tboc\mlt
 wincmd w
 argglobal
+edit C:\xampp\htdocs\tboc\mlt\login.php
+onoremap <buffer> <silent> [[ ?\(.*\%#\)\@!\_^\s*\zs\(\(abstract\s\+\|final\s\+\|private\s\+\|protected\s\+\|public\s\+\|static\s\+\)*function\|\(abstract\s\+\|final\s\+\)*class\|interface\)?:nohls
+nnoremap <buffer> <silent> [[ ?\(.*\%#\)\@!\_^\s*\zs\(\(abstract\s\+\|final\s\+\|private\s\+\|protected\s\+\|public\s\+\|static\s\+\)*function\|\(abstract\s\+\|final\s\+\)*class\|interface\)?:nohls
+onoremap <buffer> <silent> ]] /\(.*\%#\)\@!\_^\s*\zs\(\(abstract\s\+\|final\s\+\|private\s\+\|protected\s\+\|public\s\+\|static\s\+\)*function\|\(abstract\s\+\|final\s\+\)*class\|interface\)/:nohls
+nnoremap <buffer> <silent> ]] /\(.*\%#\)\@!\_^\s*\zs\(\(abstract\s\+\|final\s\+\|private\s\+\|protected\s\+\|public\s\+\|static\s\+\)*function\|\(abstract\s\+\|final\s\+\)*class\|interface\)/:nohls
+setlocal keymap=
+setlocal noarabic
+setlocal noautoindent
+setlocal balloonexpr=
+setlocal nobinary
+setlocal bufhidden=
+setlocal buflisted
+setlocal buftype=
+setlocal nocindent
+setlocal cinkeys=0{,0},0),:,0#,!^F,o,O,e
+setlocal cinoptions=
+setlocal cinwords=if,else,while,do,for,switch
+setlocal colorcolumn=
+setlocal comments=s1:/*,mb:*,ex:*/,://,:#
+setlocal commentstring=/*%s*/
+setlocal complete=.,w,b,u,t,i
+setlocal concealcursor=
+setlocal conceallevel=0
+setlocal completefunc=
+setlocal copyindent
+setlocal cryptmethod=
+setlocal nocursorbind
+setlocal nocursorcolumn
+setlocal nocursorline
+setlocal define=
+setlocal dictionary=
+setlocal nodiff
+setlocal equalprg=
+setlocal errorformat=
+setlocal noexpandtab
+if &filetype != 'php'
+setlocal filetype=php
+endif
+setlocal foldcolumn=0
+setlocal foldenable
+setlocal foldexpr=0
+setlocal foldignore=#
+setlocal foldlevel=0
+setlocal foldmarker={{{,}}}
+setlocal foldmethod=manual
+setlocal foldminlines=1
+setlocal foldnestmax=20
+setlocal foldtext=foldtext()
+setlocal formatexpr=
+setlocal formatoptions=qrowcb
+setlocal formatlistpat=^\\s*\\d\\+[\\]:.)}\\t\ ]\\s*
+setlocal grepprg=
+setlocal iminsert=2
+setlocal imsearch=2
+setlocal include=\\(require\\|include\\)\\(_once\\)\\?
+setlocal includeexpr=
+setlocal indentexpr=GetPhpIndent()
+setlocal indentkeys=0{,0},0),:,!^F,o,O,e,*<Return>,=?>,=<?,=*/
+setlocal noinfercase
+setlocal iskeyword=@,48-57,_,192-255
+setlocal keywordprg=
+setlocal nolinebreak
+setlocal nolisp
+setlocal nolist
+setlocal makeprg=
+setlocal matchpairs=(:),{:},[:],<:>
+setlocal modeline
+setlocal modifiable
+setlocal nrformats=octal,hex
+set number
+setlocal number
+setlocal numberwidth=4
+setlocal omnifunc=phpcomplete#CompletePHP
+setlocal path=
+setlocal nopreserveindent
+setlocal nopreviewwindow
+setlocal quoteescape=\\
+setlocal noreadonly
+setlocal norelativenumber
+setlocal norightleft
+setlocal rightleftcmd=search
+setlocal noscrollbind
+setlocal shiftwidth=2
+setlocal noshortname
+setlocal nosmartindent
+setlocal softtabstop=0
+setlocal nospell
+setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
+setlocal spellfile=
+setlocal spelllang=en
+setlocal statusline=
+setlocal suffixesadd=
+setlocal noswapfile
+setlocal synmaxcol=3000
+if &syntax != 'php'
+setlocal syntax=php
+endif
+setlocal tabstop=2
+setlocal tags=C:/xampp/htdocs/tboc/mlt/.git/php.tags,C:/xampp/htdocs/tboc/mlt/.git/tags,./tags,tags
+setlocal textwidth=0
+setlocal thesaurus=
+setlocal noundofile
+setlocal nowinfixheight
+setlocal nowinfixwidth
+set nowrap
+setlocal nowrap
+setlocal wrapmargin=0
+silent! normal! zE
+let s:l = 17 - ((16 * winheight(0) + 29) / 58)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+17
+normal! 08|
+lcd C:\xampp\htdocs\tboc\mlt
+wincmd w
+argglobal
 edit C:\xampp\htdocs\tboc\mlt\index.php
 onoremap <buffer> <silent> [[ ?\(.*\%#\)\@!\_^\s*\zs\(\(abstract\s\+\|final\s\+\|private\s\+\|protected\s\+\|public\s\+\|static\s\+\)*function\|\(abstract\s\+\|final\s\+\)*class\|interface\)?:nohls
 nnoremap <buffer> <silent> [[ ?\(.*\%#\)\@!\_^\s*\zs\(\(abstract\s\+\|final\s\+\|private\s\+\|protected\s\+\|public\s\+\|static\s\+\)*function\|\(abstract\s\+\|final\s\+\)*class\|interface\)?:nohls
@@ -992,7 +1244,8 @@ setlocal matchpairs=(:),{:},[:],<:>
 setlocal modeline
 setlocal modifiable
 setlocal nrformats=octal,hex
-setlocal nonumber
+set number
+setlocal number
 setlocal numberwidth=4
 setlocal omnifunc=phpcomplete#CompletePHP
 setlocal path=
@@ -1030,12 +1283,124 @@ set nowrap
 setlocal nowrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 645 - ((5 * winheight(0) + 29) / 58)
+let s:l = 45 - ((36 * winheight(0) + 29) / 58)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-645
-normal! 010|
+45
+normal! 046|
+lcd C:\xampp\htdocs\tboc\mlt
+wincmd w
+argglobal
+edit C:\xampp\htdocs\tboc\mlt\js\login.js
+setlocal keymap=
+setlocal noarabic
+setlocal autoindent
+setlocal balloonexpr=
+setlocal nobinary
+setlocal bufhidden=
+setlocal buflisted
+setlocal buftype=
+setlocal cindent
+setlocal cinkeys=0{,0},0),:,0#,!^F,o,O,e
+setlocal cinoptions=j1,J1
+setlocal cinwords=if,else,while,do,for,switch
+setlocal colorcolumn=
+setlocal comments=sO:*\ -,mO:*\ \ ,exO:*/,s1:/*,mb:*,ex:*/,://
+setlocal commentstring=//%s
+setlocal complete=.,w,b,u,t,i
+setlocal concealcursor=
+setlocal conceallevel=0
+setlocal completefunc=
+setlocal copyindent
+setlocal cryptmethod=
+setlocal nocursorbind
+setlocal nocursorcolumn
+setlocal nocursorline
+setlocal define=
+setlocal dictionary=
+setlocal nodiff
+setlocal equalprg=
+setlocal errorformat=
+setlocal noexpandtab
+if &filetype != 'javascript'
+setlocal filetype=javascript
+endif
+setlocal foldcolumn=0
+setlocal foldenable
+setlocal foldexpr=0
+setlocal foldignore=#
+setlocal foldlevel=0
+setlocal foldmarker={{{,}}}
+setlocal foldmethod=manual
+setlocal foldminlines=1
+setlocal foldnestmax=20
+setlocal foldtext=foldtext()
+setlocal formatexpr=
+setlocal formatoptions=croql
+setlocal formatlistpat=^\\s*\\d\\+[\\]:.)}\\t\ ]\\s*
+setlocal grepprg=
+setlocal iminsert=2
+setlocal imsearch=2
+setlocal include=
+setlocal includeexpr=
+setlocal indentexpr=
+setlocal indentkeys=0{,0},:,0#,!^F,o,O,e
+setlocal noinfercase
+setlocal iskeyword=@,48-57,_,192-255
+setlocal keywordprg=
+setlocal nolinebreak
+setlocal nolisp
+setlocal nolist
+setlocal makeprg=
+setlocal matchpairs=(:),{:},[:]
+setlocal modeline
+setlocal modifiable
+setlocal nrformats=octal,hex
+setlocal nonumber
+setlocal numberwidth=4
+setlocal omnifunc=javascriptcomplete#CompleteJS
+setlocal path=
+setlocal nopreserveindent
+setlocal nopreviewwindow
+setlocal quoteescape=\\
+setlocal noreadonly
+setlocal norelativenumber
+setlocal norightleft
+setlocal rightleftcmd=search
+setlocal noscrollbind
+setlocal shiftwidth=2
+setlocal noshortname
+setlocal nosmartindent
+setlocal softtabstop=0
+setlocal nospell
+setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
+setlocal spellfile=
+setlocal spelllang=en
+setlocal statusline=
+setlocal suffixesadd=
+setlocal noswapfile
+setlocal synmaxcol=3000
+if &syntax != 'javascript'
+setlocal syntax=javascript
+endif
+setlocal tabstop=2
+setlocal tags=C:/xampp/htdocs/tboc/mlt/.git/javascript.tags,C:/xampp/htdocs/tboc/mlt/.git/tags,./tags,tags
+setlocal textwidth=0
+setlocal thesaurus=
+setlocal noundofile
+setlocal nowinfixheight
+setlocal nowinfixwidth
+set nowrap
+setlocal nowrap
+setlocal wrapmargin=0
+silent! normal! zE
+let s:l = 24 - ((15 * winheight(0) + 14) / 28)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+24
+normal! 0
 lcd C:\xampp\htdocs\tboc\mlt
 wincmd w
 argglobal
@@ -1142,12 +1507,12 @@ set nowrap
 setlocal nowrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 1 - ((0 * winheight(0) + 28) / 56)
+let s:l = 672 - ((9 * winheight(0) + 13) / 27)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-1
-normal! 0
+672
+normal! 022|
 lcd C:\xampp\htdocs\tboc\mlt
 wincmd w
 argglobal
@@ -2776,6 +3141,122 @@ normal! 0
 lcd C:\xampp\htdocs\tboc\mlt
 wincmd w
 argglobal
+edit C:\xampp\htdocs\tboc\mlt\php\login_request.php
+onoremap <buffer> <silent> [[ ?\(.*\%#\)\@!\_^\s*\zs\(\(abstract\s\+\|final\s\+\|private\s\+\|protected\s\+\|public\s\+\|static\s\+\)*function\|\(abstract\s\+\|final\s\+\)*class\|interface\)?:nohls
+nnoremap <buffer> <silent> [[ ?\(.*\%#\)\@!\_^\s*\zs\(\(abstract\s\+\|final\s\+\|private\s\+\|protected\s\+\|public\s\+\|static\s\+\)*function\|\(abstract\s\+\|final\s\+\)*class\|interface\)?:nohls
+onoremap <buffer> <silent> ]] /\(.*\%#\)\@!\_^\s*\zs\(\(abstract\s\+\|final\s\+\|private\s\+\|protected\s\+\|public\s\+\|static\s\+\)*function\|\(abstract\s\+\|final\s\+\)*class\|interface\)/:nohls
+nnoremap <buffer> <silent> ]] /\(.*\%#\)\@!\_^\s*\zs\(\(abstract\s\+\|final\s\+\|private\s\+\|protected\s\+\|public\s\+\|static\s\+\)*function\|\(abstract\s\+\|final\s\+\)*class\|interface\)/:nohls
+setlocal keymap=
+setlocal noarabic
+setlocal noautoindent
+setlocal balloonexpr=
+setlocal nobinary
+setlocal bufhidden=
+setlocal buflisted
+setlocal buftype=
+setlocal nocindent
+setlocal cinkeys=0{,0},0),:,0#,!^F,o,O,e
+setlocal cinoptions=
+setlocal cinwords=if,else,while,do,for,switch
+setlocal colorcolumn=
+setlocal comments=s1:/*,mb:*,ex:*/,://,:#
+setlocal commentstring=/*%s*/
+setlocal complete=.,w,b,u,t,i
+setlocal concealcursor=
+setlocal conceallevel=0
+setlocal completefunc=
+setlocal copyindent
+setlocal cryptmethod=
+setlocal nocursorbind
+setlocal nocursorcolumn
+setlocal nocursorline
+setlocal define=
+setlocal dictionary=
+setlocal nodiff
+setlocal equalprg=
+setlocal errorformat=
+setlocal noexpandtab
+if &filetype != 'php'
+setlocal filetype=php
+endif
+setlocal foldcolumn=0
+setlocal foldenable
+setlocal foldexpr=0
+setlocal foldignore=#
+setlocal foldlevel=0
+setlocal foldmarker={{{,}}}
+setlocal foldmethod=manual
+setlocal foldminlines=1
+setlocal foldnestmax=20
+setlocal foldtext=foldtext()
+setlocal formatexpr=
+setlocal formatoptions=qrowcb
+setlocal formatlistpat=^\\s*\\d\\+[\\]:.)}\\t\ ]\\s*
+setlocal grepprg=
+setlocal iminsert=2
+setlocal imsearch=2
+setlocal include=\\(require\\|include\\)\\(_once\\)\\?
+setlocal includeexpr=
+setlocal indentexpr=GetPhpIndent()
+setlocal indentkeys=0{,0},0),:,!^F,o,O,e,*<Return>,=?>,=<?,=*/
+setlocal noinfercase
+setlocal iskeyword=@,48-57,_,192-255
+setlocal keywordprg=
+setlocal nolinebreak
+setlocal nolisp
+setlocal nolist
+setlocal makeprg=
+setlocal matchpairs=(:),{:},[:],<:>
+setlocal modeline
+setlocal modifiable
+setlocal nrformats=octal,hex
+setlocal nonumber
+setlocal numberwidth=4
+setlocal omnifunc=phpcomplete#CompletePHP
+setlocal path=
+setlocal nopreserveindent
+setlocal nopreviewwindow
+setlocal quoteescape=\\
+setlocal noreadonly
+setlocal norelativenumber
+setlocal norightleft
+setlocal rightleftcmd=search
+setlocal noscrollbind
+setlocal shiftwidth=2
+setlocal noshortname
+setlocal nosmartindent
+setlocal softtabstop=0
+setlocal nospell
+setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
+setlocal spellfile=
+setlocal spelllang=en
+setlocal statusline=
+setlocal suffixesadd=
+setlocal noswapfile
+setlocal synmaxcol=3000
+if &syntax != 'php'
+setlocal syntax=php
+endif
+setlocal tabstop=2
+setlocal tags=C:/xampp/htdocs/tboc/mlt/.git/php.tags,C:/xampp/htdocs/tboc/mlt/.git/tags,./tags,tags
+setlocal textwidth=0
+setlocal thesaurus=
+setlocal noundofile
+setlocal nowinfixheight
+setlocal nowinfixwidth
+set nowrap
+setlocal nowrap
+setlocal wrapmargin=0
+silent! normal! zE
+let s:l = 13 - ((12 * winheight(0) + 9) / 18)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+13
+normal! 047|
+lcd C:\xampp\htdocs\tboc\mlt
+wincmd w
+argglobal
 edit C:\xampp\htdocs\tboc\mlt\php\submit.php
 onoremap <buffer> <silent> [[ ?\(.*\%#\)\@!\_^\s*\zs\(\(abstract\s\+\|final\s\+\|private\s\+\|protected\s\+\|public\s\+\|static\s\+\)*function\|\(abstract\s\+\|final\s\+\)*class\|interface\)?:nohls
 nnoremap <buffer> <silent> [[ ?\(.*\%#\)\@!\_^\s*\zs\(\(abstract\s\+\|final\s\+\|private\s\+\|protected\s\+\|public\s\+\|static\s\+\)*function\|\(abstract\s\+\|final\s\+\)*class\|interface\)?:nohls
@@ -2883,17 +3364,12 @@ set nowrap
 setlocal nowrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 1 - ((0 * winheight(0) + 18) / 36)
+let s:l = 6 - ((2 * winheight(0) + 8) / 17)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-1
-let s:c = 19 - ((0 * winwidth(0) + 10) / 20)
-if s:c > 0
-  exe 'normal! ' . s:c . '|zs' . 19 . '|'
-else
-  normal! 019|
-endif
+6
+normal! 0
 lcd C:\xampp\htdocs\tboc\mlt
 wincmd w
 argglobal
@@ -3128,56 +3604,62 @@ normal! zt
 normal! 0
 lcd C:\xampp\htdocs\tboc\mlt
 wincmd w
-3wincmd w
-exe '1resize ' . ((&lines * 7 + 30) / 60)
-exe 'vert 1resize ' . ((&columns * 46 + 118) / 236)
-exe '2resize ' . ((&lines * 9 + 30) / 60)
-exe 'vert 2resize ' . ((&columns * 46 + 118) / 236)
-exe '3resize ' . ((&lines * 34 + 30) / 60)
-exe 'vert 3resize ' . ((&columns * 46 + 118) / 236)
+exe '1resize ' . ((&lines * 24 + 30) / 60)
+exe 'vert 1resize ' . ((&columns * 56 + 118) / 236)
+exe '2resize ' . ((&lines * 23 + 30) / 60)
+exe 'vert 2resize ' . ((&columns * 56 + 118) / 236)
+exe '3resize ' . ((&lines * 1 + 30) / 60)
+exe 'vert 3resize ' . ((&columns * 56 + 118) / 236)
 exe '4resize ' . ((&lines * 1 + 30) / 60)
-exe 'vert 4resize ' . ((&columns * 46 + 118) / 236)
+exe 'vert 4resize ' . ((&columns * 56 + 118) / 236)
 exe '5resize ' . ((&lines * 1 + 30) / 60)
-exe 'vert 5resize ' . ((&columns * 46 + 118) / 236)
+exe 'vert 5resize ' . ((&columns * 56 + 118) / 236)
 exe '6resize ' . ((&lines * 1 + 30) / 60)
-exe 'vert 6resize ' . ((&columns * 46 + 118) / 236)
-exe 'vert 7resize ' . ((&columns * 164 + 118) / 236)
-exe '8resize ' . ((&lines * 56 + 30) / 60)
-exe 'vert 8resize ' . ((&columns * 1 + 118) / 236)
-exe '9resize ' . ((&lines * 1 + 30) / 60)
-exe 'vert 9resize ' . ((&columns * 1 + 118) / 236)
-exe '10resize ' . ((&lines * 1 + 30) / 60)
+exe 'vert 6resize ' . ((&columns * 56 + 118) / 236)
+exe '7resize ' . ((&lines * 1 + 30) / 60)
+exe 'vert 7resize ' . ((&columns * 56 + 118) / 236)
+exe 'vert 8resize ' . ((&columns * 27 + 118) / 236)
+exe 'vert 9resize ' . ((&columns * 77 + 118) / 236)
+exe '10resize ' . ((&lines * 28 + 30) / 60)
 exe 'vert 10resize ' . ((&columns * 1 + 118) / 236)
-exe '11resize ' . ((&lines * 52 + 30) / 60)
+exe '11resize ' . ((&lines * 27 + 30) / 60)
 exe 'vert 11resize ' . ((&columns * 1 + 118) / 236)
 exe '12resize ' . ((&lines * 1 + 30) / 60)
 exe 'vert 12resize ' . ((&columns * 1 + 118) / 236)
 exe '13resize ' . ((&lines * 1 + 30) / 60)
 exe 'vert 13resize ' . ((&columns * 1 + 118) / 236)
-exe '14resize ' . ((&lines * 1 + 30) / 60)
-exe 'vert 14resize ' . ((&columns * 20 + 118) / 236)
+exe '14resize ' . ((&lines * 52 + 30) / 60)
+exe 'vert 14resize ' . ((&columns * 1 + 118) / 236)
 exe '15resize ' . ((&lines * 1 + 30) / 60)
-exe 'vert 15resize ' . ((&columns * 20 + 118) / 236)
+exe 'vert 15resize ' . ((&columns * 1 + 118) / 236)
 exe '16resize ' . ((&lines * 1 + 30) / 60)
-exe 'vert 16resize ' . ((&columns * 20 + 118) / 236)
+exe 'vert 16resize ' . ((&columns * 1 + 118) / 236)
 exe '17resize ' . ((&lines * 1 + 30) / 60)
-exe 'vert 17resize ' . ((&columns * 20 + 118) / 236)
+exe 'vert 17resize ' . ((&columns * 69 + 118) / 236)
 exe '18resize ' . ((&lines * 1 + 30) / 60)
-exe 'vert 18resize ' . ((&columns * 20 + 118) / 236)
+exe 'vert 18resize ' . ((&columns * 69 + 118) / 236)
 exe '19resize ' . ((&lines * 1 + 30) / 60)
-exe 'vert 19resize ' . ((&columns * 20 + 118) / 236)
+exe 'vert 19resize ' . ((&columns * 69 + 118) / 236)
 exe '20resize ' . ((&lines * 1 + 30) / 60)
-exe 'vert 20resize ' . ((&columns * 20 + 118) / 236)
+exe 'vert 20resize ' . ((&columns * 69 + 118) / 236)
 exe '21resize ' . ((&lines * 1 + 30) / 60)
-exe 'vert 21resize ' . ((&columns * 20 + 118) / 236)
+exe 'vert 21resize ' . ((&columns * 69 + 118) / 236)
 exe '22resize ' . ((&lines * 1 + 30) / 60)
-exe 'vert 22resize ' . ((&columns * 20 + 118) / 236)
-exe '23resize ' . ((&lines * 36 + 30) / 60)
-exe 'vert 23resize ' . ((&columns * 20 + 118) / 236)
+exe 'vert 22resize ' . ((&columns * 69 + 118) / 236)
+exe '23resize ' . ((&lines * 1 + 30) / 60)
+exe 'vert 23resize ' . ((&columns * 69 + 118) / 236)
 exe '24resize ' . ((&lines * 1 + 30) / 60)
-exe 'vert 24resize ' . ((&columns * 20 + 118) / 236)
+exe 'vert 24resize ' . ((&columns * 69 + 118) / 236)
 exe '25resize ' . ((&lines * 1 + 30) / 60)
-exe 'vert 25resize ' . ((&columns * 20 + 118) / 236)
+exe 'vert 25resize ' . ((&columns * 69 + 118) / 236)
+exe '26resize ' . ((&lines * 18 + 30) / 60)
+exe 'vert 26resize ' . ((&columns * 69 + 118) / 236)
+exe '27resize ' . ((&lines * 17 + 30) / 60)
+exe 'vert 27resize ' . ((&columns * 69 + 118) / 236)
+exe '28resize ' . ((&lines * 1 + 30) / 60)
+exe 'vert 28resize ' . ((&columns * 69 + 118) / 236)
+exe '29resize ' . ((&lines * 1 + 30) / 60)
+exe 'vert 29resize ' . ((&columns * 69 + 118) / 236)
 tabnext 1
 if exists('s:wipebuf')
   silent exe 'bwipe ' . s:wipebuf
@@ -3192,4 +3674,3 @@ let &so = s:so_save | let &siso = s:siso_save
 doautoall SessionLoadPost
 unlet SessionLoad
 " vim: set ft=vim :
-let @/=''

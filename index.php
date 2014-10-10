@@ -30,10 +30,33 @@
 	</head>
 	<body>
 	<center>
+
+<div id='user_container'>
+	<span id='user'><?php session_start(); echo $_SESSION['user']; ?></span>
+	<?php 
+		if (isset($_SESSION)){
+			echo "
+				<div id='user_drop'>
+					<ul>
+						<li class='user_drop_li'>Log Out</li>
+						<li class='user_drop_li'>Change Password</li>
+						";
+						if($_SESSION['privileges']=='1'){
+							echo "
+								<li class='user_drop_li'>Modify Privelages</li>
+							";
+						}
+						echo"
+					</ul>
+				</div>
+			";
+		}
+	?>
+</div>
+
 		<div id='header'>
 			<span id='header_text'>Mortgage Loans Tracker</span>
 			<span id='version'>Beta 1.6</span>
-			<span id='user'><?php /*echo $_SESSION['user'];*/ ?></span>
 		</div>
 		<div id='body'>
 			<div id='doc'>
