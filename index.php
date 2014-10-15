@@ -1,10 +1,8 @@
 <?php /*session_start(); if(!isset($_SESSION['user'])){header('Location:login.php');};*/ ?>
-<!DOCTYPE HTML>
-<!--[if lt IE 7 ]> <html class="ie6" lang="en"> <![endif]-->
-<!--[if IE 7 ]>    <html class="ie7" lang="en"> <![endif]-->
-<!--[if IE 8 ]>    <html class="ie8" lang="en"> <![endif]-->
-<!--[if (gte IE 9)|!(IE)]><!--> <html lang="en"> <!--<![endif]-->
-<!--<html>-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html>
+<meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <!--
 	Mortgage Loan Tracker: An interactive mortgage loan form
 	Copyright (C) 2014 Jordan Elder
@@ -29,30 +27,29 @@
 		<link rel='shortcut icon' href='res/favicon.png' />
 	</head>
 	<body>
-	<center>
-
-<div id='user_container'>
-	<span id='user'><?php session_start(); echo $_SESSION['user']; ?></span>
-	<?php 
-		if (isset($_SESSION)){
-			echo "
-				<div id='user_drop'>
-					<ul>
-						<li class='user_drop_li'>Log Out</li>
-						<li class='user_drop_li'>Change Password</li>
-						";
-						if($_SESSION['privileges']=='1'){
-							echo "
-								<li class='user_drop_li'>Modify Privelages</li>
-							";
-						}
-						echo"
-					</ul>
-				</div>
-			";
-		}
-	?>
-</div>
+		<div id='user_container'>
+			<span id='user'><?php /* session_start(); echo $_SESSION['user']; */ ?></span>
+			<?php 
+				// if (isset($_SESSION)){
+				/*	echo "
+						<div id='user_drop'>
+							<ul>
+								<li class='user_drop_li'>Log Out</li>
+								<li class='user_drop_li'>Change Password</li>
+								";
+								if($_SESSION['privileges']=='1'){
+									echo "
+										<li class='user_drop_li'>Modify Privelages</li>
+									";
+								}
+								echo"
+							</ul>
+						</div>
+					";
+				*/
+				// }
+			?>
+		</div>
 
 		<div id='header'>
 			<span id='header_text'>Mortgage Loans Tracker</span>
@@ -687,6 +684,6 @@
 
 		<script type='text/javascript' src='js/jquery.js'></script>
 		<script type='text/javascript' src='js/index.js'></script>
-	</center>
+		<script type='text/javascript' src='js/PIE.js'></script>
 	</body>
 </html>

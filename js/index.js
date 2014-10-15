@@ -335,6 +335,7 @@ function set_session(first,last){
 	// Customer Name
 	// when focused, field.value =''. Ignore the css(color) -> it was just eyecandy.
 	// when blured value = field.alt (check index.php for inline alt attribute)
+/*
 	$('input[type="text"]').focus(function(){
 		$(this).attr('value', '').css({'color':'black'}).select();
 	}).blur(function(){
@@ -355,6 +356,7 @@ function set_session(first,last){
 			$(this).css({'color':'gray','text-align':'center'});
 		}
 	});
+	*/
 
 	// Customer Name Check -- These should be placed near the top
 	$('#first').blur(function(){
