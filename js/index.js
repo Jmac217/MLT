@@ -63,6 +63,69 @@ $(document).ready(function(){
 	// 	append customer as a class to the list
 	// ---
 
+
+	$.getJSON('json/users.json', function(users){
+		/*** global session var `user` ***/
+		var username = users.users[0].name;
+		var admin = users.users[0].admin;
+		alert(username+' '+admin);
+		$('#user_name').html(username);
+		if (username !== null && admin !== null){
+			$.getJSON('json/user_settings.json', function(user_settings){
+				$.each(user_settings, function(key, value){
+					alert(key+', '+value);
+					if(admin == 'true'){
+								
+					}
+				});
+			});
+		}
+	});
+
+
+	/*** in case async:false becomes necessary ***/
+	/*
+	$.ajax({
+		dataType: 'json',
+		url: 'json/users.json',
+		async: false,
+		success: function(users){
+			var username = users.users[0].name;
+			var admin = users.users[0].admin;
+			alert(username+' '+admin);
+			$('#user_name').html(username);
+				$.ajax({
+					dataType: 'json',
+					url: 'json/users.json',
+					async: false,
+					success: function(user_settings){
+						alert(user_settings);
+						$.each(user_settings, function(key, value){
+							alert(key+', '+value);
+							if(admin == 'true'){
+										
+							}
+						});
+					}
+				});
+			}
+	});
+	*/
+
+
+
+
+	$('#user_container').click(function(){
+		$(this)
+			.animate({'height':'110px'})
+			.children('#user_drop').css({'visibility':'visible'})
+			.mouseleave(function(){
+				$(this)
+					.parent().animate({'height':'32px'})
+					.children('#user_drop').css({'visibility':'hidden'});	
+			});	
+	});
+
 	function date_selection(id, title){
 		// this should take a json template!
 		// in 'id=this.id+"*"', "*" should be removed as part of the ID and associated as a relative class
@@ -151,12 +214,12 @@ function set_session(first,last){
 	// Dropdown
 	// =======
 	$("#dropdown_extend").click(function(){
-		$("#dropdown").animate({"height":"620px"},200);
+		$("#customer_drop").animate({"height":"540px"},400);
 		$(this).css({'visibility':'hidden'});
 		$('#dropdown_close').css({'visibility':'visible'});
 	});
 	$("#dropdown_close").click(function(){
-		$("#dropdown").animate({"height":"10px"},200);
+		$("#customer_drop").animate({"height":"10px"},400);
 		$(this).css({'visibility':'hidden'});
 		$('#dropdown_extend').css({'visibility':'visible'});
 	});
@@ -335,7 +398,6 @@ function set_session(first,last){
 	// Customer Name
 	// when focused, field.value =''. Ignore the css(color) -> it was just eyecandy.
 	// when blured value = field.alt (check index.php for inline alt attribute)
-/*
 	$('input[type="text"]').focus(function(){
 		$(this).attr('value', '').css({'color':'black'}).select();
 	}).blur(function(){
@@ -356,7 +418,6 @@ function set_session(first,last){
 			$(this).css({'color':'gray','text-align':'center'});
 		}
 	});
-	*/
 
 	// Customer Name Check -- These should be placed near the top
 	$('#first').blur(function(){

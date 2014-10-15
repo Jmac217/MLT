@@ -1,0 +1,17 @@
+{
+	"logout":{
+		"name":"Logout",
+		"src":"logout()",
+		"admin":"false"
+	},
+	"password":{
+		"name":"Change Password",
+		"src":"modules/password.html",
+		"admin":"false"
+	},
+	"privileges":{
+		"name":"Modify Privileges",
+		"src":"modules/privileges.html",
+		"admin":"true"
+	}
+}
