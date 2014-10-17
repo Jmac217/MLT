@@ -1,6 +1,11 @@
 $(document).ready(function(){
 
 
+	function debug(string){
+		console.log(string);
+	}
+
+
 	// hack together the date in PHP/SQL format... jeez
 	var today = new Date();
 	if(today.getDate()+1<10){
@@ -64,23 +69,7 @@ $(document).ready(function(){
 	// ---
 
 
-	$.getJSON('json/users.json', function(users){
-		/*** global session var `user` ***/
-		var username = users.users[0].name;
-		var admin = users.users[0].admin;
-		alert(username+' '+admin);
-		$('#user_name').html(username);
-		if (username !== null && admin !== null){
-			$.getJSON('json/user_settings.json', function(user_settings){
-				$.each(user_settings, function(key, value){
-					alert(key+', '+value);
-					if(admin == 'true'){
-								
-					}
-				});
-			});
-		}
-	});
+
 
 
 	/*** in case async:false becomes necessary ***/
@@ -112,17 +101,48 @@ $(document).ready(function(){
 	});
 	*/
 
+	$.getJSON('json/users.json', function(json){
+		/*** global session var `user` ***/
+		var users = json.users[0];
+		var username = Object.keys(users);
+		var admin = users[username].admin;
+		$('.drop_title').prepend(username);
+		$.each(users[username], function(key, val){
+			switch(key) {
+				case 'password':
+					$('.drop_list').append("<a class='drop_item block'>Password</a>");	
+				break;
+				case 'admin':
+					if(val=='true'){
+						$('.drop_list').append("<a class='drop_item block'>Admin</a>");	
+					}
+				break;
+				default: alert('Case is out of scope!');break;
+			}
+		});
+		/*
+		if (username !== null && admin !== null){
+			$.getJSON('json/user_settings.json', function(user_settings){
+				$.each(user_settings, function(key, value){
+					// alert(key+', '+value);
+					if(admin == 'true'){
+						debug('admin == true');	
+					}
+				});
+			});
+		}
+		*/
+	});
 
-
-
-	$('#user_container').click(function(){
+	$('.drop_container').click(function(){
 		$(this)
 			.animate({'height':'110px'})
-			.children('#user_drop').css({'visibility':'visible'})
+			.children('.drop_title').children('.drop_list')
+			.css({'visibility':'visible'})
 			.mouseleave(function(){
 				$(this)
-					.parent().animate({'height':'32px'})
-					.children('#user_drop').css({'visibility':'hidden'});	
+					.css({'visibility':'hidden'})
+					.parent().parent().animate({'height':'32px'});
 			});	
 	});
 
@@ -398,6 +418,7 @@ function set_session(first,last){
 	// Customer Name
 	// when focused, field.value =''. Ignore the css(color) -> it was just eyecandy.
 	// when blured value = field.alt (check index.php for inline alt attribute)
+/*
 	$('input[type="text"]').focus(function(){
 		$(this).attr('value', '').css({'color':'black'}).select();
 	}).blur(function(){
@@ -418,6 +439,7 @@ function set_session(first,last){
 			$(this).css({'color':'gray','text-align':'center'});
 		}
 	});
+	*/
 
 	// Customer Name Check -- These should be placed near the top
 	$('#first').blur(function(){

@@ -1,5 +1,7 @@
 TODO
 
+A fundamental problem with using JSON that I just noticed is that ALL users get loaded with all fields to be checked for validation. That is a big no-no.
+
 Separate index.js into global.js, index.js, and dropdown.js.
   - dropdown.js needs to be able to be called from $.getScript(), or included into dropdown.php, probably the latter.
 

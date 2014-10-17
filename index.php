@@ -28,43 +28,32 @@
 	</head>
 	<body>
 <div id='slider_column'>
-		<div id='user_container' class='shadow'>
-			<div id='user_name' class='block'>
-			<?php 
-				// session_start(); 
-
-				/*** Debug ***/
-				/*
-				$_SESSION['user']='jordan';
-				$_SESSION['privileges']='1';
-				*/
-				/*** Debug ***/
-
-				// echo $_SESSION['user']; 
-			?>
+		<div id='user_settings' class='drop_container shadow'>
+			<div class='drop_title block'>
+				<div class='drop_list'></div>
 			</div>
-			<?php 
-			/*
-				if (isset($_SESSION)){
-					echo "
-						<div id='user_drop'>
-							<a class='user_drop_a block'>Log Out</a>
-							<a class='user_drop_a block'>Change Password</a>
-							";
-							if($_SESSION['privileges']=='1'){
-								echo "
-									<a class='user_drop_a block'>Modify Privelages</a>
-								";
-							}
-							echo "
-						</div>
-					";
-				}
-			*/
-			?>
 		</div>
+		<br/>
+		<div id='customer_selection' class='drop_container shadow'>
+			<input class='drop_search' type='text' placeholder='Customer Last Name Search...'/>
+			<div class='drop_title block'>
+				<div class='drop_list'></div>
+			</div>
+		</div>
+
+		<!-- customer dropdown for JS -->
+		<!--
+		<div id='customer_container' class='shadow'>
+			<input id='customer_search' type='text' placeholder='Customer Last Name Search...'/>
+			<div id='customer_name' class='block'>
+				<div id='customer_drop'></div>
+			</div>
+		</div>
+		-->
+
 		<!-- Dropdown -->
 		<!--<div id='dropdown_feedback' alt='0'></div>-->
+		<!--
 		<div id="customer_container">
 			<div id="customer" class="dropdown_box">
 				<span id="customer_name">Customers</span>
@@ -72,6 +61,7 @@
 			</div>
 			<div id="customer_drop" class="dropdown_box">
 			<?php
+				/*
 
 				include 'php/connect.php';
 
@@ -95,7 +85,7 @@
 					if(isset($row['first'])&&isset($row['last'])){
 						if($row['id']==$i){
 							//if($t=0){$top=0;}else{
-							$top = ($t*$height)/*.'px'*/; // this dynamically sets message top
+							$top = ($t*$height);//.'px'; // this dynamically sets message top
 							//}
 							$id=$row['id']; // this message_id
 									
@@ -120,6 +110,7 @@
 						}
 					}else{$i++;}
 				} if($top=0){$dropHeight=0;}else{$dropHeight=($height*$t+10);};
+				 */
 
 				/*
 				
@@ -137,6 +128,7 @@
 					<div id="dropdown_close" class="bordered"><div id="dropdown_close_text">Close</div></div>
 				</div>
 		</div>
+-->
 	</div>
 </div>
 
@@ -152,8 +144,8 @@
 				<table id='customer_input'>
 					<tr><td>Today's Date:</td><td colspan='2'><center><i><?php echo Date("m-d-Y"); ?></i></center></td></tr>
 					<tr><td>Customer Name:</td>
-							<td><input id='first' type='text' value='First Name' alt='First Name' /></td>
-							<td><input id='last' type='text' value='Last Name' alt='Last Name' /></td>
+							<td><input id='first' type='text' placeholder='First Name' alt='First Name' /></td>
+							<td><input id='last' type='text' placeholder='Last Name' alt='Last Name' /></td>
 					</tr>
 					<tr><td colspan='3'><span id='customer_name_check'>&nbsp;</span></td></tr>
 				
@@ -406,7 +398,7 @@
 					<tr>
 						<td colspan='3'>
 							<!--<input type='input' value='Appraisal Comments' id='appraisalComment' alt='Appraisal Comments' style='width:100%;' />-->
-							<textarea id='appraisal_comments' default='Appraisal Comments' alt='Appraisal Comments'>Appraisal Comments</textarea>
+							<textarea id='appraisal_comments' placeholder='Appraisal Comments' alt='Appraisal Comments'></textarea>
 						</td>
 					</tr>
 
@@ -496,7 +488,7 @@
 					<tr>
 						<td colspan='3'>
 							<!--<input type='input' value='Loan Status Comments' id='loanStatusComment' alt='Loan Status Comments'  style='width:100%;' />-->
-							<textarea id='loan_status_comments' default='Loan Status Comments' alt='Loan Status Comments'>Loan Status Comments</textarea>
+							<textarea id='loan_status_comments' placeholder='Loan Status Comments' alt='Loan Status Comments'></textarea>
 						</td>
 					</tr>
 
@@ -585,7 +577,7 @@
 					<tr>
 						<td colspan='3'>
 							<!--<input type='input' value='Title Comments' id='titleComment' alt='Title Comments' style='width:100%;' />-->
-							<textarea id='title_comments' default='Title Comments' alt='Title Comments'>Title Comments</textarea>
+							<textarea id='title_comments' placeholder='Title Comments' alt='Title Comments'></textarea>
 						</td>
 					</tr>
 					

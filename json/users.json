@@ -1,15 +1,13 @@
 {
 	"users":[{
-		"name":"Jordan",
-		"password":"123456",
-		"admin":"true"
+		"Jordan":{
+			"password":"123456",
+			"admin":"true"
+			}
 	},{
-		"name":"Jeanie",
-		"password":"123456",
-		"admin":"true"
-	},{
-		"name":"Test",
-		"password":"123456",
-		"admin":"false"
+		"Jeanie":{
+			"password":"123456",
+			"admin":"false"
+		}
 	}]
 }
