@@ -64,7 +64,7 @@ td{border:solid 1px transparent;}
 
 
 
-#doc{position:absolute;top:55px;left:8px;height:auto;width:660px;border-radius:30px 30px 100px 100px;background-color:#6d7d7d;background:-moz-linear-gradient(#6d7d7d, #3a3a3a);padding:40px 60px 60px 60px;border:solid 7px #222;border-bottom:solid 45px #222;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;-ms-box-sizing:border-box;box-sizing:border-box;behavior:url(js/PIE.htc);}
+#doc{position:absolute;top:55px;left:8px;height:auto;width:660px;border-radius:30px 30px 50px 50px;background-color:#6d7d7d;background:-moz-linear-gradient(#6d7d7d, #4b4b4b);padding:40px 60px 60px 60px;border:solid 7px #222;border-bottom:solid 45px #222;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;-ms-box-sizing:border-box;box-sizing:border-box;behavior:url(js/PIE.htc);}
 #customer_input{position:relative;width:100%;}
 #customer_name_check{position:relative;text-align:right;}
 
