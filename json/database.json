@@ -1,0 +1,71 @@
+{
+	"database":{
+		"today":{
+			"type":"script",
+			"name":"todaysDate",
+		},
+		"customer_name":{
+			"type":"input",
+			"fields":{
+				"first_name":{
+					"type":"text",
+					"value":"First Name"
+				},
+				"last_name":{
+					"type":"text",
+					"value":"Last Name"
+				}
+			}
+		},
+		"conditionally_approved":{
+			"value":"Conditionally Approved",
+			"type":"checkbox",
+			"date":"date"
+		},
+		"appraisal_ordered":{
+			"value":"Appraisal Ordered",
+			"type":"checkbox",
+			"date":"date"
+		},
+		"appraisal_approved":{
+			"value":"Appraisal Approved",
+			"type":"checkbox",
+			"date":"date"
+		},
+		"title_work_approved":{
+			"value":"Title Work Approved",
+			"type":"checkbox",
+			"date":"date"
+		},
+		"appraisal_comments":{
+			"type":"text",
+			"value":"Appraisal Comments"
+		},
+		"loan_status":{
+			"type":"radio",
+			"value":"Loan Status",
+			"fields":{
+				"proccessing_underwriting":"Processing/Underwriting",
+				"awaiting_response":"Awaiting Response",
+				"closing_prep":"Closing Prep"
+			}
+		},
+		"loan_status_comments":{
+			"type":"text",
+			"value":"Loan Status Comments"
+		},
+		"title_work_ordered":{
+			"type":"radio",
+			"value":"Title Work Ordered",
+			"fields":{
+				"no":"No",
+				"bank":"By Bank",
+				"realtor":"By Realtor"
+			}
+		},
+		"title_comments":{
+			"type":"text",
+			"value":"Title Comments"
+		}
+	}
+}

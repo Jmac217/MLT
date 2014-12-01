@@ -750,7 +750,13 @@
 		<?php // include 'php/bug.php'; ?>
 
 		<script type='text/javascript' src='js/jquery.js'></script>
+		<script type='text/javascript' src='js/global.js'></script>
+		<script type='text/javascript' src='js/functions.js'></script>
 		<script type='text/javascript' src='js/index.js'></script>
+		<script type='text/javascript' src='js/dropdown.js'></script>
+		<script type='text/javascript' src='js/request.js'></script>
+		<script type='text/javascript' src='js/bug.js'></script>
+		<script type='text/javascript' src='js/debug.js'></script>
 		<script type='text/javascript' src='js/PIE.js'></script>
 	</body>
 </html>

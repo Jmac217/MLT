@@ -1,9 +1,6 @@
 TODO
 
-A fundamental problem with using JSON that I just noticed is that ALL users get loaded with all fields to be checked for validation. That is a big no-no.
-
-Separate index.js into global.js, index.js, and dropdown.js.
-  - dropdown.js needs to be able to be called from $.getScript(), or included into dropdown.php, probably the latter.
+Linear Gradients need ported from Firefox into Chrome and Internet Explorer
 
 x Implement jsPDF for printer page 
   - Doesn't retain style, come back to this at jspdf.php
@@ -15,8 +12,6 @@ There's no proper check for duplicate name entry on submit. That must have been 
 
 o Default dates to use "today's date", 
   - and possibly add a new checkbox that says 'no date,' or 'none' that will void the date instead of it being based on 2014-01-01.
-
-comment alt check/replacement is just a little too touchy
 
 Customer Container needs restyled
 
