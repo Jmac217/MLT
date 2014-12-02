@@ -60,23 +60,78 @@ $.ajax({
 });
 */
 
-	$('.drop_container').click(function(){
-		$(this)
-			.animate({'height':'110px'})
-			.children('.drop_title').children('.drop_list')
-			.css({'visibility':'visible'})
-			.mouseleave(function(){
-				$(this)
-					.css({'visibility':'hidden'})
-					.parent().parent().animate({'height':'32px'});
-			});	
+var drop_containers_heights = new Array;
+$('.drop_container').each(function(){
+	drop_containers_heights.push($(this).height());
+});
+//alert($('.drop_container')[0]);
+$('.drop_container').click(function(){
+	//alert($(this).index());
+	var this_height = drop_containers_heights[$(this).index()];
+	var new_height = (this_height+110)+'px';
+	//alert(this_height);
+	$(this)
+		.animate({'height':new_height})
+		.children('.drop_list')
+		.css({'visibility':'visible'})
+		.mouseleave(function(){
+			$(this)
+				.css({'visibility':'hidden'})
+				.parent().animate({'height':this_height});
+		});	
+});
+
+var user='jordan',
+		pass='123456';
+
+$.ajax({
+	type:'post',
+	url:'php/login.php',
+	data:{"user":user,"pass":pass},
+	success:function(data){
+		// alert(data);
+	}
+});
+
+$.getJSON('json/users.json', function(json){
+		var users = json.users[0];
+		var username = Object.keys(users);
+		var admin = users[username].admin;
+		$('.drop_title').prepend(username);
+		$.each(users[username], function(key, val){
+			switch(key) {
+				case 'password':
+					$('.drop_list').append("<a class='drop_item block'>Password</a>");	
+				break;
+				case 'admin':
+					if(val=='true'){
+						$('.drop_list').append("<a class='drop_item block'>Admin</a>");	
+					}
+				break;
+				default: alert('Case is out of scope!');break;
+			}
+		});
+		/*
+		if (username !== null && admin !== null){
+			$.getJSON('json/user_settings.json', function(user_settings){
+				$.each(user_settings, function(key, value){
+					// alert(key+', '+value);
+					if(admin == 'true'){
+						debug('admin == true');	
+					}
+				});
+			});
+		}
+		*/
 	});
-	
-	
+
+
+
 	
 	
 // Dropdown
 // =======
+/*
 $("#dropdown_extend").click(function(){
 	$("#customer_drop").animate({"height":"540px"},400);
 	$(this).css({'visibility':'hidden'});
@@ -221,6 +276,8 @@ $('.customer').click(function(){
 		set_session($first.text(), $last.text());
 	});
 });
+*/
+/*
 $('#customer_search').click(function(){
 	$("#dropdown").animate({"height":"620px"},200);
 }).bind('keypress', function(e){
@@ -237,7 +294,8 @@ $('#customer_search').click(function(){
 		});	
 	}
 });
-
+*/
+/*
 $(".remove").hover(function(){
 		$(this).css({'background-image':'url("res/x_red.png")'});
 }).mouseout(function(){
@@ -256,6 +314,7 @@ $(".remove").hover(function(){
 		}
 	});
 });
+*/
 	
 	
 	

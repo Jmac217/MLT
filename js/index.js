@@ -36,38 +36,7 @@ $(document).ready(function(){
 	$('#title_work_approved_day').val(day);
 	$('#title_work_approved_year').val(year);
 
-	$.getJSON('json/users.json', function(json){
-		/*** global session var `user` ***/
-		var users = json.users[0];
-		var username = Object.keys(users);
-		var admin = users[username].admin;
-		$('.drop_title').prepend(username);
-		$.each(users[username], function(key, val){
-			switch(key) {
-				case 'password':
-					$('.drop_list').append("<a class='drop_item block'>Password</a>");	
-				break;
-				case 'admin':
-					if(val=='true'){
-						$('.drop_list').append("<a class='drop_item block'>Admin</a>");	
-					}
-				break;
-				default: alert('Case is out of scope!');break;
-			}
-		});
-		/*
-		if (username !== null && admin !== null){
-			$.getJSON('json/user_settings.json', function(user_settings){
-				$.each(user_settings, function(key, value){
-					// alert(key+', '+value);
-					if(admin == 'true'){
-						debug('admin == true');	
-					}
-				});
-			});
-		}
-		*/
-	});
+	
 	/*
 	function date_selection(id, title){
 		// this should take a json template!

@@ -29,16 +29,13 @@
 	<body>
 <div id='slider_column'>
 		<div id='user_settings' class='drop_container shadow'>
-			<div class='drop_title block'>
-				<div class='drop_list'></div>
-			</div>
+			<div class='drop_title block'></div>
+			<div class='drop_list'></div>
 		</div>
-		<br/>
 		<div id='customer_selection' class='drop_container shadow'>
-			<input class='drop_search' type='text' placeholder='Customer Last Name Search...'/>
-			<div class='drop_title block'>
+				<div class='drop_title block'></div>
+				<input class='drop_search' type='text' placeholder='Customer Last Name Search...'/>
 				<div class='drop_list'></div>
-			</div>
 		</div>
 
 		<!-- customer dropdown for JS -->
