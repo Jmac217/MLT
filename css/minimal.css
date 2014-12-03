@@ -1,6 +1,6 @@
 /* Globals */
 @font-face{font-family:geosans;src:url('../res/GeosansLight.eot');src:url('../res/GeosansLight.ttf');}
-body{position:relative;background-color:#fdf7e9;background-image:url('../res/white_texture.jpg');width:950px;height:640px;font-family:geosans;color:white;font-weight:500;text-shadow:5px 5px 5px #333;font-size:20px;}
+body{position:relative;background-color:#fdf7e9;background-image:url('../res/white_texture.jpg');height:740px;font-family:geosans;color:white;font-weight:500;text-shadow:5px 5px 5px #333;font-size:20px;}
 p{color:#888;}
 li{color:#111;list-style-type:none;padding:0;}
 a{cursor:pointer;}
@@ -105,6 +105,12 @@ td{border:solid 1px transparent;font-family:geosans;}
 #bugTrackerDescription{position:absolute;top:25px;left:0px;height:20px;width:200px;height:60px;resize:none;}
 #bugFeedback{position:absolute;left:-5px;top:90px;width:150px;height:20px;font-size:13px;}
 #submitBug{position:absolute;top:90px;left:137px;}
+
+/* debug */
+#markdown{border-radius:10px;padding:20px;position:absolute;top:100%;left:0px;width:100%;height:auto;background-color:#333;border:solid 1px #222;overflow-y:none;overflow-x:none;font-family:arial;text-shadow:none;}
+#markdown, #markdown ul, li, em {color:#CCC;text-align:left;}
+#markdown hr {border-style:none;border:solid 1px #222;}
+#markdown h4 {text-decoration:underline;}
 
 /* send button */
 .button{}

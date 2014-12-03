@@ -27,7 +27,7 @@
 		<link rel='shortcut icon' href='res/favicon.png' />
 	</head>
 	<body>
-<div id='slider_column'>
+	<div id='slider_column'>
 		<div id='user_settings' class='drop_container shadow'>
 			<div class='drop_title block'></div>
 			<div class='drop_list'></div>
@@ -730,6 +730,7 @@
 						</td>
 					</tr>
 				</table>
+
 				
 				<div id='footer'>
 					<div id='request_alert'></div>
@@ -739,6 +740,7 @@
 					<input id='print_preview' type='button' value ='Print Preview' />
 				</div>
 			</div>
+			<div id='markdown' class='box'></div>
 		</div>
 
 
@@ -752,6 +754,8 @@
 		<script type='text/javascript' src='js/index.js'></script>
 		<script type='text/javascript' src='js/dropdown.js'></script>
 		<script type='text/javascript' src='js/request.js'></script>
+		<script type='text/javascript' src='js/showdown.js'></script>
+		<script type='text/javascript' src='js/baseplate.js'></script>
 		<script type='text/javascript' src='js/bug.js'></script>
 		<script type='text/javascript' src='js/debug.js'></script>
 		<script type='text/javascript' src='js/PIE.js'></script>
